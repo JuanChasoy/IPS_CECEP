@@ -1,5 +1,6 @@
 body{
     background-image: url(../img/mount.jpg);
     background-repeat: no-repeat;
-
+    background-size: cover;
+    background-attachment: fixed;
 }
