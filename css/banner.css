@@ -1,0 +1,38 @@
+.banner{
+    width: 700px;
+    height: 300px;
+    margin: auto;
+    
+    animation: banner 7s infinite linear alternate;
+    background-size: 100% 100%;
+}
+@keyframes banner{
+    0%, 20%{
+        background-image: url(../img/banner1.png);
+        opacity: 1;
+    }
+    21%, 40%{
+        opacity: 0.5;
+    }
+    41%, 60%{
+         background-image: url(../img/banner2.jpg);
+        opacity: 1;
+    }
+    61%, 80%{
+        opacity: 0,5;
+    }
+    81%, 100%{
+        background-image: url(../img/banner4.jpg);
+        opacity: 1;
+    }
+
+}
+@media only screen and (min-width:400px) and (max-width:700px){
+    .banner{
+        width:400px;
+        height: 300px;
+    }
+    h1{
+        font-size: 40px;
+    }
+}
