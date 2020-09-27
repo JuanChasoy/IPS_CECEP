@@ -5,7 +5,17 @@
 }
 
 body{
-    background-color: #0fc;
+    height: 100vh;
+    background: url(../img/Citas-Medicas.jpg) no-repeat;
+    background-color: #0000007a;
+    background-size: cover;
+}
+
+#dark-background{
+    z-index: 1;
+    background-color: rgba(37, 142, 146, 0.295);
+    width: 100%;
+    height: 100%;
 }
 
 #formulario{
@@ -14,16 +24,53 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: #fff;
-    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 0 35px #000;
 }
 
 #formulario h1{
     text-align: center;
+    padding: 10px;
+    background-color: #0fc;
+    border-radius: 20px 20px 0 0;
 }
 
 #formulario #content{
-    padding: 30px 10px;
+    padding: 30px 20px;
 }
 #formulario .camp{
     margin: 20px 0;
 }
+
+#formulario input[type="text"], #formulario select{
+    outline: none;
+    border-radius: 10px;
+    height: 25px;
+    padding: 0 10px;
+    border-width: 0;
+    background-color: #ccc;
+}
+#formulario input[type="text"]:focus, #formulario select:focus{
+    box-shadow: 0 0 7px #0fc;
+}
+
+#formulario input[type="submit"]{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #0fc;
+    color: #0fc;
+    background: none;
+    font-weight: 700;
+    transition: .5s;
+    cursor: pointer;
+}
+
+#formulario input[type="submit"]:hover{
+    background-color: #0fc;
+    color: #fff;
+}
+
