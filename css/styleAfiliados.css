@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#formulario{
+    text-align: justify;
+    padding: 20px 50px;
+}
+
+#formulario label{
+    font-weight: 500;
+}
+
+#formulario .content{
+    margin-top: 30px;
+}
+
+#formulario .camp{
+    margin: 15px 0;
+}
+
+#formulario .camp input,
+#formulario .camp select{
+    padding: 0 15px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #ccc;
+    outline: none;
+}
+
+#formulario .camp input:focus,
+#formulario .camp select:focus{
+    box-shadow: 0 0 20px #072b79;
+}
+
+#formulario input[type="submit"]{
+    padding: 5px 20px;
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid #072b79;
+    font-weight: 700;
+    color: #072b79;
+    transition: .3s linear;
+}
+
+#formulario input[type="submit"]:hover{
+    background-color: #072b79;
+    color: #fff;
+}
