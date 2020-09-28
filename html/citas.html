@@ -15,6 +15,34 @@
         <h1>Asignacion de Citas</h1>
         <div id="content">
             <div class="camp">
+                <label for="NB">Nombre</label>
+                <input type="text">
+            </div>
+            <div class="camp">
+                <label for="AP">Apellido</label>
+                <input type="text">
+            </div>
+            <div class="camp">
+                <label for="TD">Tipo de documento</label>
+                <select name="tip-dat" id="TD">
+                  <option value="" selected></option>
+                  <option value="1">Cedula de Ciudadania</option>
+                  <option value="2">Cedula de Estranjeria</option>
+                  <option value="3">Carne Diplomatico</option>
+                  <option value="4">Certificado de Nacido Vivo</option>
+                  <option value="5">Pasaporte</option>
+                  <option value="6">Permiso Especial</option>
+                  <option value="7">Permiso Especial Formalizacion</option>
+                  <option value="8">Registro Civil</option>
+                  <option value="9">Salvo Conducto de Permanencia</option>
+                  <option value="10">Targeta de Indentidad</option>
+                </select>
+              </div>
+              <div class="camp">
+                <label for="FN">Fecha de Nacimiento</label>
+                <input type="date" name="fehc-nac" id="FN">
+              </div>
+            <div class="camp">
                 <label for="TI">Tipo de identificacion</label>
                 <select name="tip-ide" id="TI">
                     <option value="" selected></option>
@@ -56,7 +84,7 @@
                 </select>
             </div>
         </div>
-        <input type="submit" value="Siguiente" id="boton">
+        <input type="submit" value="Validar Cita" id="boton">
     </form>
 </body>
 </html>
