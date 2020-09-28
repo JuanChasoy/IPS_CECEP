@@ -59,6 +59,7 @@
               <button type="button" class="btn btn-secondary btn-lg btn-block">Eliminar empleado</button>
               <button type="button" class="btn btn-primary btn-lg btn-block">Modificar empleado</button>
               <button type="button" class="btn btn-secondary btn-lg btn-block">Ir al inicio</button>
+              <button type="button" class="btn btn-secondary btn-lg btn-block">Ver tabla empleados</button>
             </div>
           </div>
       </div>
