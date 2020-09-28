@@ -43,7 +43,9 @@ body{
     margin: 20px 0;
 }
 
-#formulario input[type="text"], #formulario select{
+#formulario input[type="text"],
+#formulario input[type="date"],
+#formulario select{
     outline: none;
     border-radius: 10px;
     height: 25px;
