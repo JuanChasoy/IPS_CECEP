@@ -13,8 +13,41 @@ body{
 }
 
 .opcion-up{
-    position: relative;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
     left: 50%;
-    transform: translateX(-50%);
-    display: block;
+    transform: translate(-50%,-50%);
+}
+
+.opcion-up a{
+    display: inline-block;
+    background-color: blue;
+    padding: 50px;
+    margin: 50px;
+    position: relative;
+    top: 20px;
+    border-radius: 100%;
+}
+
+.opcion-down{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.opcion-down a{
+    display: inline-block;
+    background-color: blue;
+    padding: 50px;
+    margin: 50px;
+    position: relative;
+    top: 20px;
+    border-radius: 100%;
 }
