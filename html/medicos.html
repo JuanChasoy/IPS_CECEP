@@ -13,11 +13,22 @@
   <body>
     
     <div class="text-center"> 
-    
       <img  src="../img/ipscecep.jpg" alt="" style="width: 180px;
       height: 200px;
-      margin: auto;">  
+      margin: auto;
+      padding: auto;">  
       </div>
+
+      <style>
+        .botones{
+          margin-top: 40px;
+        }
+        .jum {
+          background-color: rgb(108, 203, 219);      
+           
+        }
+  
+      </style>
 
 
 <nav class="navbar navbar-expand-lg  navbar-dark " style="background-color: rgb(7, 43, 121);  " >
@@ -50,8 +61,6 @@
         <a class="nav-link" href="../html/ciudades.html">Ciudades</a>
       </li>
      
-        
-      
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
@@ -59,6 +68,45 @@
     </form>
   </div>
 </nav>
+
+<img  src="../img/Medicos.jpg" alt="" style="width: 800px;
+      height: 400px;
+      margin: 20px;">
+      </div>
+
+      <div class="container">
+        <div class="jumbotron jum">
+            <h1>Gestión De Medicos</h1>
+            <div class="row">
+              <div class="col-sm-6">
+                <div>
+                  <label for="formGroupExampleInput">Nombre Del Medico</label>
+                    <input type="text" class="form-control" id="nom_medico" name="nom_medico" value=""
+                    placeholder="Ingrese el nombre del medico ">
+                </div>
+                <div>
+                  <label for="formGroupExampleInput">Sede donde trabaja</label>
+                    <input type="text" class="form-control" id="sede_trabaj" name="sede_trabaja" value=""
+                    placeholder="Ingresar sede donde trabaja el medico ">
+                </div>
+                              
+              </div>
+              <div class="col-sm-6 botones">
+                <button type="button" class="btn btn-primary btn-lg btn-block">Buscar Medico</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Eliminar Busqueda</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" >Ir al inicio</button>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
 
 
     <!-- Optional JavaScript -->
