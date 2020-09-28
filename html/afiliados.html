@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/styleAfiliados.css">
     <title>IPS CECEP-Afiliados</title>
   </head>
   <body>
@@ -50,6 +50,9 @@
         <a class="nav-link" href="../html/ciudades.html">Ciudades</a>
       </li>
      
+      <li class="nav-item">
+        <a class="nav-link" href="../html/paises.html">Paises</a>
+      </li>
         
       
     </ul>
@@ -61,6 +64,42 @@
 </nav>
 
 
+  <form action="" method="" onsubmit="" id="formulario">
+    <h2>Afiliados</h2>
+    <div class="info">
+      <p>La información personal que diligencies debe ser acorde a los documentos de identidad de cada persona. Si se presentan inconsistencias en la información ingresada y los documentos anexos, el formulario será rechazado.</p>
+    <p>Si tienes más de 5 beneficiarios, tendrás que diligenciar 2 o más veces este formulario.</p>
+    </div>
+
+    <div class="content">
+      <div class="camp">
+        <label for="TD">Tipo de documento</label>
+        <select name="tip-dat" id="TD">
+          <option value="" selected></option>
+          <option value="1">Cedula de Ciudadania</option>
+          <option value="2">Cedula de Estranjeria</option>
+          <option value="3">Carne Diplomatico</option>
+          <option value="4">Certificado de Nacido Vivo</option>
+          <option value="5">Pasaporte</option>
+          <option value="6">Permiso Especial</option>
+          <option value="7">Permiso Especial Formalizacion</option>
+          <option value="8">Registro Civil</option>
+          <option value="9">Salvo Conducto de Permanencia</option>
+          <option value="10">Targeta de Indentidad</option>
+        </select>
+      </div>
+      <div class="camp">
+        <label for="ND">Numero de documento</label>
+        <input type="text" name="tip-doc">
+      </div>
+      <div class="camp">
+        <label for="FN">Fecha de Nacimiento</label>
+        <input type="date" name="fehc-nac" id="FN">
+      </div>
+    </div>
+
+    <input type="submit" value="Validar Usuario">
+  </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
