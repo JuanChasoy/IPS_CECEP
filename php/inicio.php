@@ -35,7 +35,7 @@
         <a class="nav-link" href="../html/afiliados.html">Afiliados    <!--<span class="sr-only">(current)</span> --></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../html/empleados.html">Empleados</a>
+        <a class="nav-link" href="empleados.php">Empleados</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../html/medicos.html">Medicos</a>
