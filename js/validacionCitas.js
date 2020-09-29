@@ -127,7 +127,7 @@ function validacion(){
 
     //se comparan los campos de numero de identificacion
     if (noIde.value != noIde2.value) {
-        alert("los numero de identificacion deben ser iguales");
+        alert("los campos de numero de identificacion deben ser iguales");
         noIde.vale = "";
         noIde2.value = "";
         noIde.style.border = "1px solid #f00";
@@ -138,11 +138,21 @@ function validacion(){
 
     /*Validacion de repeticion de numero de identificacion******************************************************************************/
 
-    if (isNaN(tel)) {
+    if (isNaN(tel.value)) {
         alert("el campo telefono debe ser numerico");
         tel.value = "";
         tel.style.border = "1px solid #f00";
         tel.focus();
+        return false;
+    }
+
+    if (isNaN(noIde.value) && isNaN(noIde2.vale)) {
+        alert("los campos numero de identificacion deben ser numericos");
+        noIde.value = "";
+        noIde2.value = "";
+        noIde.style.border = "1px solid #f00";
+        noIde2.style.border = "1px solid #f00";
+        noIde.focus();
         return false;
     }
 
