@@ -4,27 +4,36 @@
     font-family: "Open Sans",sans-serif;
 }
 
-body{
-    background-color: #f1f1f1;
+.container{
+    margin-bottom: 50px;
 }
-
 .container h1{
     text-align: center;
+    color: #133c99;
+}
+
+.container img{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: auto;
+}
+
+.opciones a{
+    color: #fff;
+    background: linear-gradient(360deg,#072b79, #25a4f8);
+    transition: .3s linear;
 }
 
 .opcion-up{
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .opcion-up a{
     display: inline-block;
-    background-color: blue;
     padding: 50px;
     margin: 50px;
     position: relative;
@@ -33,13 +42,9 @@ body{
 }
 
 .opcion-down{
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .opcion-down a{
@@ -51,3 +56,35 @@ body{
     top: 20px;
     border-radius: 100%;
 }
+
+.opciones i{
+    font-size: 500%;
+}
+
+.opciones .content h2{
+    text-align: center;
+    font-size: 1.5em;
+    color: #000000c4;
+}
+
+.opciones a:hover{
+    box-shadow: 0 0 100px #072b79;
+    animation: button-animation .5s linear;
+}
+
+@keyframes button-animation{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-90deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
