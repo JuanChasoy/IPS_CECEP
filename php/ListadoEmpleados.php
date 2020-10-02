@@ -1,78 +1,82 @@
 <?php
 
-	/*$db_host ="localhost";
+	$db_host ="localhost";
 	$db_user = "root";
 	$db_pass = "";
-	$db_name = "persona";
+	$db_name = "bdatos_ips";
 
 	$conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
-	$sql = "select * from tb_comuna order by comu_nomb";
+	$sql = "select * from tb_medicos order by id_sede";
 
 	$resultado = $conexion->query($sql);
-				//or die(mysqli_errno($this->conexion)." : " 
-				//.mysqli_error($conexion)." | Query=".$sql);
-
-	
-	//$primerRegistro = $resultado->fetch_assoc();
-
-	//print_r($primerRegistro);	
 
 	$listado =array();
 	while($fila = $resultado->fetch_assoc()){
 			$listado[]=$fila;
 	}
 
-	$conexion->close();*/
+	$conexion->close();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+		crossorigin="anonymous">
 
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Listado de Empleados</title>
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css">
-    	<!-- Font Awesome -->
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	</head>
-	<body>
-		<h1 align="center">Listado de Empleados </h1>
-		<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">			
-			<thead>
-				<tr>
-					<th>Código Id</th>
-					<th>Nombre</th>
-                    <th>Epellido</th>
-                    <th>celualr</th>
-					<th>Direccion</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach($listado as $fila){ ?>
-				<tr>
-					<td><?php echo $fila['comu_codi'] ?> </td>
-					<td><?php echo utf8_encode($fila['comu_nomb']) ?> </td>
-					<td><?php echo utf8_encode($fila['muni_codi']) ?> </td> 
-				</tr>
-				<?php } ?>
-			</tbody>
-		</table>
+	<title>Listado medicos</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">		
+			<h1 alaign="center">Listado de Empleados </h1>
+			<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">			
+				<thead>
+					<tr>
+						<th>Código Id</th>
+						<th>Nombre</th>
+						<th>celualr</th>
+						<th>Correo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach($listado as $fila){ ?>
+					<tr>
+						<td><?php echo $fila['id_medico'] ?> </td>
+						<td><?php echo utf8_encode($fila['nom_medico']) ?> </td>
+						<td><?php echo utf8_encode($fila['celu_medico']) ?> </td> 
+						<td><?php echo utf8_encode($fila['correo_medico']) ?> </td> 
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
 
-		<!-- jQuery 2.1.4 -->
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
-	    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-	    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-	    <!-- jQuery UI 1.11.4 -->
-	    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-	    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-	    
-	    <!-- Bootstrap 3.3.5 -->
-    	<script src="bootstrap/js/bootstrap.min.js"></script>
-    	<!-- Funciones de Lógica de neogcio -->
-		<script>
-    		$(document).ready(function(){
-    			$("#tabla").DataTable();
-    		});
-		</script>
-	</body>
+
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    		<!--<script src="../js/bootstrap.min.js"></script> llama archivo js  -->
+    	
+			<script>
+				$(document).ready(function(){
+					alert("cargada suceefull");
+					console.log("cargada la tabla ");
+					
+				});
+
+				
+			</script>
+
+			<script>
+				$(table).c
+			</script>
+</body>
 </html>
