@@ -39,20 +39,25 @@
                   placeholder="Ingresar nombre del empleado ">
               </div>
               <div>
-                <label for="formGroupExampleInput">Apellidos</label>
+                <label for="formGroupExampleInput">Cedula</label>
                   <input type="text" class="form-control" id="Ape_Empleado" name="Ape_Empleado" value=""
-                  placeholder="Ingresar los aplellidos ">
+                  placeholder="identificacion">
               </div>
               <div>
-                <label for="formGroupExampleInput">Edad</label>
+                <label for="formGroupExampleInput">Direccion</label>
                   <input type="text" class="form-control" id="Eda_Empleado" name="Eda_Empleado" value=""
-                  placeholder="Ingresar la edad ">
+                  placeholder="direccion residencia">
               </div>
               <div>
-                <label for="formGroupExampleInput">Fecha de nacimiento</label>
+                <label for="formGroupExampleInput">Celular</label>
                   <input type="text" class="form-control" id="Fecha_Empleado" name="Fecha_Empleado" value=""
-                  placeholder="Ingresar fecha de nacimiento">
-              </div>              
+                  placeholder="numero de celular">
+              </div>   
+              <div>
+                <label for="formGroupExampleInput">Email</label>
+                  <input type="text" class="form-control" id="Fecha_Empleado" name="Fecha_Empleado" value=""
+                  placeholder="direcion de correo electrinico">
+              </div>            
             </div>
             <div class="col-sm-6 botones">
               <button type="button" class="btn btn-primary btn-lg btn-block">Crear Empleado</button>

@@ -31,37 +31,45 @@
     <div class="container">
       <div class="jumbotron jum">
           <h1>Gestion de Empleados</h1>
-          <div class="row">
-            <div class="col-sm-6">
-              <div>
-                <label for="formGroupExampleInput">Nombre del empleado</label>
-                  <input type="text" class="form-control" id="Nom_Empleado" name="Nom_Empleado" value=""
-                  placeholder="Ingresar nombre del empleado ">
+          <form action="../php/CrearEmpleado.php" method="POST">
+            <div class="row">
+              <div class="col-sm-6">
+                <div>
+                  <label for="formGroupExampleInput">Nombre del empleado</label>
+                    <input type="text" class="form-control" id="Nom_Empleado" name="Nom_Empleado" value=""
+                    placeholder="Ingresar nombre del empleado ">
+                </div>
+                <div>
+                  <label for="formGroupExampleInput">Cedula</label>
+                    <input type="text" class="form-control" id="Cedu_Empleado" name="Cedu_Empleado" value=""
+                    placeholder="identificacion">
+                </div>
+                <div>
+                  <label for="formGroupExampleInput">Direccion</label>
+                    <input type="text" class="form-control" id="Dire_Empleado" name="Dire_Empleado" value=""
+                    placeholder="direccion residencia">
+                </div>
+                <div>
+                  <label for="formGroupExampleInput">Celular</label>
+                    <input type="text" class="form-control" id="celu_Empleado" name="celu_Empleado" value=""
+                    placeholder="numero de celular">
+                </div>   
+                <div>
+                  <label for="formGroupExampleInput">Email</label>
+                    <input type="text" class="form-control" id="Emal_Empleado" name="Emal_Empleado" value=""
+                    placeholder="direcion de correo electrinico">
+                </div>            
               </div>
-              <div>
-                <label for="formGroupExampleInput">Apellidos</label>
-                  <input type="text" class="form-control" id="Ape_Empleado" name="Ape_Empleado" value=""
-                  placeholder="Ingresar los aplellidos ">
+              <div class="col-sm-6 botones">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Crear Empleado</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Eliminar empleado</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Modificar empleado</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Ir al inicio</button>
+                <a href="ListadoEmpleados.php" class="btn btn-secondary btn-lg btn-block">Ver tabla de empleados</a> 
               </div>
-              <div>
-                <label for="formGroupExampleInput">Edad</label>
-                  <input type="text" class="form-control" id="Eda_Empleado" name="Eda_Empleado" value=""
-                  placeholder="Ingresar la edad ">
-              </div>
-              <div>
-                <label for="formGroupExampleInput">Fecha de nacimiento</label>
-                  <input type="text" class="form-control" id="Fecha_Empleado" name="Fecha_Empleado" value=""
-                  placeholder="Ingresar fecha de nacimiento">
-              </div>              
             </div>
-            <div class="col-sm-6 botones">
-              <button type="button" class="btn btn-primary btn-lg btn-block">Crear Empleado</button>
-              <button type="button" class="btn btn-secondary btn-lg btn-block">Eliminar empleado</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block">Modificar empleado</button>
-              <a href="../html/inicio.html" class="btn btn-secondary btn-lg btn-block">Ir al inicio</a>
-              
-            </div>
-          </div>
+          </form>
+          
       </div>
     </div>
 

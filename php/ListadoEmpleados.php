@@ -7,7 +7,7 @@
 
 	$conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
-	$sql = "select * from tb_medicos order by id_sede";
+	$sql = "select * from tb_empleados order by id_sede";
 
 	$resultado = $conexion->query($sql);
 
@@ -38,45 +38,22 @@
 					<tr>
 						<th>Código Id</th>
 						<th>Nombre</th>
-						<th>celualr</th>
+						<th>celualar</th>
 						<th>Correo</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php foreach($listado as $fila){ ?>
 					<tr>
-						<td><?php echo $fila['id_medico'] ?> </td>
-						<td><?php echo utf8_encode($fila['nom_medico']) ?> </td>
-						<td><?php echo utf8_encode($fila['celu_medico']) ?> </td> 
-						<td><?php echo utf8_encode($fila['correo_medico']) ?> </td> 
+						<td><?php echo $fila['id_empleado'] ?> </td>
+						<td><?php echo utf8_encode($fila['nom_empleado']) ?> </td>
+						<td><?php echo utf8_encode($fila['celu_empleado']) ?> </td> 
+						<td><?php echo utf8_encode($fila['email_empleado']) ?> </td> 
 					</tr>
 					<?php } ?>
 				</tbody>
 			</table>
 		</div>
-	</div>
-	
-
-
-
-
-
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    		<!--<script src="../js/bootstrap.min.js"></script> llama archivo js  -->
-    	
-			<script>
-				$(document).ready(function(){
-					alert("cargada suceefull");
-					console.log("cargada la tabla ");
-					
-				});
-
-				
-			</script>
-
-			<script>
-				$(table).c
-			</script>
+	</div>	
 </body>
 </html>
