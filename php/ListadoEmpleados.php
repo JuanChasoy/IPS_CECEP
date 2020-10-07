@@ -3,7 +3,7 @@
 	$db_host ="localhost";
 	$db_user = "root";
 	$db_pass = "";
-	$db_name = "bdatos_ips";
+	$db_name = "base_ips";
 
 	$conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
@@ -12,8 +12,10 @@
 	$resultado = $conexion->query($sql);
 
 	$listado =array();
+
 	while($fila = $resultado->fetch_assoc()){
 			$listado[]=$fila;
+			//print_r ($listado);
 	}
 
 	$conexion->close();
