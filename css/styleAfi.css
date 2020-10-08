@@ -1,0 +1,101 @@
+:root{
+    --color-principal: #072b79;
+    --color-fondo: #fff;
+    --color-form: rgba(0, 0, 0, 0.288);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans',sans-serif;
+}
+
+body{
+    background-color: var(--color-fondo);
+}
+
+h2{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,-20%);
+}
+
+img#logo{
+    width: 130px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0%);
+}
+#formulario{
+    background-color: var(--color-form);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
+    padding: 0 20px;
+    border-radius: 10px;
+}
+
+#formulario h1{
+    text-align: center;
+    background-color: var(--color-principal);
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 20px;
+}
+
+#formulario #content{
+    text-align: center;
+}
+
+#formulario #content label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+#formulario #content .camp{
+    margin-bottom: 20px;
+}
+
+#formulario #content .camp select,
+#formulario #content .camp input{
+    height: 25px;
+    padding: 0 10px;
+    outline: none;
+    border: 2px solid var(--color-principal);
+    border-radius: 10px;
+    width: 50%;
+    transition: .3s linear;
+}
+
+#formulario #content .camp select:focus,
+#formulario #content .camp input:focus{
+    width: 65%;
+    border-color: #0cf;
+}
+
+#formulario input#boton{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border-style: none;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-principal);
+    padding: 7px 20px;
+    border-radius: 10px;
+    color: var(--color-principal);
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+
+#formulario input#boton:hover{
+    background: var(--color-principal);
+    color: #fff;
+}
