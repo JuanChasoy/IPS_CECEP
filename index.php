@@ -1,3 +1,44 @@
+<?php
+     $alert = "";
+     if(!empty($_POST))
+     {
+        if(empty($_POST['usuario']) || empty($_POST['clave']))
+        {
+            $alert = "ingresar usuario y clave ";
+        }
+        else
+        {
+
+                require_once "conexion.php";
+
+                $user = $_POST['usuario'];
+                $pass = $_POST['clave'];            
+                
+                $query = mysqli_query($conexion,"SELECT * FROM tb_usuarios WHERE nom_usuario = '$user' AND clave = '$pass'");
+                $resultado = mysqli_num_rows($query);
+                
+                //$listado = array();
+
+                if($resultado > 0){
+                    $listado = mysqli_fetch_assoc($query);
+                    print_r($listado);
+                    /*session_start();
+                    $_SESSION['active'] = true;
+                    $_SESSION['idUser'] = $listado['id_usuario'];
+                    $_SESSION['nombre'] = $listado['nom_usuario'];
+                    $_SESSION['cedula'] = $listado['cedu_usuario'];
+                    $_SESSION['sexo'] = $listado['sexo_usuario'];
+                    $_SESSION['celular'] = $listado['celu_usuario'];
+                    $_SESSION['correo'] = $listado['correo_usuario'];
+                    $_SESSION['sede'] = $listado['id_sede'];
+                    $_SESSION['rol'] = $listado['id_rol'];
+
+                    header('location: menu/');*/
+                }
+        }
+     }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +48,16 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="../IPS_CECEP/css/style.css">
-    <title>PAGINA PRINCIPAL IPS CECEP</title>
+    <title>LOGIN</title>
 
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 mr-1">
             <div class="col-md-4 formulario">
-                <form action="../IPS_CECEP/php/inicio.php" >
+
+                <form action="" method="post">
+
                     <div class="form-group text-center">
                         <h1 class="text-light ">Iniciar sesion</h1>
                     </div>
@@ -24,10 +67,13 @@
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="text" class="form-control " placeholder="ingrese la contraseña" name ="clave ">
                     </div>
+                    <div class="alert"><?php echo "".$alert.""; ?></div> 
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="submit" class="btn btn-blcok ingresar" value="Ingresar " >
                     </div>
+
                 </form>
+
             </div>
         </div>
     </div>

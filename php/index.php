@@ -29,7 +29,7 @@
                     $_SESSION['idUser'] = $listado['id_usuario'];
                     $_SESSION['nombre'] = $listado['nom_usuario'];
                     $_SESSION['clave'] = $listado['clave'];
-                    header('location: menu/');
+                    header('location: ./menu/');
                 }
         }
      }
@@ -60,7 +60,7 @@
                         <input type="text" class="form-control " placeholder="ingrese el usuario" name = "usuario">
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
-                        <input type="text" class="form-control " placeholder="ingrese la contraseña" name ="clave ">
+                        <input type="password" class="form-control " placeholder="ingrese la contraseña" name ="clave ">
                         <div class="alert"> <?php echo "".$alert.""; ?> </div>
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
