@@ -6,6 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Inicia aqui tu solicitud de afiliacion</h2>
+    <form action="" method="POST" id="formulario">
+        <h1 id="titulo-form">Empresa</h1>
+        <div id="content">
+            <div class="camp">
+                <label for="tipo de documento"></label>
+                <select name="tip-doc" id="TipDoc">
+                    <option value=""></option>
+                    <option value="1">Cedula de Ciudadania</option>
+                    <option value="2">Carnet Diplomatico</option>
+                    <option value="3">cedula de Extranjeria</option>
+                    <option value="4">Registro Civil</option>
+                    <option value="5">NIT</option>
+                    <option value="6">Pasaporte</option>
+                    <option value="7">Targeta de Identidad</option>
+                    <option value="8">Permiso Especial de Permanencia</option>
+                </select>
+            </div>
+            <div class="camp">
+                <label for="NumDoc">Numero de Documento</label>
+                <input type="text" name="num-doc" id="NumDoc">
+            </div>
+            <div class="camp">
+                <label for="CorEle">Correo Electronico</label>
+                <input type="email" name="cor-ele" id="CorEle">
+            </div>
+        </div>
+
+        <input type="submit" value="Iniciar Solicitud" id="boton">
+    </form>
 </body>
 </html>
