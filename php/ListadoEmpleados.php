@@ -12,6 +12,7 @@
 	$resultado = $conexion->query($sql);
 
 	$listado =array();
+	
 
 	while($fila = $resultado->fetch_assoc()){
 			$listado[]=$fila;

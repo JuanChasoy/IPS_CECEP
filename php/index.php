@@ -1,47 +1,41 @@
 <?php
-    $alert = "";
-    if(!empty($_POST))
-    {
+     $alert = "";
+     if(!empty($_POST))
+     {
         if(empty($_POST['usuario']) || empty($_POST['clave']))
         {
             $alert = "ingresar usuario y clave ";
-        }else{
-
-            //require_once "../conexion.php";
-            $db_host ="localhost";
-	        $db_user = "root";
-	        $db_pass = "";
-	        $db_name = "base_ips";
-
-            $conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
-            $user = $_POST['usuario'];
-            $pass = $_POST['clave'];
-            
-            $query = mysqli_query($conexion, "SELECT * FROM tb_usuarios WHERE nom_usuario = '$user' AND clave = '$pass'");
-            $result = mysqli_num_rows($query);
-
-            if($result > 0 )
-            {
-                $data = mysqli_fetch_array($query);
-                session_start();
-                $_SESSION['active'] = true;
-                $_SESSION['idUser'] = $data['id_usuario'];
-                $_SESSION['nombre'] = $data['nom_usuario'];
-                $_SESSION['clave'] = $data['clave'];
-
-                header('location : inicio.php');
-
-
-            }else
-            {
-                $alert = "el usuario o la clave son incorrectos  ";
-            }
         }
-    }
+        else
+        {
 
+                require_once "conexion.php";
+
+                $user = $_POST['usuario'];
+                $pass = $_POST['clave'];            
+                
+                $sql = "SELECT * FROM tb_usuarios WHERE nom_usuario = '$user' AND clave = '$pass'";
+
+                $resultado = $conexion->query($sql);
+                
+                $listado = array();
+
+                while($fila = $resultado->fetch_assoc())
+                {
+                    $listado[]=$fila;
+                    print_r ($listado);
+                    session_start();
+                    $_SESSION['active'] = true;
+                    $_SESSION['idUser'] = $listado['id_usuario'];
+                    $_SESSION['nombre'] = $listado['nom_usuario'];
+                    $_SESSION['clave'] = $listado['clave'];
+                    header('location: menu/');
+                }
+        }
+     }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +61,7 @@
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="text" class="form-control " placeholder="ingrese la contraseña" name ="clave ">
-                        <div class="alert"> <?php echo isset($alert)? $alert : '' ;  ?> </div>
+                        <div class="alert"> <?php echo "".$alert.""; ?> </div>
                     </div>
                     <div class="form-group mx-sm-4 pb-3">
                         <input type="submit" class="btn btn-blcok ingresar" value="Ingresar " >
