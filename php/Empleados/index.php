@@ -1,39 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-    	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
-		crossorigin="anonymous">
+<div id="nuevo-editar" class="hide">
+		<!-- div para cargar el formulario para una nueva comuna o editar una comuna -->
+</div>
 
-	<title>Listado medicos</title>
-</head>
-<body>
-	<div class="container">
-		<div class="jumbotron">		
-			<h1 alaign="center">Listado de Empleados </h1>
-			<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">			
-				<thead>
-					<tr>
-						<th>Código Id</th>
-						<th>Nombre</th>
-						<th>celualar</th>
-						<th>Correo</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach($listado as $fila){ ?>
-					<tr>
-						<td><?php echo $fila['id_empleado'] ?> </td>
-						<td><?php echo utf8_encode($fila['nom_empleado']) ?> </td>
-						<td><?php echo utf8_encode($fila['celu_empleado']) ?> </td> 
-						<td><?php echo utf8_encode($fila['email_empleado']) ?> </td> 
-					</tr>
-					<?php } ?>
-				</tbody>
-			</table>
-		</div>
-	</div>	
-</body>
-</html>
+<div id="empleado">
+<div class="box-header">
+    <i class="ion ion-clipboard"></i>
+     <!-- tools box -->
+    <div class="pull-right box-tools">
+    	<button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" title="Nuevo Empleado"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+    	<button class="btn btn-info btn-sm btncerrar"  data-toggle="tooltip" title="Ocultar"><i class="fa fa-times"></i></button>
+
+    </div><!-- /. tools -->
+                  
+</div><!-- /.box-header -->
+
+<div class="box-body">
+
+	<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Código Id</th>
+				<th>Nombre</th>
+				<th>celualar</th>
+				<th>Correo</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+		</tbody>
+
+	</table>
+
+</div><!-- /.box-body -->  
+<script src="js/FuncionesEmpleados.js"></script>
+</div>
