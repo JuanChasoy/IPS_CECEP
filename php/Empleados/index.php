@@ -1,26 +1,3 @@
-<?php
-
-	$db_host ="localhost";
-	$db_user = "root";
-	$db_pass = "";
-	$db_name = "base_ips";
-
-	$conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
-	$sql = "select * from tb_empleados order by id_sede";
-
-	$resultado = $conexion->query($sql);
-
-	$listado =array();
-	
-
-	while($fila = $resultado->fetch_assoc()){
-			$listado[]=$fila;
-			//print_r ($listado);
-	}
-
-	$conexion->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
