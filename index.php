@@ -35,7 +35,7 @@
         <a class="nav-link" href="../html/afiliados.html">Afiliados    <!--<span class="sr-only">(current)</span> --></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="empleados.php">Empleados</a>
+        <a class="nav-link" href="php/Empleados/index.php">Empleados</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../html/medicos.html">Medicos</a>
@@ -55,10 +55,22 @@
       <li class="nav-item">
         <a class="nav-link" href="../html/paises.html">Paises</a>
       </li>
-     
-        
-      
-    </ul>
+      <li class="nav-item">
+        <a class="nav-link" href="../html/citas.html">Citas</a>
+      </li>
+     </ul>
+
+     <div class="panel-group hide" id="contenedor"><div class="panel panel-primary">
+            <div class="panel-heading" id="titulo"></div>
+            <div class="panel-body">
+                
+                <div class="form-group" id="contenido">        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -100,14 +112,29 @@ margin-top: 25px;">
 </div>
 
     
- 
-    
+      <input type="hidden" id="pagina" value="index" name="editar"/>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <!-- Librearía para las funcionalidades de la tabla -->
+          <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+          <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+          <!-- Librería para las alertas -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.2/sweetalert2.all.js"></script>
+          <!-- jQuery UI 1.11.4 -->
+          <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+          <!-- Funciones de Lógica de negocio -->
+          <script src="js/funcionesJquery.js"></script>
+          <!-- Funciones de Lógica de neogcio -->
+          <script>
+              $(document).ready(Inicio);
+          </script>
   </body>
 </html>
+
+
+
+
+
+
+
