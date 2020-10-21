@@ -59,7 +59,7 @@
 		
 		public function lista() {
 			$this->query = "
-			SELECT id_empleado, nom_empleado, m.nom_sede
+			SELECT id_empleado, nom_empleado, celu_empleado, email_empleado, m.nom_sede 
 			FROM tb_empleados as c inner join tb_sedes as m
 			ON (c.id_sede = m.id_sede) order by id_empleado
 			";

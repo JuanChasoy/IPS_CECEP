@@ -1,6 +1,6 @@
 var dt;
 
-function Empleados(){
+function empleados(){
     $("#contenido").on("click","button#actualizar",function(){
          var datos=$("#fempleados").serialize();
          $.ajax({
@@ -101,14 +101,14 @@ function Empleados(){
 
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nuevo Empleado");
-        $("#nuevo-editar" ).load("./php/Empleados/ControladorEmpleados.php"); 
+        $("#nuevo-editar" ).load("./php/Empleados/NuevoEmpleado.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#empleado").removeClass("show");
         $("#empleado").addClass("hide");
          $.ajax({
              type:"get",
-             url:"./php/Empleados/ControladorEmpleados.php", // falta poner el el controlador de sedes
+             url:"./php/Empleados/ControladorSede.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -213,7 +213,7 @@ $(document).ready(() => {
   $("#contenido").off("click","a.borrar");
   $("#contenido").off("click","button#nuevo");
   $("#contenido").off("click","button#grabar");
-  $("#titulo").php("TODOS LOS EMPLEADOS");
+  $("#titulo").html("TODOS LOS EMPLEADOS");
   dt = $("#tabla").DataTable({
         "ajax": "php/Empleados/ControladorEmpleados.php?accion=listar",
         "columns": [
@@ -221,19 +221,20 @@ $(document).ready(() => {
             { "data": "nom_empleado" },
             { "data": "celu_empleado" },
             { "data": "email_empleado" }, 
+            { "data": "nom_sede" }, 
             { "data": "id_empleado",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
-                                 '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash"></i></a>' 
+                                 '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
                 }
             },
             { "data": "id_empleado",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
-                                 '" class="btn btn-info btn-sm editar"> <i class="fa fa-edit"></i></a>';
+                                 '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
                 }
             }
         ]
   });
-  Empleados();
+  empleados();
 });
