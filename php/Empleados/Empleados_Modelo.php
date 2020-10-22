@@ -94,6 +94,10 @@
 			$this->query = "
 			UPDATE tb_empleados
 			SET nom_empleado='$nom_empleado',
+			cedu_emplado='$cedu_emplado',
+			celu_empleado='$celu_empleado',
+			dire_empleado='$dire_emspleado',
+			email_empleado='$email_empleado',
 			id_sede='$id_sede'
 			WHERE id_empleado = '$id_empleado'
 			";

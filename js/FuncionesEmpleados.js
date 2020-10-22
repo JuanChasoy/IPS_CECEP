@@ -1,6 +1,6 @@
 var dt;
 
-function empleados(){
+function empleados(){ // actualizar es el nombre del boton en el form editar 
     $("#contenido").on("click","button#actualizar",function(){
          var datos=$("#fempleados").serialize();
          $.ajax({
@@ -16,7 +16,7 @@ function empleados(){
                     'success'
                 )     
                 dt.ajax.reload();
-                $("#titulo").php("Listado Empleados");
+                $("#titulo").html("Listado Empleados");
                 $("#nuevo-editar").php("");
                 $("#nuevo-editar").removeClass("show");
                 $("#nuevo-editar").addClass("hide");
@@ -145,8 +145,8 @@ function empleados(){
                 $("#nuevo-editar").html("");
                 $("#nuevo-editar").removeClass("show");
                 $("#nuevo-editar").addClass("hide");
-                $("#empleados").removeClass("hide");
-                $("#empleados").addClass("show")
+                $("#empleado").removeClass("hide");
+                $("#empleado").addClass("show")
              } else {
                 swal({
                   type: 'error',

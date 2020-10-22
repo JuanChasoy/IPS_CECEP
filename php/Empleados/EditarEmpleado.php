@@ -80,16 +80,17 @@
                         </div>
                     </div>
 
-					            <div class="form-group">        
+                    <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="button" id="grabar" class="btn btn-primary" data-toggle="tooltip" title="Guardar Empleado">Guardar Empleado</button>
-                            <button type="button" id="cerrar" class="btn btn-success btncerrar2" data-toggle="tooltip" title="Cancelar">Cancelar</button>
+                            <button type="button" id="actualizar" data-toggle="tooltip" title="Actualizar empleado" class="btn btn-primary">Actualizar empleado</button>
+                            <button type="button" id="cancelar" data-toggle="tooltip" title="Cancelar Edición" class="btn btn-success btncerrar2"> Cancelar </button>
                         </div>
-                      </div>
+                    </div>
 
-					<input type="hidden" id="nuevo" value="nuevo" name="accion"/>
+					<input type="hidden" id="editar" value="editar" name="accion"/>
 			</fieldset>
 
 		</form>
-	</div>
+  </div>
+    <input type="hidden" id="pagina" value="editar" name="editar"/>
 </div>
