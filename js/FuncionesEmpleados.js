@@ -157,13 +157,13 @@ function empleados(){
         });
     });
 
-
+    //codigo hace parte para cargar datos al momento de darle en editar
     $("#contenido").on("click","a.editar",function(){
-       $("#titulo").html("Editar Comuna");
+       $("#titulo").html("Editar Empleado");
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
        var sede;
-        $("#nuevo-editar").load("./php/Empleados/ControladorEmpleados.php");
+        $("#nuevo-editar").load("./php/Empleados/EditarEmpleado.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#empleado").removeClass("show");
@@ -173,33 +173,37 @@ function empleados(){
            url:"./php/Empleados/ControladorEmpleados.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
-           }).done(function( Empleado ) {        
-                if(Empleado.respuesta === "no existe"){
+           }).done(function( empleados ) {        
+                if(empleados.respuesta === "no existe"){
                     swal({
                       type: 'error',
                       title: 'Oops...',
                       text: 'Comuna no existe!!!!!'                         
                     })
                 } else {
-                    $("#comu_codi").val(Empleado.codigo);                   
-                    $("#comu_nomb").val(Empleado.Empleado);
-                    sede = Empleado.sede;
+                    $("#id_empleado").val(empleados.codigo);                   
+                    $("#nom_empleado").val(empleados.empleado);
+                    $("#cedu_emplado").val(empleados.cedula);                   
+                    $("#dire_empleado").val(empleados.direccion);
+                    $("#celu_empleado").val(empleados.celular);                   
+                    $("#email_empleado").val(empleados.email);
+                    sede = empleados.sede;
                 }
            });
 
            $.ajax({
              type:"get",
-             url:"./php/municipio/controladorEmpleados.php", // falta poner el el controlador de sedes
+             url:"./php/Sedes/ControladorSedes.php", // falta poner el el controlador de sedes
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
-              $("#id_empleado option").remove();
+              $("#id_sede option").remove();
               $.each(resultado.data, function (index, value) { 
                 
-                if(Empleado === value.muni_codi){
-                  $("#id_empleado").append("<option selected value='" + value.id_empleado + "'>" + value.id_empleado + "</option>")
+                if(sede === value.id_sede){
+                  $("#id_sede").append("<option selected value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
                 }else {
-                  $("#id_empleado").append("<option value='" + value.id_empleado + "'>" + value.id_empleado + "</option>")
+                  $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
                 }
               });
            });    

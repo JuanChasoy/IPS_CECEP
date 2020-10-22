@@ -19,7 +19,7 @@
             <div class="panel-heading">Datos Empleados</div>
             <div class="panel-body">
     
-                <form class="form-horizontal" role="form"  id="fcomuna">
+                <form class="form-horizontal" role="form"  id="fempleados">
 
 
  					<div class="form-group">
