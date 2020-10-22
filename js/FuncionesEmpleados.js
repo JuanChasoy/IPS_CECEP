@@ -1,6 +1,6 @@
 var dt;
-
-function empleados(){ // actualizar es el nombre del boton en el form editar 
+// actualizar es el nombre del boton en el form editar 
+function empleados(){ 
     $("#contenido").on("click","button#actualizar",function(){
          var datos=$("#fempleados").serialize();
          $.ajax({
@@ -17,7 +17,7 @@ function empleados(){ // actualizar es el nombre del boton en el form editar
                 )     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Empleados");
-                $("#nuevo-editar").php("");
+                $("#nuevo-editar").html("");
                 $("#nuevo-editar").removeClass("show");
                 $("#nuevo-editar").addClass("hide");
                 $("#empleado").removeClass("hide");
