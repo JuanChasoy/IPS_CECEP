@@ -108,15 +108,15 @@ function empleados(){
         $("#empleado").addClass("hide");
          $.ajax({
              type:"get",
-             url:"./php/Empleados/ControladorSede.php",
+             url:"./php/Sedes/ControladorSedes.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
               //console.log(resultado.data)           
-              $("#muni_codi option").remove()       
-              $("#muni_codi").append("<option selecte value=''>Seleccione un municipio</option>")
+              $("#id_sede option").remove()       
+              $("#id_sede").append("<option selecte value=''>Seleccione una sede</option>")
               $.each(resultado.data, function (index, value) { 
-                $("#muni_codi").append("<option value='" + value.muni_codi + "'>" + value.muni_nomb + "</option>")
+                $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
               });
            });
     })

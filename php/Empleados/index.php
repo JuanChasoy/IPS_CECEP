@@ -1,7 +1,3 @@
-<div id="nuevo-editar" class="hide">
-		<!-- div para cargar el formulario para una nueva comuna o editar una comuna -->
-</div>
-
 <div id="comuna">
 <div class="box-header">
     <i class="ion ion-clipboard"></i>
@@ -33,6 +29,11 @@
 		</tbody>
 
 	</table>
+
+		<div id="nuevo-editar" class="hide">
+			<!-- div para cargar el formulario para una nueva comuna o editar una comuna -->
+		</div>
+
 </div><!-- /.box-body -->  
 	<script src="js/FuncionesEmpleados.js"></script>
 </div>
