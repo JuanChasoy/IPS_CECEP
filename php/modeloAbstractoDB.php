@@ -3,7 +3,7 @@
 		private static $db_host ="localhost";
 		private static $db_user = "root";
 		private static $db_pass = "";
-		protected $db_name = "base_ips";
+		protected $db_name = "ips";
 		protected $query; //alamcenar la consulta (sql)
 		protected $rows = array(); //almacena el resultado de la consulta comando (select)
 		private $conexion; // almacena la conexion establecida 
