@@ -161,13 +161,11 @@ function empleados(){
             dataType:"json"
           }).done(function( resultado ) {
               if(resultado.respuesta){
-                swal({
-                    position: 'center',
-                    type: 'success',
-                    title: '<El empleado fue grabado con éxito',
-                    showConfirmButton: false,
-                    timer: 1200
-                })     
+                swal(
+                  'Grabado!!',
+                  'El registro se grabó correctamente',
+                  'success'
+                )     
                     $(".box-title").html("Listado de Empleados");
                     $(".box #nuevo").show();
                     $("#editar").html('');
