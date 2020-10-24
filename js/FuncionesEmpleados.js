@@ -151,46 +151,47 @@ function empleados(){
 
 
 
-
-
-
-
-
-    $("#contenido").on("click","button#grabar",function(){
-        /*var comu_codi = $("#comu_codi").attr("value");
-        var comu_nomb = $("#comu_nomb").attr("value");
-        var muni_codi = $("#muni_codi").attr("value");
-        var datos = "comu_codi="+comu_codi+"&comu_nomb="+comu_nomb+"&muni_codi="+muni_codi;*/
-      
+    $("#editar").on("click","button#grabar",function(){
       var datos=$("#fempleados").serialize();
-       $.ajax({
+      //console.log(datos);
+      $.ajax({
             type:"get",
             url:"./php/Empleados/ControladorEmpleados.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
               if(resultado.respuesta){
-                swal(
-                    'Grabado!!',
-                    'El registro se grabó correctamente',
-                    'success'
-                )     
-                dt.ajax.reload();
-                $("#titulo").html("Listado Empleados");
-                $("#nuevo-editar").html("");
-                $("#nuevo-editar").removeClass("show");
-                $("#nuevo-editar").addClass("hide");
-                $("#empleado").removeClass("hide");
-                $("#empleado").addClass("show")
+                swal({
+                    position: 'center',
+                    type: 'success',
+                    title: '<El empleado fue grabado con éxito',
+                    showConfirmButton: false,
+                    timer: 1200
+                })     
+                    $(".box-title").html("Listado de Empleados");
+                    $(".box #nuevo").show();
+                    $("#editar").html('');
+                    $("#editar").addClass('hide');
+                    $("#editar").removeClass('show');
+                    $("#listado").addClass('show');
+                    $("#listado").removeClass('hide');
+                    dt.page( 'last' ).draw( 'page' );
+                    dt.ajax.reload(null, false);                   
              } else {
                 swal({
-                  type: 'error',
-                  title: 'Oops...',
-                  text: 'Something went wrong!'                         
-                })
+                    position: 'center',
+                    type: 'error',
+                    title: 'Ocurrió un erro al grabar',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+               
             }
         });
     });
+
+
+
 
     //codigo hace parte para cargar datos al momento de darle en editar
     $("#contenido").on("click","a.editar",function(){

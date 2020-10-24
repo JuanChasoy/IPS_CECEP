@@ -101,3 +101,38 @@ $(document).ready(() => {
               });
            });
     })
+
+
+    // codigo de cuando se le da clilc en guardar 
+     $("#contenido").on("click","button#grabar",function(){      
+      var datos=$("#fempleados").serialize();
+       $.ajax({
+            type:"get",
+            url:"./php/Empleados/ControladorEmpleados.php",
+            data: datos,
+            dataType:"json"
+          }).done(function( resultado ) {
+              if(resultado.respuesta){
+                swal(
+                    'Grabado!!',
+                    'El registro se grabó correctamente',
+                    'success'
+                )     
+                dt.ajax.reload();
+                $("#titulo").html("Listado Empleados");
+                $("#nuevo-editar").html("");
+                $("#nuevo-editar").removeClass("show");
+                $("#nuevo-editar").addClass("hide");
+                $("#empleado").removeClass("hide");
+                $("#empleado").addClass("show")
+             } else {
+                swal({
+                  type: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!'                         
+                })
+            }
+        });
+    });
+
+
