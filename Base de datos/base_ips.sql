@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2020 a las 06:28:21
+-- Tiempo de generación: 24-10-2020 a las 07:06:46
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.30
 
@@ -110,9 +110,18 @@ CREATE TABLE `tb_empleados` (
 --
 
 INSERT INTO `tb_empleados` (`id_empleado`, `nom_empleado`, `cedu_emplado`, `celu_empleado`, `dire_empleado`, `email_empleado`, `id_sede`) VALUES
-(1, 'pedro', 1113123, 11245, 'calle 6', 'pedrito@gmail.com', 1),
-(2, 'arley', 96766524, 143345, 'calle 2', 'arley@gmail.com', 1),
-(3, 'oscar', 78566524, 112345, 'calle 1', 'oscar@gmail.com', 2);
+(2, 'arley rivas', 96766524, 143345, '', 'arley@gmail.com', 5),
+(4, 'Deivy Rivas', 1143997886, 313765146, '', 'deyruiz555qgmail.com', 3),
+(5, 'Diana', 773464288, 310726545, '', 'dianaRia@hotmail.com', 1),
+(6, 'paulina Roa', 55426754, 32352823, '', 'pau@hotmail.com', 6),
+(7, 'Yeferson ', 6345223, 31076347, '', 'yeriru@gmail.com', 6),
+(8, 'pedro', 1113123, 11245, 'calle 6 - 54N', 'pedrito@gmail.com', 1),
+(9, 'pedro A', 1113123, 112455, '', 'pedrito@gmail.com', 4),
+(10, 'pedroo', 1113123, 11245, 'calle 6', 'pedrito@gmail.com', 1),
+(11, 'Diana maria rivas', 773464288, 310726545, 'carrera 82 # 1 - 5 ', 'diana123@hotmail.com', 5),
+(12, 'deivy', 1143997888, 313765146, 'cra 24d # 42a - 07', 'deyruiz555qgmail.com', 3),
+(13, 'pedroo', 888888888, 11245, 'rodeo', 'pedrito@gmail.com', 3),
+(14, 'pedroo', 88888, 11245, 'rodeo', 'pedrito@gmail.com', 3);
 
 -- --------------------------------------------------------
 
@@ -265,21 +274,22 @@ CREATE TABLE `tb_usuarios` (
   `id_usuario` int(11) NOT NULL,
   `nom_usuario` varchar(255) NOT NULL,
   `cedu_usuario` int(11) NOT NULL,
-  `sexo_usuario` varchar(2) NOT NULL,
+  `usua_user` varchar(100) NOT NULL,
   `celu_usuario` int(11) NOT NULL,
   `correo_usuario` text NOT NULL,
   `id_sede` int(11) NOT NULL,
-  `id_rol` int(11) NOT NULL
+  `id_rol` int(11) NOT NULL,
+  `usua_pass` varchar(100) NOT NULL,
+  `usua_foto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tb_usuarios`
 --
 
-INSERT INTO `tb_usuarios` (`id_usuario`, `nom_usuario`, `cedu_usuario`, `sexo_usuario`, `celu_usuario`, `correo_usuario`, `id_sede`, `id_rol`) VALUES
-(1, 'Camilo fuentes', 231111, 'M', 98111, 'funtes@hotmail.com', 2, 1),
-(2, 'loren', 234564, 'F', 98712, 'lorenita@hotmail.com', 3, 1),
-(3, 'mayra', 201123, 'F', 98142, 'mayra@hotmail.com', 4, 1);
+INSERT INTO `tb_usuarios` (`id_usuario`, `nom_usuario`, `cedu_usuario`, `usua_user`, `celu_usuario`, `correo_usuario`, `id_sede`, `id_rol`, `usua_pass`, `usua_foto`) VALUES
+(4, 'Deivi Steven Rivas Rivas', 223451, 'deivy', 53453424, 'Drivas@gmail.com.co', 1, 1, '$2y$12$xyMXafB//kPIBlb6kBjUUe9ojYPpLgWT.uKEFdRMDfEzp7YffmmvW', 'deivy.jpg'),
+(7, 'Pedro Bustamante Arqueo', 5562543, 'pedro', 31245673, 'Pedro@otro.com.co', 2, 3, '$2y$12$c0SuyCU6hdqKMf7RcW/ya.u0JfVRNcY8M10L7Thb2yvn0DaQT5w/a', 'avatar.png');
 
 --
 -- Índices para tablas volcadas
@@ -386,7 +396,7 @@ ALTER TABLE `tb_ciudades`
 -- AUTO_INCREMENT de la tabla `tb_empleados`
 --
 ALTER TABLE `tb_empleados`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_medicamentos`
@@ -410,7 +420,7 @@ ALTER TABLE `tb_pais`
 -- AUTO_INCREMENT de la tabla `tb_roles`
 --
 ALTER TABLE `tb_roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_sedes`
@@ -428,7 +438,7 @@ ALTER TABLE `tb_servicio`
 -- AUTO_INCREMENT de la tabla `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

@@ -6,7 +6,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="./Recursos/img/deivy.jpg" class="img-circle" alt="User Image">
+        <img src="./Recursos/img/<?php echo $_SESSION['foto'] ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION["nombre"]; ?></p>
@@ -53,7 +53,7 @@
             <li><a href="#"><i class="fa fa-city"></i> Ciudades</a></li>
             <li><a href="#"><i class="fas fa-archway"></i> Paises</a></li>
             <li><a href="#"><i class="fas fa-globe-americas"></i> Usuarios</a></li>
-            <li><a href="#"><i class="fas fa-users"></i> Citas</a></li>
+            <li><a href="#"><i class="./php/Citas/index.php"></i> Citas</a></li>
           </ul>
         </li>
        
