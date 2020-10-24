@@ -11,7 +11,7 @@
 # contribuyente-b
 [Programador b](https://github.com/AntonyNarajo25)
 
-# contribuyente-c
+# DeivyRivas-c
 [Programador c](https://github.com/DeivyRivas)
 
 # contribuyente-d
