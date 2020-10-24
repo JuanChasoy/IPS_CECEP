@@ -136,3 +136,12 @@ $(document).ready(() => {
     });
 
 
+
+
+
+
+ $("#nuevo-editar").removeClass("hide");
+        $("#nuevo-editar").addClass("show");
+        $("#empleado").removeClass("show");
+        $("#empleado").addClass("hide");
+

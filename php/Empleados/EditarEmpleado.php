@@ -1,4 +1,6 @@
 <!-- quick email widget -->
+<?php include_once ("../../Funciones/sessiones.php"); ?>
+
 <div id="seccion-comuna">
 	<div class="box-header">
     	<i class="fa fa-building" aria-hidden="true">Gestión de Empleados</i>
@@ -76,7 +78,7 @@
                         <div class="col-sm-10">
                             <select class="form-control" id="id_sede" name="id_sede">
                          
-							              </select>	
+							</select>	
                         </div>
                     </div>
 

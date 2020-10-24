@@ -27,7 +27,7 @@ function empleados(){
 
 
 
-    $("#contenido").on("click","button#actualizar",function(){
+    $(".box-body").on("click","button#actualizar",function(){
          var datos=$("#fempleados").serialize();
          $.ajax({
             type:"get",
@@ -36,18 +36,20 @@ function empleados(){
             dataType:"json"
           }).done(function( resultado ) {
               if(resultado.respuesta){
-                swal(
-                    'Actualizado!',
-                    'Se actaulizaron los datos correctamente',
-                    'success'
-                )     
+                swal({
+                  position: 'center',
+                  type: 'success',
+                  title: 'Se actaulizaron los datos correctamente',
+                  showConfirmButton: false,
+                  timer: 1500
+              })     
                 dt.ajax.reload();
-                $("#titulo").html("Listado Empleados");
-                $("#nuevo-editar").html("");
-                $("#nuevo-editar").removeClass("show");
-                $("#nuevo-editar").addClass("hide");
-                $("#empleado").removeClass("hide");
-                $("#empleado").addClass("show")
+                $(".box-title").html("Listado Empleados");
+                //$("#editar").html("");
+                $("#editar").removeClass("show");
+                $("#editar").addClass("hide");
+                $("#listado").removeClass("hide");
+                $("#listado").addClass("show")
              } else {
                 swal({
                   type: 'error',
@@ -58,7 +60,7 @@ function empleados(){
         });
     })
 
-    $("#contenido").on("click","a.borrar",function(){
+    $(".box-body").on("click","a.borrar",function(){
         //Recupera datos del formulario
         var codigo = $(this).data("codigo");
 
@@ -192,16 +194,29 @@ function empleados(){
 
 
     //codigo hace parte para cargar datos al momento de darle en editar
-    $("#contenido").on("click","a.editar",function(){
-       $("#titulo").html("Editar Empleado");
-       //Recupera datos del fromulario
+    $(".box-body").on("click","a.editar",function(){
+      
        var codigo = $(this).data("codigo");
        var sede;
-        $("#nuevo-editar").load("./php/Empleados/EditarEmpleado.php");
-        $("#nuevo-editar").removeClass("hide");
-        $("#nuevo-editar").addClass("show");
+       $(this).hide();
+       $(".box-title").html("Actualizar Empleado")
+       $("#editar").addClass('show');
+       $("#editar").removeClass('hide');
+       $("#empleado").addClass('hide');
+       $("#empleado").removeClass('show'); 
+       
+        /*$("#editar").removeClass("hide");
+        $("#editar").addClass("show");
         $("#empleado").removeClass("show");
         $("#empleado").addClass("hide");
+       
+       
+       */
+
+        $("#editar").load("./php/Empleados/EditarEmpleado.php");
+
+      
+
        $.ajax({
            type:"get",
            url:"./php/Empleados/ControladorEmpleados.php",
@@ -212,7 +227,7 @@ function empleados(){
                     swal({
                       type: 'error',
                       title: 'Oops...',
-                      text: 'Comuna no existe!!!!!'                         
+                      text: 'Empleado no existe!!!!!'                         
                     })
                 } else {
                     $("#id_empleado").val(empleados.codigo);                   
