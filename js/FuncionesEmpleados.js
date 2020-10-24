@@ -1,6 +1,32 @@
-var dt;
+
 // actualizar es el nombre del boton en el form editar 
 function empleados(){ 
+
+        var  dt = $("#tabla").DataTable({
+            "ajax": "php/Empleados/ControladorEmpleados.php?accion=listar",
+            "columns": [
+                { "data": "id_empleado"} ,
+                { "data": "nom_empleado" },
+                { "data": "celu_empleado" },
+                { "data": "email_empleado" }, 
+                { "data": "nom_sede" }, 
+                { "data": "id_empleado",
+                    render: function (data) {
+                              return '<a href="#" data-codigo="'+ data + 
+                                    '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
+                    }
+                },
+                { "data": "id_empleado",
+                    render: function (data) {
+                              return '<a href="#" data-codigo="'+ data + 
+                                    '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
+                    }
+                }
+            ]
+        });
+
+
+
     $("#contenido").on("click","button#actualizar",function(){
          var datos=$("#fempleados").serialize();
          $.ajax({
@@ -99,27 +125,36 @@ function empleados(){
         $("#contenido").html('')
     })
 
-    $("#contenido").on("click","button#nuevo",function(){
-        $("#titulo").html("Nuevo Empleado");
-        $("#nuevo-editar" ).load("./php/Empleados/NuevoEmpleado.php"); 
-        $("#nuevo-editar").removeClass("hide");
-        $("#nuevo-editar").addClass("show");
-        $("#empleado").removeClass("show");
-        $("#empleado").addClass("hide");
-         $.ajax({
-             type:"get",
-             url:"./php/Sedes/ControladorSedes.php",
-             data: {accion:'listar'},
-             dataType:"json"
-           }).done(function( resultado ) {   
-              //console.log(resultado.data)           
-              $("#id_sede option").remove()       
-              $("#id_sede").append("<option selecte value=''>Seleccione una sede</option>")
-              $.each(resultado.data, function (index, value) { 
-                $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
-              });
-           });
+    //se modifico el codigo para cargar el formulario de empleados 
+      $(".box").on("click","#nuevo", function(){
+        $(this).hide();
+        $(".box-title").html("Crear Empleado");
+        $("#editar").addClass('show');
+        $("#editar").removeClass('hide');
+        $("#listado").addClass('hide');
+        $("#listado").removeClass('show');
+        $("#editar").load('./php/Empleados/NuevoEmpleado.php', function(){
+            $.ajax({
+              type:"get",
+              url:"./php/Sedes/ControladorSedes.php",
+              data: {accion:'listar'},
+              dataType:"json"
+            }).done(function( resultado ) {                    ;
+                $.each(resultado.data, function (index, value) { 
+                  $("#editar #id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
+                });
+            });
+        });
+        
     })
+
+
+
+
+
+
+
+
 
     $("#contenido").on("click","button#grabar",function(){
         /*var comu_codi = $("#comu_codi").attr("value");
@@ -211,34 +246,3 @@ function empleados(){
        })
 }
 
-$(document).ready(() => {
-  $("#contenido").off("click", "a.editar");
-  $("#contenido").off("click", "button#actualizar");
-  $("#contenido").off("click","a.borrar");
-  $("#contenido").off("click","button#nuevo");
-  $("#contenido").off("click","button#grabar");
-  $("#titulo").html("TODOS LOS EMPLEADOS");
-  dt = $("#tabla").DataTable({
-        "ajax": "php/Empleados/ControladorEmpleados.php?accion=listar",
-        "columns": [
-            { "data": "id_empleado"} ,
-            { "data": "nom_empleado" },
-            { "data": "celu_empleado" },
-            { "data": "email_empleado" }, 
-            { "data": "nom_sede" }, 
-            { "data": "id_empleado",
-                render: function (data) {
-                          return '<a href="#" data-codigo="'+ data + 
-                                 '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
-                }
-            },
-            { "data": "id_empleado",
-                render: function (data) {
-                          return '<a href="#" data-codigo="'+ data + 
-                                 '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
-                }
-            }
-        ]
-  });
-  empleados();
-});

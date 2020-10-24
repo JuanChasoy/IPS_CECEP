@@ -25,7 +25,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="./Recursos/img/yova.png" class="user-image" alt="User Image">
+              <img src="./Recursos/img/deivy.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"> <?php echo $_SESSION["nombre"]; ?></span>
             </a>
             <ul class="dropdown-menu">
@@ -35,7 +35,7 @@
 
                 <p>
                   <?php echo $_SESSION["nombre"] . "- Docente"; ?>
-                  <small>Profesor desde Jul. 1994</small>
+                  <small>Administrador</small>
                 </p>
               </li>
               <!-- Menu Body -->

@@ -6,11 +6,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="./Recursos/img/yova.png" class="img-circle" alt="User Image">
+          <img src="./Recursos/img/deivy.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION["nombre"]; ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> Activo</a>
         </div>
       </div>
       <!-- search form -->
@@ -35,7 +35,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard </a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Nada disponible </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -44,12 +44,16 @@
             <span>Entidades Pricipales</span>
           </a>
           <ul class="treeview-menu">
-            <li><a id="prueba" href="#"><i class="fa fa-home"></i> Barrios</a></li>
-            <li><a href="./vistas/comuna/comuna.php"><i class="fas fa-building"></i> Comunas</a></li>
-            <li><a href="#"><i class="fa fa-city"></i> Municipios</a></li>
-            <li><a href="#"><i class="fas fa-archway"></i> Departamentos</a></li>
-            <li><a href="#"><i class="fas fa-globe-americas"></i> Paises</a></li>
-             <li><a href="#"><i class="fas fa-users"></i> Personas</a></li>
+            <li><a id="prueba" href="#"><i class="fa fa-home"></i> Afiliados</a></li> <!--  -->
+            <li><a href="./php/Empleados/index.php"><i class="fab fa-accessible-icon"></i> Empleados</a></li>
+            <li><a href="#"><i class="fa fa-city"></i> Medicos</a></li>
+            <li><a href="#"><i class="fas fa-archway"></i> Servicios</a></li>
+            <li><a href="#"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Sedes</a></li>
+            <li><a href="#"><i class="fa fa-city"></i> Ciudades</a></li>
+            <li><a href="#"><i class="fas fa-archway"></i> Paises</a></li>
+            <li><a href="#"><i class="fas fa-globe-americas"></i> Usuarios</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Citas</a></li>
           </ul>
         </li>
        

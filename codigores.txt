@@ -1,0 +1,103 @@
+<?php include_once ("../../Funciones/sessiones.php"); ?>
+
+<div id="comuna">
+<div class="box-header">
+    <i class="ion ion-clipboard"></i>
+     <!-- tools box -->
+    <div class="pull-right box-tools">
+    	<button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" title="Nueva Empleado"><i aria-hidden="true"></i>Nuevo empleado</button> 
+    	
+
+    </div><!-- /. tools -->
+                  
+</div><!-- /.box-header -->
+
+<div class="box-body">
+
+	<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Código Id</th>
+				<th>Nombre</th>
+				<th>celualar</th>
+				<th>Correo</th>
+				<th>Sede</th>
+				<th>Eliminar</th>
+				<th>Modificar</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+		</tbody>
+
+	</table>
+
+		<div id="nuevo-editar" class="hide">
+			<!-- div para cargar el formulario para una nueva comuna o editar una comuna -->
+		</div>
+
+</div><!-- /.box-body -->  
+	<script src="js/FuncionesEmpleados.js"></script>
+</div>
+<script>
+    $(document).ready(empleados);
+</script>
+
+
+// codigo de mostrar tabla 
+
+$(document).ready(() => {
+  $("#contenido").off("click", "a.editar");
+  $("#contenido").off("click", "button#actualizar");
+  $("#contenido").off("click","a.borrar");
+  $("#contenido").off("click","button#nuevo");
+  $("#contenido").off("click","button#grabar");
+  $("#titulo").html("TODOS LOS EMPLEADOS");
+  dt = $("#tabla").DataTable({
+        "ajax": "php/Empleados/ControladorEmpleados.php?accion=listar",
+        "columns": [
+            { "data": "id_empleado"} ,
+            { "data": "nom_empleado" },
+            { "data": "celu_empleado" },
+            { "data": "email_empleado" }, 
+            { "data": "nom_sede" }, 
+            { "data": "id_empleado",
+                render: function (data) {
+                          return '<a href="#" data-codigo="'+ data + 
+                                 '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
+                }
+            },
+            { "data": "id_empleado",
+                render: function (data) {
+                          return '<a href="#" data-codigo="'+ data + 
+                                 '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
+                }
+            }
+        ]
+  });
+
+
+
+  // codigo de cuando se le da click en el boton nuevo 
+  
+  $("#contenido").on("click","button#nuevo",function(){
+        $("#titulo").html("Nuevo Empleado");
+        $("#editar" ).load("./php/Empleados/NuevoEmpleado.php"); 
+        $("#editar").removeClass("hide");
+        $("#editar").addClass("show");
+        $("#empleado").removeClass("show");
+        $("#empleado").addClass("hide");
+         $.ajax({
+             type:"get",
+             url:"./php/Sedes/ControladorSedes.php",
+             data: {accion:'listar'},
+             dataType:"json"
+           }).done(function( resultado ) {   
+              //console.log(resultado.data)           
+              $("#id_sede option").remove()       
+              $("#id_sede").append("<option selecte value=''>Seleccione una sede</option>")
+              $.each(resultado.data, function (index, value) { 
+                $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
+              });
+           });
+    })

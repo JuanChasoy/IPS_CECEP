@@ -4,8 +4,8 @@ function usuario(){
         var datos = $(this).serialize();
         //console.log(datos)
         $.ajax({
-            type:"post",
-            url:"./Controlador/controladorUsuario.php",
+            type:"post", //./Controlador/controladorUsuario.php
+            url:"./php/Usuarios/controladorUsuario.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {

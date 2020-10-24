@@ -1,4 +1,5 @@
 <!-- quick email widget -->
+<?php include_once ("../../Funciones/sessiones.php"); ?>
 <div id="seccion-comuna">
 	<div class="box-header">
     	<i class="fa fa-building" aria-hidden="true">Gestión de Empleados</i>
