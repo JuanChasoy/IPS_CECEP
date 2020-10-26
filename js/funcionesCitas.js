@@ -222,18 +222,17 @@ $(document).ready(() => {
   dt = $("#tabla").DataTable({
         "ajax": "php/Citas/ControladorCitas?accion=listar",
         "columns": [
-            { "data": "id_empleado"} ,
-            { "data": "nom_empleado" },
-            { "data": "celu_empleado" },
-            { "data": "email_empleado" }, 
-            { "data": "nom_servicio" }, 
-            { "data": "id_empleado",
+            { "data": "id_cita"} ,
+            { "data": "nom_usu_cita" },
+            { "data": "cedu_usu_cita" },
+            { "data": "correo_cita" }, 
+            { "data": "id_servicio",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
                                  '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
                 }
             },
-            { "data": "id_empleado",
+            { "data": "id_cita",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
                                  '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
