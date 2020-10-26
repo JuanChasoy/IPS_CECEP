@@ -51,7 +51,7 @@
             <li><a href="./php/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>
             <li><a href="#"><i class="fas fa-users"></i> Sedes</a></li>
             <li><a href="#"><i class="fa fa-city"></i> Ciudades</a></li>
-            <li><a href="#"><i class="fas fa-archway"></i> Paises</a></li>
+            <li><a href="./php/Pais/index.php"><i class="fas fa-archway"></i> Paises</a></li>
             <li><a href="#"><i class="fas fa-globe-americas"></i> Usuarios</a></li>
             <li><a href="#"><i class="./php/Citas/index.php"></i> Citas</a></li>
           </ul>
