@@ -101,6 +101,19 @@
     300%{margin-left: -300%;}
 }
 
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    height: 300px;
+}
+
 
   
 
