@@ -35,22 +35,28 @@
 
 #header .navbar{
     position: fixed;
-    background-color: #072b79b0;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 999;
 }
 
+header.sticky .navbar{
+    transition: .5s linear;
+    background: #072b79;
+}
+
 #header .navbar a{
-    color: #ccc;
+    font-size: 1.1em;
+    font-weight: 500;
     transition: .3s linear;
 }
+
 
 #header .navbar a:hover{
     transform: scale(1.2);
     color: #fff;
 }
-
 
 #header .navbar button{
     transition: .3s linear;
@@ -101,18 +107,147 @@
     300%{margin-left: -300%;}
 }
 
-.swiper-container {
+.informacion{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(22, 104, 124);
+}
+.swiper-container{
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-.swiper-slide {
+.swiper-slide{
     background-position: center;
     background-size: cover;
     width: 50%;
     height: 300px;
 }
+
+.informacion{
+    padding: 30px 0;
+}
+
+.info .parrafo-info{
+    width: 50%;
+    display: inline-block;
+    text-align: justify;
+    padding: 0 25px;
+}
+
+.info .parrafo-info h3{
+    text-align: center;
+}
+
+.info .image-info{
+    width: 47%;
+    height: auto;
+    display: inline-block;
+    box-shadow: 0 0 10px #00000077;
+}
+
+.contact-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.targeta{
+    position: relative;
+    float: 1;
+    width: 30%;
+    height: 140px;
+    background-color: #fff;
+    margin: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.336);
+}
+
+.icon{
+    font-size: 32px;
+    color: #072b79;
+    transition: .3s linear;
+}
+
+.targeta:hover .icon{
+    transform: scale(4);
+    opacity: 0;
+}
+
+.contenido-targeta h3,
+.contenido-targeta span{
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+}
+
+.contenido-targeta h3{
+    top: 20px;
+    text-transform: uppercase;
+    color: #072b79;
+    font-size: 1.2em;
+}
+
+.contenido-targeta span{
+    bottom: 20px;
+    color: #000;
+    font-weight: 500;
+}
+
+.targeta:hover h3{
+    opacity: 1;
+    top: 46px;
+    transition: .3s linear .3s;
+}
+
+.targeta:hover span{
+    opacity: 1;
+    bottom: 46px;
+    transition: .3s linear .3s;
+}
+
+/*estilos footer en progreso...*/
+.footer{
+    width: 100%;
+    height: 100vh;
+    background-color: #072b79;
+}
+
+@media screen and (max-width:900px){
+    .info{
+        margin: 30px 0;
+    }
+    
+    .info .parrafo-info{
+        display: block;
+        width: 100%;
+    }
+
+    .info .image-info{
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: auto;
+    }
+    
+    .targeta{
+        float: 100%;
+        width: 80%;
+    }
+}
+
+
 
 
   
