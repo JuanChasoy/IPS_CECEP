@@ -1,19 +1,19 @@
 <?php
  
-require_once 'Sedes_modelo.php';
+require_once 'Ciudades_Modelo.php';
 $datos = $_GET;
 switch ($_GET['accion']){
     case 'editar':
-        $sedes = new Sedes();
-        $resultado = $sedes->editar($datos);
+        $ciudades = new Ciudades();
+        $resultado = $ciudades->editar($datos);
         $respuesta = array(
                 'respuesta' => $resultado
             );
         echo json_encode($respuesta);
         break;
     case 'nuevo':
-        $sedes = new Sedes();
-		$resultado = $sedes->nuevo($datos);
+        $ciudades = new Ciudades();
+		$resultado = $ciudades->nuevo($datos);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'
@@ -26,8 +26,8 @@ switch ($_GET['accion']){
         echo json_encode($respuesta);
         break;
     case 'borrar':
-		$sedes = new Sedes();
-		$resultado = $sedes->borrar($datos['codigo']);
+		$ciudades = new Ciudades();
+		$resultado = $ciudades->borrar($datos['codigo']);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'
@@ -41,20 +41,18 @@ switch ($_GET['accion']){
         break;
 
     case 'consultar':
-        $sedes = new Sedes();
-        $sedes->consultar($datos['codigo']);
+        $ciudades = new Ciudades();
+        $ciudades->consultar($datos['codigo']);
 
-        if($sedes->getId_sede() == null) {
+        if($ciudades->getId_ciudad() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(
-                'codigo' => $sedes->getId_sede(),
-                'sedes' => $sedes->getNom_sede(),
-                'direccion' =>$sedes->getDirec_sede(),
-                'telefono' => $sedes->getTele_sede(),
-                'ciudad' =>$sedes->getId_ciudad(),
+                'codigo' => $ciudades->getId_ciudad(),
+                'ciudad' => $ciudades->getNom_ciudad(),
+                'pais' =>$ciudades->getId_pais(),
                 'respuesta' =>'existe'
             );
         }
@@ -62,8 +60,8 @@ switch ($_GET['accion']){
         break;
 
     case 'listar':
-        $sedes = new Sedes();
-        $listado = $sedes->lista();
+        $ciudades = new Ciudades();
+        $listado = $ciudades->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
 }

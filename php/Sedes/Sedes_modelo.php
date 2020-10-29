@@ -71,7 +71,7 @@
 					INSERT INTO tb_sedes
 					(id_sede, nom_sede, direc_sede, tele_sede, id_ciudad)
 					VALUES
-					(NULL, '$id_sede', '$nom_sede', '$direc_sede', '$tele_sede', '$id_ciudad')
+					(NULL, '$nom_sede', '$direc_sede', '$tele_sede', '$id_ciudad')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;
@@ -82,21 +82,23 @@
 			foreach ($datos as $campo=>$valor):
 				$$campo = $valor;
 			endforeach;
-			$nom_empleado= utf8_decode($nom_empleado);
+			$nom_sede= utf8_decode($nom_sede);
 			$this->query = "
-			UPDATE tb_empleados
-			SET nom_empleado='$nom_empleado',
-			id_sede='$id_sede'
-			WHERE id_empleado = '$id_empleado'
+			UPDATE tb_sedes
+			SET nom_sede='$nom_sede',
+			direc_sede='$direc_sede',
+			tele_sede='$tele_sede',
+			id_ciudad='$id_ciudad'
+			WHERE id_sede = '$id_sede'
 			";
 			$resultado = $this->ejecutar_query_simple();
 			return $resultado;
 		}
 		
-		public function borrar($id_empleado='') {
+		public function borrar($id_sede='') {
 			$this->query = "
-			DELETE FROM tb_empleados
-			WHERE id_empleado = '$id_empleado'
+			DELETE FROM tb_sedes
+			WHERE id_sede = '$id_sede'
 			";
 			$resultado = $this->ejecutar_query_simple();
 

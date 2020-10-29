@@ -35,29 +35,30 @@ function empleados(){
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
-              if(resultado.respuesta){
-                swal({
+   
+            if(resultado.respuesta){    
+              swal({
                   position: 'center',
                   type: 'success',
                   title: 'Se actaulizaron los datos correctamente',
                   showConfirmButton: false,
                   timer: 1500
-              })     
-                dt.ajax.reload();
-                $(".box-title").html("Listado Empleados");
-                //$("#editar").html("");
-                $("#editar").removeClass("show");
-                $("#editar").addClass("hide");
-                $("#listado").removeClass("hide");
-                $("#listado").addClass("show")
-             } else {
-                swal({
-                  type: 'error',
-                  title: 'Oops...',
-                  text: 'Something went wrong!'                         
-                })
-            }
-        });
+              }) 
+              $(".box-title").html("Listado de Empleados");
+              $("#editar").html('');
+              $("#editar").addClass('hide');
+              $("#editar").removeClass('show');
+              $("#listado").addClass('show');
+              $("#listado").removeClass('hide');
+              dt.ajax.reload(null, false);       
+           } else {
+              swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!'                         
+              })
+          }
+      });
     })
 
     $(".box-body").on("click","a.borrar",function(){
@@ -199,11 +200,11 @@ function empleados(){
        var codigo = $(this).data("codigo");
        var sede;
        $(this).hide();
-       $(".box-title").html("Actualizar Empleado")
+       $(".box-title").html("Actualizar Empleados");
        $("#editar").addClass('show');
        $("#editar").removeClass('hide');
-       $("#empleado").addClass('hide');
-       $("#empleado").removeClass('show'); 
+       $("#listado").addClass('hide');
+       $("#listado").removeClass('show');  
        
         /*$("#editar").removeClass("hide");
         $("#editar").addClass("show");
