@@ -18,8 +18,7 @@
   </head>
   <body>
     
-    <h1> Hola </h1> 
-  
+     
     <div class="text-center"> 
     
     <header id="header">
@@ -126,7 +125,7 @@
           <i class="icon fas fa-envelope"></i>
           <div class="contenido-targeta">
             <h3>Correo</h3>
-            <span>ipsCecep@gmailcom</span>
+            <span>ipsCecep@gmail.com</span>
           </div>
         </div>
 
