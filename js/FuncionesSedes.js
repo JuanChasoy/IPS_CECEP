@@ -67,7 +67,7 @@ $(".box-body").on("click","a.borrar",function(){
 
     swal({
           title: '¿Está seguro?',
-          text: "¿Realmente desea borrar la comuna con codigo : " + codigo + " ?",
+          text: "¿Realmente desea borrar la Sede con codigo : " + codigo + " ?",
           type: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
