@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2020 a las 07:06:46
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.30
+-- Tiempo de generación: 30-10-2020 a las 15:45:19
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -156,6 +155,7 @@ CREATE TABLE `tb_medicos` (
   `id_medico` int(11) NOT NULL,
   `nom_medico` varchar(255) NOT NULL,
   `celu_medico` int(11) NOT NULL,
+  `Especialista` varchar(50) NOT NULL,
   `cedu_medico` int(11) NOT NULL,
   `correo_medico` text NOT NULL,
   `id_sede` int(11) NOT NULL
@@ -165,10 +165,11 @@ CREATE TABLE `tb_medicos` (
 -- Volcado de datos para la tabla `tb_medicos`
 --
 
-INSERT INTO `tb_medicos` (`id_medico`, `nom_medico`, `celu_medico`, `cedu_medico`, `correo_medico`, `id_sede`) VALUES
-(1, 'pedro santiago', 31934576, 12345, 'pedro@gmail.com', 1),
-(2, 'santiago reos', 3165476, 987345, 'reos@gmail.com', 1),
-(3, 'ana jose', 3123476, 78645, 'ana@gmail.com', 1);
+INSERT INTO `tb_medicos` (`id_medico`, `nom_medico`, `celu_medico`, `Especialista`, `cedu_medico`, `correo_medico`, `id_sede`) VALUES
+(1, 'pedro santiago', 31934576, 'Medico General', 12345, 'pedro@gmail.com', 1),
+(2, 'santiago reos', 3165476, 'Psicologo', 987345, 'reos@gmail.com', 1),
+(3, 'maria jose', 3123476, 'Odontologa', 78645, 'mariajose@gmail.com', 1),
+(4, 'antony naranjo', 31734642, 'Cirujano', 1010104106, 'antony@gmail.com', 3);
 
 -- --------------------------------------------------------
 
@@ -379,67 +380,56 @@ ALTER TABLE `tb_usuarios`
 --
 ALTER TABLE `tb_afiliados`
   MODIFY `id_afiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_citas`
 --
 ALTER TABLE `tb_citas`
   MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_ciudades`
 --
 ALTER TABLE `tb_ciudades`
   MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_empleados`
 --
 ALTER TABLE `tb_empleados`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `tb_medicamentos`
 --
 ALTER TABLE `tb_medicamentos`
   MODIFY `id_medicamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_medicos`
 --
 ALTER TABLE `tb_medicos`
-  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tb_pais`
 --
 ALTER TABLE `tb_pais`
   MODIFY `id_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_roles`
 --
 ALTER TABLE `tb_roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `tb_sedes`
 --
 ALTER TABLE `tb_sedes`
   MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_servicio`
 --
 ALTER TABLE `tb_servicio`
   MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -492,7 +482,6 @@ ALTER TABLE `tb_servicio`
 ALTER TABLE `tb_usuarios`
   ADD CONSTRAINT `tb_usuarios_ibfk_1` FOREIGN KEY (`id_sede`) REFERENCES `tb_sedes` (`id_sede`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_usuarios_ibfk_2` FOREIGN KEY (`id_rol`) REFERENCES `tb_roles` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
