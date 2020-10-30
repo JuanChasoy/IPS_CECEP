@@ -1,4 +1,3 @@
-
 // actualizar es el nombre del boton en el form editar 
 function empleados(){ 
 

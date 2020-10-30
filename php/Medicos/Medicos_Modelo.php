@@ -90,14 +90,14 @@
 			foreach ($datos as $campo=>$valor):
 				$$campo = $valor;
 			endforeach;
-			$nom_empleado= utf8_decode($nom_empleado);
+			$nom_medico= utf8_decode($nom_medico);
 			$this->query = "
 			UPDATE tb_medicos
 			SET nom_medico='$nom_medico',
 			celu_medico='$celu_medico',
             especialista='$Especialista',
             cedu_medico='$cedu_medico',
-			correo_medico='$email_empleado',
+			correo_medico='$correo_empleado',
 			id_sede='$id_sede'
 			WHERE id_medico = '$id_medico'
 			";
@@ -105,10 +105,10 @@
 			return $resultado;
 		}
 		
-		public function borrar($id_medicoo='') {
+		public function borrar($id_medico='') {
 			$this->query = "
 			DELETE FROM tb_medicos
-			WHERE id_medico = '$id_medicoo'
+			WHERE id_medico = '$id_medico'
 			";
 			$resultado = $this->ejecutar_query_simple();
 
