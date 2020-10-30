@@ -32,7 +32,8 @@
                 <thead>
                 <tr>
 					<th>Id Medico</th>
-					<th>Nombre</th>
+          <th>Nombre</th>
+          <th>Especialista</th>
           <th>Celular</th>
           <th>Cedula</th>
 					<th>Correo</th>
@@ -46,9 +47,11 @@
                 </tbody>
                 <tfoot>
                 <tr>
-					<th>Código Id</th>
-					<th>Nombre</th>
-					<th>celualar</th>
+          <th>Id Medico</th>
+          <th>Nombre</th>
+          <th>Especialista</th>
+          <th>Celular</th>
+          <th>Cedula</th>
 					<th>Correo</th>
 					<th>Sede</th>
 					<th>Eliminar</th>
