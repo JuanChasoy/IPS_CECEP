@@ -44,13 +44,14 @@ $(".box-body").on("click","button#actualizar",function(){
               showConfirmButton: false,
               timer: 1500
           }) 
+          dt.ajax.reload();
           $(".box-title").html("Listado de Medicos");
           $("#editar").html('');
           $("#editar").addClass('hide');
           $("#editar").removeClass('show');
           $("#listado").addClass('show');
           $("#listado").removeClass('hide');
-          dt.ajax.reload(null, false);       
+      // dt.ajax.reload(null, false);       
        } else {
           swal({
             type: 'error',
