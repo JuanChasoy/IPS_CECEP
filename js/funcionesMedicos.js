@@ -1,21 +1,22 @@
 // actualizar es el nombre del boton en el form editar 
-function empleados(){ 
+function medicos(){ 
 
     var  dt = $("#tabla").DataTable({
-        "ajax": "php/Empleados/ControladorEmpleados.php?accion=listar",
+        "ajax": "php/Medicos/ControladorMedicos.php?accion=listar",
         "columns": [
-            { "data": "id_empleado"} ,
-            { "data": "nom_empleado" },
-            { "data": "celu_empleado" },
-            { "data": "email_empleado" }, 
+            { "data": "id_medico"} ,
+            { "data": "nom_medico" },
+            { "data": "celu_medico" },
+            { "data": "Especialista" },
+            { "data": "corre_medico" }, 
             { "data": "nom_sede" }, 
-            { "data": "id_empleado",
+            { "data": "id_medico",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
                                 '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
                 }
             },
-            { "data": "id_empleado",
+            { "data": "id_medico",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
                                 '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
@@ -27,10 +28,10 @@ function empleados(){
 
 
 $(".box-body").on("click","button#actualizar",function(){
-     var datos=$("#fempleados").serialize();
+     var datos=$("#fmedicos").serialize();
      $.ajax({
         type:"get",
-        url:"./php/Empleados/ControladorEmpleados.php",
+        url:"./php/Medicos/ControladorMedicos.php",
         data: datos,
         dataType:"json"
       }).done(function( resultado ) {
@@ -66,7 +67,7 @@ $(".box-body").on("click","a.borrar",function(){
 
     swal({
           title: '¿Está seguro?',
-          text: "¿Realmente desea borrar la comuna con codigo : " + codigo + " ?",
+          text: "¿Realmente desea borrar el medico con codigo : " + codigo + " ?",
           type: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
@@ -77,7 +78,7 @@ $(".box-body").on("click","a.borrar",function(){
 
                 var request = $.ajax({
                     method: "get",
-                    url: "./php/Empleados/ControladorEmpleados.php",
+                    url: "./php/Medicos/ControladorMedicos.php",
                     data: {codigo: codigo, accion:'borrar'},
                     dataType: "json"
                 })
@@ -86,7 +87,7 @@ $(".box-body").on("click","a.borrar",function(){
                     if(resultado.respuesta == 'correcto'){
                         swal(
                             'Borrado!',
-                            'La comuna con codigo : ' + codigo + ' fue borrada',
+                            'El medico con codigo : ' + codigo + ' fue borrado',
                             'success'
                         )     
                         dt.ajax.reload();                            
@@ -116,8 +117,8 @@ $("#contenido").on("click","button.btncerrar2",function(){
     $("#nuevo-editar").html("");
     $("#nuevo-editar").removeClass("show");
     $("#nuevo-editar").addClass("hide");
-    $("#empleado").removeClass("hide");
-    $("#empleado").addClass("show");
+    $("#medicos").removeClass("hide");
+    $("#medicos").addClass("show");
 
 })
 
@@ -135,7 +136,7 @@ $("#contenido").on("click","button.btncerrar",function(){
     $("#editar").removeClass('hide');
     $("#listado").addClass('hide');
     $("#listado").removeClass('show');
-    $("#editar").load('./php/Empleados/NuevoEmpleado.php', function(){
+    $("#editar").load('./php/Medicos/NuevoMedico.php', function(){
         $.ajax({
           type:"get",
           url:"./php/Sedes/ControladorSedes.php",
@@ -154,11 +155,11 @@ $("#contenido").on("click","button.btncerrar",function(){
 
 
 $("#editar").on("click","button#grabar",function(){
-  var datos=$("#fempleados").serialize();
+  var datos=$("#fmedicos").serialize();
   //console.log(datos);
   $.ajax({
         type:"get",
-        url:"./php/Empleados/ControladorEmpleados.php",
+        url:"./php/Medicos/ControladorMedicos.php",
         data: datos,
         dataType:"json"
       }).done(function( resultado ) {
@@ -168,7 +169,7 @@ $("#editar").on("click","button#grabar",function(){
               'El registro se grabó correctamente',
               'success'
             )     
-                $(".box-title").html("Listado de Empleados");
+                $(".box-title").html("Listado de Medicos");
                 $(".box #nuevo").show();
                 $("#editar").html('');
                 $("#editar").addClass('hide');
@@ -199,7 +200,7 @@ $(".box-body").on("click","a.editar",function(){
    var codigo = $(this).data("codigo");
    var sede;
    $(this).hide();
-   $(".box-title").html("Actualizar Empleados");
+   $(".box-title").html("Actualizar Medicos");
    $("#editar").addClass('show');
    $("#editar").removeClass('hide');
    $("#listado").addClass('hide');
@@ -213,13 +214,13 @@ $(".box-body").on("click","a.editar",function(){
    
    */
 
-    $("#editar").load("./php/Empleados/EditarEmpleado.php");
+    $("#editar").load("./php/Medicos/EditarMedico.php");
 
   
 
    $.ajax({
        type:"get",
-       url:"./php/Empleados/ControladorEmpleados.php",
+       url:"./php/Medicos/ControladorMedicos.php",
        data: {codigo: codigo, accion:'consultar'},
        dataType:"json"
        }).done(function( empleados ) {        
@@ -230,13 +231,13 @@ $(".box-body").on("click","a.editar",function(){
                   text: 'Empleado no existe!!!!!'                         
                 })
             } else {
-                $("#id_empleado").val(empleados.codigo);                   
-                $("#nom_empleado").val(empleados.empleado);
-                $("#cedu_emplado").val(empleados.cedula);                   
-                $("#dire_empleado").val(empleados.direccion);
-                $("#celu_empleado").val(empleados.celular);                   
-                $("#email_empleado").val(empleados.email);
-                sede = empleados.sede;
+                $("#id_medico").val(medico.codigo);                   
+                $("#nom_medico").val(medico.empleado);
+                $("#cedu_medico").val(medico.cedula);   
+                $("#Especialista").val(medico.especializacion);                
+                $("#celu_medico").val(medico.celular);                   
+                $("#corre_medico").val(medico.correo);
+                sede = medico.sede;
             }
        });
 
