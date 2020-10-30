@@ -41,12 +41,12 @@
 			return $this->id_sede;
 		}
 
-		public function consultar($id_empleado='') {
-			if($id_empleado !=''):
+		public function consultar($id_medico='') {
+			if($id_medico !=''):
 				$this->query = "
-				SELECT id_empleado, nom_empleado, cedu_emplado, celu_empleado, dire_empleado, email_empleado, id_sede
-				FROM tb_empleados
-				WHERE id_empleado = '$id_empleado' order by id_empleado
+				SELECT id_medico, nom_medico, celu_medico, Especialista, cedu_medico, correo_medico, id_sede
+				FROM tb_medicos
+				WHERE id_empleado = '$id_medico' order by id_medico
 				";
 				$this->obtener_resultados_query(); // se ejecuta cuando sea consulta select 
 			endif;
@@ -59,9 +59,9 @@
 		
 		public function lista() {
 			$this->query = "
-			SELECT id_empleado, nom_empleado, celu_empleado, email_empleado, m.nom_sede 
-			FROM tb_empleados as c inner join tb_sedes as m
-			ON (c.id_sede = m.id_sede) order by id_empleado
+			SELECT id_medico, nom_medico, celu_medico, Especialista, correo_medico, m.nom_sede 
+			FROM tb_medicos as c inner join tb_sedes as m
+			ON (c.id_sede = m.id_sede) order by id_medico
 			";
 			
 			$this->obtener_resultados_query();
@@ -70,11 +70,11 @@
 		}
 		
 		public function nuevo($datos=array()) {
-			if(array_key_exists('id_empleado', $datos)):
+			if(array_key_exists('id_medico', $datos)):
 				foreach ($datos as $campo=>$valor):
 					$$campo = $valor;
 				endforeach;
-				$nom_empleado= utf8_decode($nom_empleado);
+				$nom_medico= utf8_decode($nom_medico);
 				$this->query = "
 					INSERT INTO tb_empleados
 					(id_empleado, nom_empleado, cedu_emplado, celu_empleado, dire_empleado, email_empleado, id_sede)
