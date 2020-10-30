@@ -40,11 +40,11 @@ $(".box-body").on("click","button#actualizar",function(){
           swal({
               position: 'center',
               type: 'success',
-              title: 'Se actaulizaron los datos correctamente',
+              title: 'Se actualizaron los datos correctamente',
               showConfirmButton: false,
               timer: 1500
           }) 
-          $(".box-title").html("Listado de Empleados");
+          $(".box-title").html("Listado de Medicos");
           $("#editar").html('');
           $("#editar").addClass('hide');
           $("#editar").removeClass('show');
@@ -117,8 +117,8 @@ $("#contenido").on("click","button.btncerrar2",function(){
     $("#nuevo-editar").html("");
     $("#nuevo-editar").removeClass("show");
     $("#nuevo-editar").addClass("hide");
-    $("#medicos").removeClass("hide");
-    $("#medicos").addClass("show");
+    $("#medico").removeClass("hide");
+    $("#medico").addClass("show");
 
 })
 
