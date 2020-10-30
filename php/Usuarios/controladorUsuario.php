@@ -92,7 +92,7 @@ switch ($_POST['accion']){
         break;
 
     case 'listar':
-        $usuario = new Usuario();
+        $usuarios = new Usuario();
         $listado = $usuario->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
