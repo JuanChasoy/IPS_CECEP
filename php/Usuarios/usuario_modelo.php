@@ -17,27 +17,27 @@
 			//$this->db_name = '';
 		}
 
-		public function getId_medico(){
+		public function getId_usuario(){
 			return $this->id_usuario;
 		}
 
-		public function getNom_medico(){
+		public function getNom_usuario(){
 			return $this->nom_usuario;
 		}
 		
-		public function getCedu_medico(){
+		public function getCedu_usuario(){
 			return $this->cedu_usuario;
         }
         
-        public function getCelu_medico(){
+        public function getUsua_user(){
 			return $this->usua_user;
         }
         
-        public function getDire_medico(){
+        public function getCelu_usuario(){
 			return $this->celu_usuario;
         }
         
-        public function getEmail_medico(){
+        public function getCorreo_usuario(){
 			return $this->correo_usuario;
         }
         
@@ -45,15 +45,15 @@
 			return $this->id_sede;
         }
         
-        public function getId_sede(){
+        public function getId_rol(){
 			return $this->id_rol;
         }
         
-        public function getId_sede(){
+        public function getUsua_pass(){
 			return $this->usua_pass;
         }
         
-        public function getId_sede(){
+        public function getUsua_foto(){
 			return $this->usua_foto;
         }
         
@@ -77,8 +77,8 @@
 		
 		public function lista() {
 			$this->query = "
-			SELECT id_medico, nom_medico, celu_medico, Especialista, correo_medico, m.nom_sede 
-			FROM tb_medicos as c inner join tb_sedes as m
+			SELECT id_usuario, nom_usuario, cedu_usuario,usua_user,celu_usuario, correo_usuario, id_sede,usua_pass,usua_foto
+			FROM tb_usuarios as c inner join tb_sedes as m
 			ON (c.id_sede = m.id_sede) order by id_medico
 			";
 			
@@ -88,16 +88,16 @@
 		}
 		
 		public function nuevo($datos=array()) {
-			if(array_key_exists('id_medico', $datos)):
+			if(array_key_exists('id_usuario', $datos)):
 				foreach ($datos as $campo=>$valor):
 					$$campo = $valor;
 				endforeach;
-				$nom_medico= utf8_decode($nom_medico);
+				$nom_usuario= utf8_decode($nom_medico);
 				$this->query = "
-					INSERT INTO tb_empleados
-					(id_empleado, nom_empleado, cedu_emplado, celu_empleado, dire_empleado, email_empleado, id_sede)
+					INSERT INTO tb_usuario
+					(id_usuario, nom_usuario, cedu_emplado, celu_usuario dire_usuario email_usuario id_sede)
 					VALUES
-					(NULL, '$nom_empleado', '$cedu_emplado', '$celu_empleado', '$dire_empleado', '$email_empleado', '$id_sede')
+					(NULL, '$nom_usuario, '$cedu_emplado', '$celu_usuario, '$dire_usuario, '$email_usuario, '$id_sede')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;
@@ -108,25 +108,29 @@
 			foreach ($datos as $campo=>$valor):
 				$$campo = $valor;
 			endforeach;
-			$nom_empleado= utf8_decode($nom_empleado);
+			$nom_usuario utf8_decode($nom_usuario);
 			$this->query = "
-			UPDATE tb_empleados
-			SET nom_empleado='$nom_empleado',
-			cedu_emplado='$cedu_emplado',
-			celu_empleado='$celu_empleado',
-			dire_empleado='$dire_emspleado',
-			email_empleado='$email_empleado',
-			id_sede='$id_sede'
-			WHERE id_empleado = '$id_empleado'
+			UPDATE tb_usuarios
+		SET id_usuario'$id_usurio';
+		nom_usuario'$nom_usuario';
+        cedu_usuario '$cedu_usuario';
+        usua_user '$usua_user';
+        celu_usuario '$celu_usuario';
+        correo_usuario '$correo_usuario';
+        id_sede '$id_sede';
+        id_rol '$id_rol';
+        usua_pass '$usua_pass';
+		usua_foto '$usua_foto';
+
 			";
 			$resultado = $this->ejecutar_query_simple();
 			return $resultado;
 		}
 		
-		public function borrar($id_empleado='') {
+		public function borrar($id_usuario'') {
 			$this->query = "
-			DELETE FROM tb_empleados
-			WHERE id_empleado = '$id_empleado'
+			DELETE FROM tb_usuario
+			WHERE id_usuario= '$id_usuario
 			";
 			$resultado = $this->ejecutar_query_simple();
 
