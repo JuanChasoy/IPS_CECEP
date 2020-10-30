@@ -74,7 +74,7 @@
   <!-- /.content-wrapper -->
 
   </div><!-- /.box-body -->  
-	<script src="js/FuncionesMedicos.js"></script>
+	<script src="js/funcionesMedicos.js"></script>
 </div>
 <script>
     $(document).ready(medicos);
