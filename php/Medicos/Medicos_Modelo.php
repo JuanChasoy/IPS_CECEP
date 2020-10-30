@@ -5,8 +5,8 @@
 		private $nom_medico;
         private $cedu_medico;
         private $celu_medico;
-        private $dire_medico;
-        private $email_medico;
+        private $Especialista;
+        private $correo_medico;
 		private $id_sede;
 		
 		function __construct() {
@@ -24,17 +24,17 @@
 		public function getCedu_medico(){
 			return $this->cedu_medico;
         }
+
+        public function getEspecialista(){
+			return $this->Especialista;
+		}
         
         public function getCelu_medico(){
 			return $this->celu_medico;
         }
         
-        public function getDire_medico(){
-			return $this->dire_medico;
-        }
-        
-        public function getEmail_medico(){
-			return $this->email_medico;
+        public function getCorreo_medico(){
+			return $this->correo_medico;
         }
         
         public function getId_sede(){
@@ -76,10 +76,10 @@
 				endforeach;
 				$nom_medico= utf8_decode($nom_medico);
 				$this->query = "
-					INSERT INTO tb_empleados
-					(id_empleado, nom_empleado, cedu_emplado, celu_empleado, dire_empleado, email_empleado, id_sede)
+					INSERT INTO tb_medicos
+					(id_medico, nom_medico, celu_medico, Especialista, cedu_medico,  correo_medico, id_sede)
 					VALUES
-					(NULL, '$nom_empleado', '$cedu_emplado', '$celu_empleado', '$dire_empleado', '$email_empleado', '$id_sede')
+					(NULL, '$nom_medico', '$cedu_medico', '$Especialista', '$celu_medico', '$correo_medico', '$id_sede')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;
@@ -92,23 +92,23 @@
 			endforeach;
 			$nom_empleado= utf8_decode($nom_empleado);
 			$this->query = "
-			UPDATE tb_empleados
-			SET nom_empleado='$nom_empleado',
-			cedu_emplado='$cedu_emplado',
-			celu_empleado='$celu_empleado',
-			dire_empleado='$dire_emspleado',
-			email_empleado='$email_empleado',
+			UPDATE tb_medicos
+			SET nom_medico='$nom_medico',
+			celu_medico='$celu_medico',
+            especialista='$Especialista',
+            cedu_medico='$cedu_medico',
+			correo_medico='$email_empleado',
 			id_sede='$id_sede'
-			WHERE id_empleado = '$id_empleado'
+			WHERE id_medico = '$id_medico'
 			";
 			$resultado = $this->ejecutar_query_simple();
 			return $resultado;
 		}
 		
-		public function borrar($id_empleado='') {
+		public function borrar($id_medicoo='') {
 			$this->query = "
-			DELETE FROM tb_empleados
-			WHERE id_empleado = '$id_empleado'
+			DELETE FROM tb_medicos
+			WHERE id_medico = '$id_medicoo'
 			";
 			$resultado = $this->ejecutar_query_simple();
 
