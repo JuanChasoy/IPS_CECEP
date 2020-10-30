@@ -44,18 +44,17 @@ switch ($_GET['accion']){
         $medicos = new Medicos();
         $medicos->consultar($datos['codigo']);
 
-        if($medicos->getId_medicos() == null) {
+        if($medicos->getId_medico() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(     // Aqui van los Get de medicos
-                'codigo' => $empleados->getId_empleado(),
-                'empleado' => $empleados->getNom_empleado(),
-                'cedula' =>$empleados->getCedu_emplado(),
-                'celular' => $empleados->getCelu_empleado(),
-                'direccion' => $empleados->getDire_empleado(),
-                'email' =>$empleados->getEmail_empleado(),
+                'codigo' => $empleados->getId_medico(),
+                'empleado' => $empleados->getNom_medico(),
+                'cedula' =>$empleados->getCedu_medico(),
+                'celular' => $empleados->getCelu_medico(),
+                'correo' =>$empleados->getCorreo_empleado(),
                 'sede' =>$empleados->getId_sede(),
                 'respuesta' =>'existe'
             );
