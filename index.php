@@ -43,7 +43,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg " style="color:blue">Autenticarse para inciar sesión</p>
+    <p class="login-box-msg " style="color:blue">Autenticarse para iniciar sesión</p>
 
     <form id="login-form" action="" method="post">
       <div class="form-group has-feedback">
