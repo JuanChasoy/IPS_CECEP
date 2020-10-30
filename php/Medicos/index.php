@@ -74,8 +74,8 @@
   <!-- /.content-wrapper -->
 
   </div><!-- /.box-body -->  
-	<script src="js/FuncionesEmpleados.js"></script>
+	<script src="js/FuncionesMedicos.js"></script>
 </div>
 <script>
-    $(document).ready(empleados);
+    $(document).ready(medicos);
 </script>
