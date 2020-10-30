@@ -1,6 +1,6 @@
 <?php
  
-require_once '#';  // Requiere el modelo Medicos
+require_once 'Medicos_Modelo.php';  // Requiere el modelo Medicos
 $datos = $_GET;
 switch ($_GET['accion']){
     case 'editar':
