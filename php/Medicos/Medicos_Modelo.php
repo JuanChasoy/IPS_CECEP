@@ -92,23 +92,23 @@
 			endforeach;
 			$nom_empleado= utf8_decode($nom_empleado);
 			$this->query = "
-			UPDATE tb_empleados
-			SET nom_empleado='$nom_empleado',
-			cedu_emplado='$cedu_emplado',
-			celu_empleado='$celu_empleado',
-			dire_empleado='$dire_emspleado',
-			email_empleado='$email_empleado',
+			UPDATE tb_medicos
+			SET nom_medico='$nom_medico',
+			celu_medico='$celu_medico',
+            especialista='$Especialista',
+            cedu_medico='$cedu_medico',
+			correo_medico='$email_empleado',
 			id_sede='$id_sede'
-			WHERE id_empleado = '$id_empleado'
+			WHERE id_medico = '$id_medico'
 			";
 			$resultado = $this->ejecutar_query_simple();
 			return $resultado;
 		}
 		
-		public function borrar($id_empleado='') {
+		public function borrar($id_medicoo='') {
 			$this->query = "
-			DELETE FROM tb_empleados
-			WHERE id_empleado = '$id_empleado'
+			DELETE FROM tb_medicos
+			WHERE id_medico = '$id_medicoo'
 			";
 			$resultado = $this->ejecutar_query_simple();
 
