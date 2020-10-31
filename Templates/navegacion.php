@@ -27,17 +27,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENÚ DE ADMINSITRACIÓN</li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Nada disponible </a></li>
-          </ul>
-        </li>
+          <li class="treeview">          
+            <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-circle-o"></i> Nada disponible </a></li>
+            </ul>
+          </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cogs"></i>
@@ -53,7 +47,8 @@
             <li><a href="./php/Ciudades/index.php"><i class="fa fa-city"></i> Ciudades</a></li>
             <li><a href="./php/Pais/index.php"><i class="fas fa-archway"></i> Paises</a></li>
             <li><a href="#"><i class="fas fa-globe-americas"></i> Usuarios</a></li>
-            <li><a href="./php/Citas/index.php"><i class="fas fa-globe-americass"></i> Citas</a></li>
+            <li><a href="./php/Citas/index.php"><i class="fas fa-users"></i> Citas</a></li>
+            <li><a href="#"><i class="fa fa-city"></i> Roles</a></li>
           </ul>
         </li>
        
