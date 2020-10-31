@@ -77,9 +77,9 @@
 				$nom_medico= utf8_decode($nom_medico);
 				$this->query = "
 					INSERT INTO tb_medicos
-					(id_medico, nom_medico, celu_medico, Especialista, cedu_medico,  correo_medico, id_sede)
+					(id_medico, nom_medico, Especialista, celu_medico, cedu_medico,  correo_medico, id_sede)
 					VALUES
-					(NULL, '$nom_medico', '$Especialista', '$celu_medico',  '$celu_medico', '$correo_medico', '$id_sede')
+					(NULL, '$nom_medico', '$Especialista', '$celu_medico', '$cedu_medico', '$correo_medico', '$id_sede')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;

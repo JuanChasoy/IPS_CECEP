@@ -99,29 +99,29 @@ function medicos(){
         $("#contenido").html('')
     })
 
-    $("#contenido").on("click","button#nuevo",function(){
-        $("#titulo").html("Nueva medico");
-        $("#nuevo-editar" ).load("./php/Medicos/NuevoMedico.php"); 
-        $("#nuevo-editar").removeClass("hide");
-        $("#nuevo-editar").addClass("show");
-        $("#medico").removeClass("show");
-        $("#medico").addClass("hide");
-         $.ajax({
-             type:"get",
-             url:"./php/Medicos/ControladorMedicos.php",
-             data: {accion:'listar'},
-             dataType:"json"
-           }).done(function( resultado ) {   
-              //console.log(resultado.data)           
-              $("#pais_codi option").remove()       
-              $("#pais_codi").append("<option selecte value=''>Seleccione un pais</option>")
+    $(".box").on("click","#nuevo", function(){
+      $(this).hide();
+      $(".box-title").html("Crear Empleado");
+      $("#editar").addClass('show');
+      $("#editar").removeClass('hide');
+      $("#listado").addClass('hide');
+      $("#listado").removeClass('show');
+      $("#editar").load('./php/Medicos/NuevoMedico.php', function(){
+          $.ajax({
+            type:"get",
+            url:"./php/Sedes/ControladorSedes.php",
+            data: {accion:'listar'},
+            dataType:"json"
+          }).done(function( resultado ) {                    ;
               $.each(resultado.data, function (index, value) { 
                 $("#editar #id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
               });
-           });
-    })
+          });
+      });
+      
+  })
 
-    $("#contenido").on("click","button#grabar",function(){
+    $("#editar").on("click","button#grabar",function(){
 
       var datos=$("#fmedicos").serialize();
        $.ajax({
@@ -135,108 +135,92 @@ function medicos(){
                     'Grabado!!',
                     'El registro se grabó correctamente',
                     'success'
-                )     
-                dt.ajax.reload();
-                $("#titulo").html("Listado Departamentos");
-                $("#nuevo-editar").html("");
-                $("#nuevo-editar").removeClass("show");
-                $("#nuevo-editar").addClass("hide");
-                $("#medico").removeClass("hide");
-                $("#medico").addClass("show")
-             } else {
-                swal({
-                  type: 'error',
-                  title: 'Oops...',
-                  text: 'Something went wrong!'                         
-                })
-            }
-        });
-    });
-
-
-    $("#contenido").on("click","a.editar",function(){
-       $("#titulo").html("Editar medico");
-       //Recupera datos del fromulario
-       var codigo = $(this).data("codigo");
-       var medicos;
-        $("#nuevo-editar").load("./php/Medicos/EditarMedicos.php");
-        $("#nuevo-editar").removeClass("hide");
-        $("#nuevo-editar").addClass("show");
-        $("#medico").removeClass("show");
-        $("#medico").addClass("hide");
-       $.ajax({
-           type:"get",
-           url:"./php/Medicos/ControladorMedicos.php",
-           data: {codigo: codigo, accion:'consultar'},
-           dataType:"json"
-           }).done(function( departamento ) {        
-                if(departamento.respuesta === "no existe"){
-                    swal({
-                      type: 'error',
-                      title: 'Oops...',
-                      text: 'departamento no existe!!!!!'                         
-                    })
-                } else {
-                  $("#id_medico").val(medico.codigo);                   
-                  $("#nom_medico").val(medico.empleado);
-                  $("#Especialista").val(medico.especialista);
-                  $("#cedu_medico").val(medico.cedula);                   
-                  $("#celu_medico").val(medico.celular);                   
-                  $("#corre_medico").val(medico.correo);
-                  sede = medico.sede;
-                }
-           });
-
-           $.ajax({
-            type:"get",
-            url:"./php/Sedes/ControladorSedes.php", // falta poner el el controlador de sedes
-            data: {accion:'listar'},
-            dataType:"json"
-          }).done(function( resultado ) {                     
-             $("#id_sede option").remove();
-             $.each(resultado.data, function (index, value) { 
-               
-               if(sede === value.id_sede){
-                 $("#id_sede").append("<option selected value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
-               }else {
-                 $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
-               }
-             });
-          });    
+                ) 
+                $(".box-title").html("Listado de medicos");
+                $(".box #nuevo").show();
+                $("#editar").html('');
+                $("#editar").addClass('hide');
+                $("#editar").removeClass('show');
+                $("#listado").addClass('show');
+                $("#listado").removeClass('hide');
+                dt.page( 'last' ).draw( 'page' );
+                dt.ajax.reload(null, false);                   
+         } else {
+            swal({
+                position: 'center',
+                type: 'error',
+                title: 'Ocurrió un erro al grabar',
+                showConfirmButton: false,
+                timer: 1500
+            });
            
-      })
-   }
-
-$(document).ready(() => {
-  $("#contenido").off("click", "a.editar");
-  $("#contenido").off("click", "button#actualizar");
-  $("#contenido").off("click","a.borrar");
-  $("#contenido").off("click","button#nuevo");
-  $("#contenido").off("click","button#grabar");
-  $("#titulo").html("Listado de Medicos");
-  dt = $("#tabla").DataTable({
-        "ajax": "php/Medicos/ControladorMedicos.php?accion=listar",
-        "columns": [
-            { "data": "id_medico"} ,
-            { "data": "nom_medico" },
-            { "data": "Especialista" },
-            { "data": "celu_medico" },
-            { "data": "cedu_medico" },
-            { "data": "correo_medico" },
-            { "data": "id_sede" },
-            { "data": "id_medico",
-                render: function (data) {
-                          return '<a href="#" data-codigo="'+ data + 
-                                 '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash"></i></a>' 
-                }
-            },
-            { "data": "id_medico",
-                render: function (data) {
-                          return '<a href="#" data-codigo="'+ data + 
-                                 '" class="btn btn-info btn-sm editar"> <i class="fa fa-edit"></i></a>';
-                }
-            }
-        ]
-  });
-  medico();
+        }
+    });
 });
+
+
+$(".box-body").on("click","a.editar",function(){
+      
+  var codigo = $(this).data("codigo");
+  var sede;
+  $(this).hide();
+  $(".box-title").html("Actualizar Medicos");
+  $("#editar").addClass('show');
+  $("#editar").removeClass('hide');
+  $("#listado").addClass('hide');
+  $("#listado").removeClass('show');  
+  
+   /*$("#editar").removeClass("hide");
+   $("#editar").addClass("show");
+   $("#empleado").removeClass("show");
+   $("#empleado").addClass("hide");
+  
+  
+  */
+
+   $("#editar").load("./php/Medicos/EditarMedico.php");
+
+ 
+
+  $.ajax({
+      type:"get",
+      url:"./php/Medicos/ControladorMedicos.php",
+      data: {codigo: codigo, accion:'consultar'},
+      dataType:"json"
+      }).done(function( empleados ) {        
+           if(empleados.respuesta === "no existe"){
+               swal({
+                 type: 'error',
+                 title: 'Oops...',
+                 text: 'Empleado no existe!!!!!'                         
+               })
+              } else {
+                $("#id_medico").val(medico.codigo);                   
+                $("#nom_medico").val(medico.empleado);
+                $("#Especialista").val(medico.especialista);
+                $("#cedu_medico").val(medico.cedula);                   
+                $("#celu_medico").val(medico.celular);                   
+                $("#corre_medico").val(medico.correo);
+                sede = medico.sede;
+              }
+      });
+
+      $.ajax({
+        type:"get",
+        url:"./php/Sedes/ControladorSedes.php", // falta poner el el controlador de sedes
+        data: {accion:'listar'},
+        dataType:"json"
+      }).done(function( resultado ) {                     
+         $("#id_sede option").remove();
+         $.each(resultado.data, function (index, value) { 
+           
+           if(sede === value.id_sede){
+             $("#id_sede").append("<option selected value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
+           }else {
+             $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
+           }
+         });
+      });    
+       
+  })
+}
