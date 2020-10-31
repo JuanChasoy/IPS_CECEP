@@ -159,60 +159,65 @@ function medicos(){
 });
 
 
-$(".box-body").on("click","a.editar",function(){
-      
-  var codigo = $(this).data("codigo");
-  var sede;
-  $(this).hide();
-  $(".box-title").html("Actualizar Medicos");
-  $("#editar").addClass('show');
-  $("#editar").removeClass('hide');
-  $("#listado").addClass('hide');
-  $("#listado").removeClass('show');  
-  
-   /*$("#editar").removeClass("hide");
-   $("#editar").addClass("show");
-   $("#empleado").removeClass("show");
-   $("#empleado").addClass("hide");
-  
-  
-  */
+    $(".box-body").on("click","a.editar",function(){
+     //  $("#titulo").html("Editar medico");
+       //Recupera datos del fromulario
+       var codigo = $(this).data("codigo");
+       var sede;
+        $(this).hide();
+        $(".box-title").html("Actualizar Medicos");
+       $("#editar").addClass('show');
+       $("#editar").removeClass('hide');
+       $("#listado").addClass('hide');
+       $("#listado").removeClass('show'); 
 
-   $("#editar").load("./php/Medicos/EditarMedico.php");
+       /*$("#editar").removeClass("hide");
+        $("#editar").addClass("show");
+        $("#empleado").removeClass("show");
+        $("#empleado").addClass("hide");
+       */
 
- 
+       $("#editar").load("./php/Medicos/EditarMedico.php");
 
-  $.ajax({
-      type:"get",
-      url:"./php/Medicos/ControladorMedicos.php",
-      data: {codigo: codigo, accion:'consultar'},
-      dataType:"json"
-      }).done(function( empleados ) {        
-           if(empleados.respuesta === "no existe"){
-               swal({
-                 type: 'error',
-                 title: 'Oops...',
-                 text: 'Empleado no existe!!!!!'                         
-               })
-              } else {
-                $("#id_medico").val(medico.codigo);                   
-                $("#nom_medico").val(medico.empleado);
-                $("#Especialista").val(medico.especialista);
-                $("#cedu_medico").val(medico.cedula);                   
-                $("#celu_medico").val(medico.celular);                   
-                $("#corre_medico").val(medico.correo);
-                sede = medico.sede;
-              }
-      });
+       $.ajax({
+           type:"get",
+           url:"./php/Medicos/ControladorMedicos.php",
+           data: {codigo: codigo, accion:'consultar'},
+           dataType:"json"
+           }).done(function( medico ) {        
+                if(medico.respuesta === "no existe"){
+                    swal({
+                      type: 'error',
+                      title: 'Oops...',
+                      text: 'medico no existe!!!!!'                         
+                    })
+                } else {
+                  $("#id_medico").val(medico.codigo);                   
+                  $("#nom_medico").val(medico.empleado);
+                  $("#Especialista").val(medico.especialista);
+                  $("#cedu_medico").val(medico.cedula);                   
+                  $("#celu_medico").val(medico.celular);                   
+                  $("#corre_medico").val(medico.correo);
+                  sede = medico.sede;
+                }
+           });
 
-      $.ajax({
-        type:"get",
-        url:"./php/Sedes/ControladorSedes.php", // falta poner el el controlador de sedes
-        data: {accion:'listar'},
-        dataType:"json"
-      }).done(function( resultado ) {                     
-         $("#id_sede option").remove();
-         $.each(resultado.data, function (index, value) { 
+           $.ajax({
+            type:"get",
+            url:"./php/Sedes/ControladorSedes.php", // falta poner el el controlador de sedes
+            data: {accion:'listar'},
+            dataType:"json"
+          }).done(function( resultado ) {                     
+             $("#id_sede option").remove();
+             $.each(resultado.data, function (index, value) { 
+               
+               if(sede === value.id_sede){
+                 $("#id_sede").append("<option selected value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
+               }else {
+                 $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
+               }
+             });
+          });    
            
       })
    }
@@ -233,7 +238,7 @@ $(document).ready(() => {
             { "data": "celu_medico" },
             { "data": "cedu_medico" },
             { "data": "correo_medico" },
-            { "data": "nom_sede" },
+            { "data": "nom_sede" }, //se cambio el campo id_sede por nom_sede
             { "data": "id_medico",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
