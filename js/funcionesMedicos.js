@@ -175,8 +175,6 @@ function medicos(){
         $("#editar").addClass("show");
         $("#empleado").removeClass("show");
         $("#empleado").addClass("hide");
-       
-       
        */
 
        $("#editar").load("./php/Medicos/EditarMedico.php");
