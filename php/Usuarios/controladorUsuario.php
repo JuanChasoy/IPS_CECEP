@@ -1,5 +1,5 @@
 <?php
-require_once 'modeloUsuario.php';
+require_once 'Modelousuario.php';
 
 $usuario = htmlspecialchars(trim("$_POST[usuario]"));
 $password = htmlspecialchars(trim("$_POST[password]"));

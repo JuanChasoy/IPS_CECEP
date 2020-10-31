@@ -223,7 +223,7 @@ $(document).ready(() => {
             { "data": "celu_medico" },
             { "data": "cedu_medico" },
             { "data": "correo_medico" },
-            { "data": "id_sede" },
+            { "data": "nom_sede" },
             { "data": "id_medico",
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + 
