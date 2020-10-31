@@ -50,12 +50,13 @@ switch ($_GET['accion']){
             );
         }  else {
             $respuesta = array(     // Aqui van los Get de medicos
-                'codigo' => $empleados->getId_medico(),
-                'empleado' => $empleados->getNom_medico(),
-                'cedula' =>$empleados->getCedu_medico(),
-                'celular' => $empleados->getCelu_medico(),
-                'correo' =>$empleados->getCorreo_empleado(),
-                'sede' =>$empleados->getId_sede(),
+                'codigo' => $medicos->getId_medico(),
+                'empleado' => $medicos->getNom_medico(),
+                'Especialista' =>$medicos->getEspecialista(),
+                'celular' => $medicos->getCelu_medico(),
+                'cedula' =>$medicos->getCedu_medico(),
+                'correo' =>$medicos->getCorreo_medico(),
+                'sede' =>$medicos->getId_sede(),
                 'respuesta' =>'existe'
             );
         }

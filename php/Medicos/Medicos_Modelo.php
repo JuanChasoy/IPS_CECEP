@@ -3,9 +3,9 @@
     class Medicos extends ModeloAbstractoDB {
 		private $id_medico;
 		private $nom_medico;
+		private $Especialista;
         private $cedu_medico;
         private $celu_medico;
-        private $Especialista;
         private $correo_medico;
 		private $id_sede;
 		
@@ -21,13 +21,13 @@
 			return $this->nom_medico;
 		}
 		
+		public function getEspecialista(){
+			return $this->Especialista;
+		}
+
 		public function getCedu_medico(){
 			return $this->cedu_medico;
         }
-
-        public function getEspecialista(){
-			return $this->Especialista;
-		}
         
         public function getCelu_medico(){
 			return $this->celu_medico;
@@ -44,7 +44,7 @@
 		public function consultar($id_medico='') {
 			if($id_medico !=''):
 				$this->query = "
-				SELECT id_medico, nom_medico, celu_medico, Especialista, cedu_medico, correo_medico, id_sede
+				SELECT id_medico, nom_medico, Especialista, celu_medico, cedu_medico, correo_medico, id_sede
 				FROM tb_medicos
 				WHERE id_empleado = '$id_medico' order by id_medico
 				";
@@ -59,7 +59,7 @@
 		
 		public function lista() {
 			$this->query = "
-			SELECT id_medico, nom_medico, celu_medico, Especialista, correo_medico, m.nom_sede 
+			SELECT id_medico, nom_medico, Especialista, celu_medico, cedu_medico, correo_medico, m.nom_sede 
 			FROM tb_medicos as c inner join tb_sedes as m
 			ON (c.id_sede = m.id_sede) order by id_medico
 			";
@@ -79,7 +79,7 @@
 					INSERT INTO tb_medicos
 					(id_medico, nom_medico, celu_medico, Especialista, cedu_medico,  correo_medico, id_sede)
 					VALUES
-					(NULL, '$nom_medico', '$cedu_medico', '$Especialista', '$celu_medico', '$correo_medico', '$id_sede')
+					(NULL, '$nom_medico', '$Especialista', '$celu_medico',  '$celu_medico', '$correo_medico', '$id_sede')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;
@@ -94,10 +94,10 @@
 			$this->query = "
 			UPDATE tb_medicos
 			SET nom_medico='$nom_medico',
+			Especialista='$Especialista',
 			celu_medico='$celu_medico',
-            especialista='$Especialista',
             cedu_medico='$cedu_medico',
-			correo_medico='$correo_empleado',
+			correo_medico='$correo_medico',
 			id_sede='$id_sede'
 			WHERE id_medico = '$id_medico'
 			";
