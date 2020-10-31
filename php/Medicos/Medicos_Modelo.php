@@ -46,7 +46,7 @@
 				$this->query = "
 				SELECT id_medico, nom_medico, Especialista, celu_medico, cedu_medico, correo_medico, id_sede
 				FROM tb_medicos
-				WHERE id_empleado = '$id_medico' order by id_medico
+				WHERE id_medico = '$id_medico' order by id_medico
 				";
 				$this->obtener_resultados_query(); // se ejecuta cuando sea consulta select 
 			endif;

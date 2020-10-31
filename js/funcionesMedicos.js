@@ -194,10 +194,10 @@ function medicos(){
                 } else {
                   $("#id_medico").val(medico.codigo);                   
                   $("#nom_medico").val(medico.empleado);
-                  $("#Especialista").val(medico.especialista);
+                  $("#Especialista").val(medico.Especialista);
                   $("#cedu_medico").val(medico.cedula);                   
                   $("#celu_medico").val(medico.celular);                   
-                  $("#corre_medico").val(medico.correo);
+                  $("#correo_medico").val(medico.correo);
                   sede = medico.sede;
                 }
            });
