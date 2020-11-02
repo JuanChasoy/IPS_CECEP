@@ -57,7 +57,10 @@ body{
     border-width: 0;
     background-color: #ccc;
 }
-#formulario input[type="text"]:focus, #formulario select:focus{
+#formulario input[type="text"]:focus,
+#formulario input[type="date"]:focus,
+#formulario input[type="tel"]:focus,
+#formulario select:focus{
     box-shadow: 0 0 7px #072b79;
 }
 
