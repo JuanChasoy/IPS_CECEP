@@ -38,9 +38,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="html/afiliados.html">Afiliados</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="html/empleados.html">Empleados</a>
             </li>
             <li class="nav-item">
@@ -56,14 +53,9 @@
               <a class="nav-link" href="html/sedes.html">Sedes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/ciudades.html">Ciudades</a>
+              <a class="nav-link" href="">Contactenos</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/paises.html">Paises</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/usuarios.html">Usuarios</a>
-            </li>
+            
            
               
             
