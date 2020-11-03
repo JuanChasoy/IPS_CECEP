@@ -68,7 +68,7 @@
            <!--BARRA DE BUSQUEDA <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>-->
         
-              <a class="btn btn-light" href="php/Usuarios/login.php" role="button">Iniciar Sesion</a>
+              <a class="btn btn-light" href="../IPS_CECEP/login.php" role="button">Iniciar Sesion</a>
           </form>
         </div>
       </nav>
@@ -146,11 +146,7 @@
       </div>
     </div>
 
-    <form action="php/Usuarios/login.php">
-
-<input type="submit" value="Administrador">
-
-</form>
+    
 
     <footer class="footer" title="footer en progreso...">
       

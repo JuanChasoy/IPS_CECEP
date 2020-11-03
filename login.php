@@ -79,7 +79,7 @@
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.2/sweetalert2.all.js"></script>
   
-<script src="./Recursos/js/funcionesUsuario.js"></script>
+<script src="././Recursos/js/funcionesUsuario.js"></script>
 <!-- Funciones de Lógica de neogcio -->
 <script>
     $(document).ready(usuario);
