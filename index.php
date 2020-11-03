@@ -1,90 +1,170 @@
-<?php
-  session_start();
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  if(isset($_GET["cerrar_session"]) and $_GET["cerrar_session"]==true){
-    session_destroy();
-  }
-?>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <!-- Estilos Inicio CSS-->
+    <link rel="stylesheet" href="css/styleInicio.css">
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>IpsCecep | Login</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="Recursos/css/bootstrap.min.css">
-   <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
- 
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="Recursos/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="Recursos/css/AdminLTE.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="Recursos/css/blue.css">
-  <link rel="stylesheet" href="css/styleIndex.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#"><img src="img/ipscecep.jpg" alt=""></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg " style="color:blue">Autenticarse para inciar sesión</p>
-
-    <form id="login-form" action="" method="post">
-      <div class="form-group has-feedback">
-        <input type="type" id="usuario" name="usuario" class="form-control" placeholder="Usuario">
-        <span class="form-control-feedback"><i class="fas fa-user-tie"></i></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-        <span class="form-control-feedback"> <i class="fas fa-key"></i></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          
-        </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" id="ingresar" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-        </div>
-        <!-- /.col -->
-        <input type="hidden" value="login" name="accion">
-      </div>
-    </form>
-
-   
-  </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.2/sweetalert2.all.js"></script>
+    <title>IPS CECEP</title>
+  </head>
+  <body>
+    
+    
   
-<script src="./Recursos/js/funcionesUsuario.js"></script>
-<!-- Funciones de Lógica de neogcio -->
-<script>
-    $(document).ready(usuario);
-</script>
+    <div class="text-center"> 
+    
+    <header id="header">
+      <video src="video/full-video.mp4" autoplay loop muted>
+      </video>
+
+      <img  src="img/ipslogo.png" id="logo">
+       
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="html/inicio.html">Inicio </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="html/afiliados.html">Afiliados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/empleados.html">Empleados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/medicos.html">Medicos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/medicamentos.html">Medicamentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/sedes.html">Sedes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/ciudades.html">Ciudades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/paises.html">Paises</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="html/usuarios.html">Usuarios</a>
+            </li>
+           
+              
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+     
+    </div>
+ 
+    <!--Banner con efecto 3D-->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url(img/banner1.png)"></div>
+        <div class="swiper-slide" style="background-image:url(img/banner2.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(img/banner3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(img/banner4.jpg)"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!--Sesion de informacion de la IPS-->
+    <div class="informacion">
+      <div class="info">
+        <div class="parrafo-info">
+          <h3>Medicos</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae ex, et, eius adipisci molestias doloremque laborum sed optio reprehenderit ea aperiam quasi natus magnam! Aut dicta ratione dolorem maiores provident mollitia, magni eaque nesciunt, sapiente nobis cupiditate molestias debitis animi obcaecati perferendis. Incidunt repellendus a facilis sunt quibusdam laboriosam corrupti voluptatum illum quaerat, aliquam nihil libero, ex corporis, repudiandae debitis. Pariatur eaque, est molestias recusandae blanditiis omnis quis tenetur ex illum in consequatur quasi veritatis quidem impedit sint dicta facilis maiores. Laudantium sit iure minima veniam libero, distinctio eligendi praesentium ut harum, excepturi et itaque exercitationem provident, tempore tempora?</p>
+        </div>
+        <img src="img/banner5.jpg" class="image-info">
+      </div>
+      <div class="info">
+        <div class="parrafo-info">
+          <h3>Odontologos</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae ex, et, eius adipisci molestias doloremque laborum sed optio reprehenderit ea aperiam quasi natus magnam! Aut dicta ratione dolorem maiores provident mollitia, magni eaque nesciunt, sapiente nobis cupiditate molestias debitis animi obcaecati perferendis. Incidunt repellendus a facilis sunt quibusdam laboriosam corrupti voluptatum illum quaerat, aliquam nihil libero, ex corporis, repudiandae debitis. Pariatur eaque, est molestias recusandae blanditiis omnis quis tenetur ex illum in consequatur quasi veritatis quidem impedit sint dicta facilis maiores. Laudantium sit iure minima veniam libero, distinctio eligendi praesentium ut harum, excepturi et itaque exercitationem provident, tempore tempora?</p>
+        </div>
+        <img src="img/info-img (1).jpg" class="image-info">
+      </div>
+      <div class="info">
+        <div class="parrafo-info">
+          <h3>Psicologos</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae ex, et, eius adipisci molestias doloremque laborum sed optio reprehenderit ea aperiam quasi natus magnam! Aut dicta ratione dolorem maiores provident mollitia, magni eaque nesciunt, sapiente nobis cupiditate molestias debitis animi obcaecati perferendis. Incidunt repellendus a facilis sunt quibusdam laboriosam corrupti voluptatum illum quaerat, aliquam nihil libero, ex corporis, repudiandae debitis. Pariatur eaque, est molestias recusandae blanditiis omnis quis tenetur ex illum in consequatur quasi veritatis quidem impedit sint dicta facilis maiores. Laudantium sit iure minima veniam libero, distinctio eligendi praesentium ut harum, excepturi et itaque exercitationem provident, tempore tempora?</p>
+        </div>
+        <img src="img/info-img (3).jpg" class="image-info">
+      </div>
+      <div class="info">
+        <div class="parrafo-info">
+          <h3>Hematologo</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi molestiae ex, et, eius adipisci molestias doloremque laborum sed optio reprehenderit ea aperiam quasi natus magnam! Aut dicta ratione dolorem maiores provident mollitia, magni eaque nesciunt, sapiente nobis cupiditate molestias debitis animi obcaecati perferendis. Incidunt repellendus a facilis sunt quibusdam laboriosam corrupti voluptatum illum quaerat, aliquam nihil libero, ex corporis, repudiandae debitis. Pariatur eaque, est molestias recusandae blanditiis omnis quis tenetur ex illum in consequatur quasi veritatis quidem impedit sint dicta facilis maiores. Laudantium sit iure minima veniam libero, distinctio eligendi praesentium ut harum, excepturi et itaque exercitationem provident, tempore tempora?</p>
+        </div>
+        <img src="img/info-img (4).jpg" class="image-info">
+      </div>
 
 
-</body>
-</html>
+      <div class="contact-info">
+        <div class="targeta">
+          <i class="icon fas fa-envelope"></i>
+          <div class="contenido-targeta">
+            <h3>Correo</h3>
+            <span>ipsCecep@gmailcom</span>
+          </div>
+        </div>
+
+        <div class="targeta">
+          <i class="icon fas fa-phone"></i>
+          <div class="contenido-targeta">
+            <h3>Telefono</h3>
+            <span>+0084435</span>
+          </div>
+        </div>
+
+        <div class="targeta">
+          <i class="icon fas fa-map-marker-alt"></i>
+          <div class="contenido-targeta">
+            <h3>Ubicacion</h3>
+            <span>Colombia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <footer class="footer" title="footer en progreso...">
+      
+    </footer>
+      
+    <script>
+      window.addEventListener('scroll', function(){
+        const header = document.querySelector('header');
+        header.classList.toggle("sticky", window.scrollY > 0);
+      })
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+  </body>
