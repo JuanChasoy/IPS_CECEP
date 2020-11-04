@@ -7,7 +7,10 @@
         private $nom_usu_cita;
         private $cedu_usu_cita;
         private $correo_cita;
-        private $id_servicio;
+		private $id_servicio;    
+		private $id_sede;
+        private $id_medico;
+        private $fecha;
 		
 		function __construct() {
 			
@@ -31,6 +34,18 @@
         
         public function getId_servicio(){
 			return $this->id_servicio;
+		}
+		
+		public function getId_sede(){
+			return $this->id_sede;
+        }
+
+        public function getId_medico(){
+			return $this->id_medico;
+        }
+        
+        public function getFecha(){
+			return $this->fecha;
         }
 
 		public function consultar($id_cita='') {
