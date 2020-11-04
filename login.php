@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="Recursos/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="Recursos/css/blue.css">
-  <link rel="stylesheet" href="css/styleIndex.css">
+  <link rel="stylesheet" href="css/styleIndex.css"> 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,14 +37,15 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
+<body background="Recursos/img/medicamento.jpg">
+
 <div class="login-box">
   <div class="login-logo">
     <a href="#"><img src="img/ipscecep.jpg" alt=""></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg " style="color:blue">Autenticarse para inciar sesión</p>
+    <p class="login-box-msg ">Autenticarse para inciar sesión</p>
 
     <form id="login-form" action="" method="post">
       <div class="form-group has-feedback">
