@@ -41,7 +41,7 @@
             <li><a id="prueba" href="#"><i class="fa fa-home"></i> Afiliados</a></li> <!--  -->
             <li><a href="./php/Empleados/index.php"><i class="fab fa-accessible-icon"></i> Empleados</a></li>
             <li><a href="./php/Medicos/index.php"><i class="fa fa-city"></i> Medicos</a></li>
-            <li><a href="#"><i class="fas fa-archway"></i> Servicios</a></li>
+            <li><a href="./php/Servicios/index.php"><i class="fas fa-archway"></i> Servicios</a></li>
             <li><a href="./php/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>
             <li><a href="./php/Sedes/index.php"><i class="fas fa-users"></i> Sedes</a></li>
             <li><a href="./php/Ciudades/index.php"><i class="fa fa-city"></i> Ciudades</a></li>

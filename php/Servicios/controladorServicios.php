@@ -46,17 +46,15 @@ switch ($_GET['accion']){
         $servicios = new Servicios();
         $servicios->consultar($datos['codigo']);
 
-        if($servicios->getId_empleado() == null) {
+        if($servicios->getId_Servicio() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(
-                'codigo' => $servicios->getId_cita(),
-                'nombre' => $servicios->getNom_usu_cita(),
-                'cedula' =>$servicios->getCedu_usu_cita(),
-                'correo' =>$servicios->getCorreo_cita(),
-                'servicio' => $servicios->getId_servicio(),
+                'codigo' => $servicios->getId_Servicio(),
+                'servicio' => $servicios->getTipo_servicio(),
+                'sede' =>$servicios->getid_sede(),
                 'respuesta' =>'existe'
                 
             );
