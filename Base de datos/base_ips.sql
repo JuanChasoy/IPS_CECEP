@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2020 a las 05:23:57
+-- Tiempo de generación: 05-11-2020 a las 19:21:24
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.30
 
@@ -58,15 +58,20 @@ CREATE TABLE `tb_citas` (
   `nom_usu_cita` varchar(100) NOT NULL,
   `cedu_usu_cita` int(11) NOT NULL,
   `correo_cita` text NOT NULL,
-  `id_servicio` int(11) NOT NULL
+  `id_sede` int(11) NOT NULL,
+  `id_servicio` int(11) NOT NULL,
+  `id_medico` int(11) NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tb_citas`
 --
 
-INSERT INTO `tb_citas` (`id_cita`, `nom_usu_cita`, `cedu_usu_cita`, `correo_cita`, `id_servicio`) VALUES
-(1, 'Maria del socorro', 2345612, 'maria@ijg.com.co', 3);
+INSERT INTO `tb_citas` (`id_cita`, `nom_usu_cita`, `cedu_usu_cita`, `correo_cita`, `id_sede`, `id_servicio`, `id_medico`, `fecha`) VALUES
+(2, 'pepito ', 231432, 'pepo@gmail.com', 2, 5, 1, '2020-11-04'),
+(8, 'paco', 653426, 'paco@gmail.com', 1, 5, 1, '2020-11-20'),
+(9, 'deivy rivas', 112344379, 'rivas@hotmail.com', 2, 8, 3, '2020-11-13');
 
 -- --------------------------------------------------------
 
@@ -268,11 +273,12 @@ INSERT INTO `tb_servicio` (`id_servicio`, `tipo_servicio`, `id_sede`) VALUES
 (1, 'Cita con medico general', 1),
 (2, 'Cita con medico general', 2),
 (3, 'Especialista', 1),
-(4, 'Laboratorios Clinicos', 1),
+(4, 'Laboratorios Clinicos', 3),
 (5, 'Odontologia', 1),
 (7, 'Especialista', 2),
 (8, 'Laboratorios Clinicos', 2),
-(9, 'Odontologia', 2);
+(9, 'Odontologia', 2),
+(10, 'Urgencias', 3);
 
 -- --------------------------------------------------------
 
@@ -318,7 +324,9 @@ ALTER TABLE `tb_afiliados`
 --
 ALTER TABLE `tb_citas`
   ADD PRIMARY KEY (`id_cita`),
-  ADD KEY `fkid_servicio` (`id_servicio`);
+  ADD KEY `fkid_servicio` (`id_servicio`),
+  ADD KEY `fkid_sede` (`id_sede`),
+  ADD KEY `fkid_medico` (`id_medico`);
 
 --
 -- Indices de la tabla `tb_ciudades`
@@ -395,7 +403,7 @@ ALTER TABLE `tb_afiliados`
 -- AUTO_INCREMENT de la tabla `tb_citas`
 --
 ALTER TABLE `tb_citas`
-  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_ciudades`
@@ -419,7 +427,7 @@ ALTER TABLE `tb_medicamentos`
 -- AUTO_INCREMENT de la tabla `tb_medicos`
 --
 ALTER TABLE `tb_medicos`
-  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_pais`
@@ -443,7 +451,7 @@ ALTER TABLE `tb_sedes`
 -- AUTO_INCREMENT de la tabla `tb_servicio`
 --
 ALTER TABLE `tb_servicio`
-  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_usuarios`
@@ -465,7 +473,9 @@ ALTER TABLE `tb_afiliados`
 -- Filtros para la tabla `tb_citas`
 --
 ALTER TABLE `tb_citas`
-  ADD CONSTRAINT `tb_citas_ibfk_1` FOREIGN KEY (`id_servicio`) REFERENCES `tb_servicio` (`id_servicio`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_citas_ibfk_1` FOREIGN KEY (`id_servicio`) REFERENCES `tb_servicio` (`id_servicio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_citas_ibfk_2` FOREIGN KEY (`id_sede`) REFERENCES `tb_sedes` (`id_sede`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_citas_ibfk_3` FOREIGN KEY (`id_medico`) REFERENCES `tb_medicos` (`id_medico`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `tb_ciudades`
