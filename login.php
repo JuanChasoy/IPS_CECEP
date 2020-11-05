@@ -39,38 +39,7 @@
 </head>
 <body>
 
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#"><img src="img/ipscecep.jpg" alt=""></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg ">Autenticarse para inciar sesión</p>
 
-    <form id="login-form" action="" method="post">
-      <div class="form-group has-feedback">
-        <input type="type" id="usuario" name="usuario" class="form-control" placeholder="Usuario">
-        <span class="form-control-feedback"><i class="fas fa-user-tie"></i></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-        <span class="form-control-feedback"> <i class="fas fa-key"></i></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          
-        </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" id="ingresar" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-        </div>
-        <!-- /.col -->
-        <input type="hidden" value="login" name="accion">
-      </div>
-    </form>
-
-   
-  </div>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
