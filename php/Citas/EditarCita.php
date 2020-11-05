@@ -37,9 +37,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="decu_usu_cita">Cedula:</label>
+                        <label class="control-label col-sm-2" for="cedu_usu_cita">Cedula:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="decu_usu_cita" name="decu_usu_cita" placeholder="Ingrese Cedula"
+                            <input type="text" class="form-control" id="cedu_usu_cita" name="cedu_usu_cita" placeholder="Ingrese Cedula"
                             value = "">
                         </div>
                     </div>

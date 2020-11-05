@@ -31,10 +31,10 @@ function citas(){
 
 
 $(".box-body").on("click","button#actualizar",function(){
-   var datos=$("#fservicio").serialize();
+   var datos=$("#fcitas").serialize();
    $.ajax({
       type:"get",
-      url:"./php/Servicios/controladorServicios.php",
+      url:"./php/Citas/ControladorCitas.php",
       data: datos,
       dataType:"json"
     }).done(function( resultado ) {
@@ -47,7 +47,7 @@ $(".box-body").on("click","button#actualizar",function(){
             showConfirmButton: false,
             timer: 1500
         }) 
-        $(".box-title").html("Listado de Ciudades");
+        $(".box-title").html("Listado de Citas");
         $("#editar").html('');
         $("#editar").addClass('hide');
         $("#editar").removeClass('show');
@@ -70,7 +70,7 @@ $(".box-body").on("click","a.borrar",function(){
 
   swal({
         title: '¿Está seguro?',
-        text: "¿Realmente desea borrar el servicio con codigo : " + codigo + " ?",
+        text: "¿Realmente desea borrar la cita con codigo : " + codigo + " ?",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -81,7 +81,7 @@ $(".box-body").on("click","a.borrar",function(){
 
               var request = $.ajax({
                   method: "get",
-                  url: "./php/Servicios/controladorServicios.php",
+                  url: "./php/Citas/ControladorCitas.php",
                   data: {codigo: codigo, accion:'borrar'},
                   dataType: "json"
               })
@@ -258,7 +258,7 @@ $(".box-body").on("click","a.editar",function(){
           } else {
               $("#id_cita").val(citas.codigo);                   
               $("#nom_usu_cita").val(citas.nombre);  
-              $("#decu_usu_cita").val(citas.cedula);                   
+              $("#cedu_usu_cita").val(citas.cedula);                   
               $("#correo_cita").val(citas.correo); 
               $("#fecha").val(citas.fecha);           
               servicio = citas.servicio;
@@ -276,7 +276,7 @@ $(".box-body").on("click","a.editar",function(){
        $("#id_servicio option").remove();
        $.each(resultado.data, function (index, value) { 
          
-         if(servicio === value.id_sede){
+         if(servicio === value.id_servicio){
            $("#id_servicio").append("<option selected value='" + value.id_servicio + "'>" + value.tipo_servicio + "</option>")
          }else {
            $("#id_servicio").append("<option value='" + value.id_servicio + "'>" + value.tipo_servicio + "</option>")
@@ -312,7 +312,7 @@ $(".box-body").on("click","a.editar",function(){
        $("#id_medico option").remove();
        $.each(resultado.data, function (index, value) { 
          
-         if(medico === value.id_sede){
+         if(medico === value.id_medico){
            $("#id_medico").append("<option selected value='" + value.id_medico + "'>" + value.nom_medico + "</option>")
          }else {
            $("#id_medico").append("<option value='" + value.id_medico + "'>" + value.nom_medico + "</option>")

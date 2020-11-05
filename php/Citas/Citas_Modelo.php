@@ -103,12 +103,14 @@
 			endforeach;
 			$nom_usu_cita= utf8_decode($nom_usu_cita);
 			$this->query = "
-			UPDATE tb_empleados
+			UPDATE tb_citas
 			SET nom_usu_cita='$nom_usu_cita',
-			nom_usu_cita='$nom_usu_cita',
 			cedu_usu_cita='$cedu_usu_cita',
 			correo_cita='$correo_cita',
 			id_servicio='$id_servicio',
+			id_medico='$id_medico',
+			id_sede='$id_sede',
+			fecha='$fecha'
 			WHERE id_cita = '$id_cita'
 			";
 			$resultado = $this->ejecutar_query_simple();
