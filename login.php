@@ -39,7 +39,46 @@
 </head>
 <body>
 
+<section>
+        <div class="imgBx">
+            <img src="img/info-img (3).jpg" alt="">
+        </div>
+        <div class="contentBx">
+            <div class="formBx">
+                <h2>Iniciar Sesion</h2>
+                <form id="login-form" action="" method="post">
+                    <div class="inputBx">
+                        <span>Usuario</span>
+                        <input type="text" id="usuario" name="usuario" class="form-control"
+                        placeholder="Usuario">
+                    </div>
+                    <div class="inputBx">
+                        <span>Contraseña</span>
+                        <input type="password" id="password" name="password" class="form-control"
+                        placeholder="Contraseña">
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox" name="" id="">Recordar</label>
+                    </div>
+                    <div class="inputBx">
+                    <button type="submit" id="ingresar" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+                    </div>
 
+                    <input type="hidden" value="login" name="accion">
+
+                    <div class="inputBx">
+                        <p>No tienes una cuenta?<a href="#">Regístrate</a></p>
+                    </div>
+                </form>
+                <h3>Iniciar sesión con las redes sociales</h3>
+                <ul class="sci">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                </ul>
+            </div>
+        </div>
+    </section>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
