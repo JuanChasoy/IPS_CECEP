@@ -1,20 +1,25 @@
 
 // actualizar es el nombre del boton en el form editar 
-function servicios(){ 
+function citas(){ 
 
   var  dt = $("#tabla").DataTable({
-      "ajax": "php/Servicios/ControladorServicios.php?accion=listar",
+      "ajax": "php/Citas/ControladorCitas.php?accion=listar",
       "columns": [
-          { "data": "id_servicio"} ,
+          { "data": "id_cita"} ,
+          { "data": "nom_usu_cita" },
+          { "data": "cedu_usu_cita" }, 
+          { "data": "correo_cita"} ,
           { "data": "tipo_servicio" },
           { "data": "nom_sede" }, 
-          { "data": "id_servicio",
+          { "data": "nom_medico" },
+          { "data": "fecha" }, 
+          { "data": "id_cita",
               render: function (data) {
                         return '<a href="#" data-codigo="'+ data + 
                               '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash">eliminar</i></a>' 
               }
           },
-          { "data": "id_servicio",
+          { "data": "id_cita",
               render: function (data) {
                         return '<a href="#" data-codigo="'+ data + 
                               '" class="btn btn-warning btn-sm editar"> <i">editar</i></a>';
@@ -129,12 +134,22 @@ $("#contenido").on("click","button.btncerrar",function(){
 //se modifico el codigo para cargar el formulario de empleados 
 $(".box").on("click","#nuevo", function(){
   $(this).hide();
-  $(".box-title").html("Crear Sevicio");
+  $(".box-title").html("Crear Cita");
   $("#editar").addClass('show');
   $("#editar").removeClass('hide');
   $("#listado").addClass('hide');
   $("#listado").removeClass('show');
-  $("#editar").load('./php/Servicios/NuevoServicio.php', function(){
+  $("#editar").load('./php/Citas/NuevaCita.php', function(){
+      $.ajax({
+        type:"get",
+        url:"./php/Servicios/controladorServicios.php",
+        data: {accion:'listar'},
+        dataType:"json"
+      }).done(function( resultado ) {                    ;
+          $.each(resultado.data, function (index, value) { 
+            $("#editar #id_servicio").append("<option value='" + value.id_servicio + "'>" + value.tipo_servicio + "</option>")
+          });
+      });
       $.ajax({
         type:"get",
         url:"./php/Sedes/ControladorSedes.php",
@@ -145,6 +160,16 @@ $(".box").on("click","#nuevo", function(){
             $("#editar #id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
           });
       });
+      $.ajax({
+        type:"get",
+        url:"./php/Medicos/ControladorMedicos.php",
+        data: {accion:'listar'},
+        dataType:"json"
+      }).done(function( resultado ) {                    ;
+          $.each(resultado.data, function (index, value) { 
+            $("#editar #id_medico").append("<option value='" + value.id_medico + "'>" + value.nom_medico + "</option>")
+          });
+      });
   });
   
 })
@@ -153,11 +178,11 @@ $(".box").on("click","#nuevo", function(){
 
 
 $("#editar").on("click","button#grabar",function(){
-var datos=$("#fservicios").serialize();
+var datos=$("#fcitas").serialize();
 //console.log(datos);
 $.ajax({
       type:"get",
-      url:"./php/Servicios/controladorServicios.php",
+      url:"./php/Citas/ControladorCitas.php",
       data: datos,
       dataType:"json"
     }).done(function( resultado ) {
@@ -167,7 +192,7 @@ $.ajax({
             'El registro se grabó correctamente',
             'success'
           )     
-              $(".box-title").html("Listado de Empleados");
+              $(".box-title").html("Listado de Citas");
               $(".box #nuevo").show();
               $("#editar").html('');
               $("#editar").addClass('hide');
@@ -197,8 +222,10 @@ $(".box-body").on("click","a.editar",function(){
 
  var codigo = $(this).data("codigo");
  var sede;
+ var servicio;
+ var medico;
  $(this).hide();
-  $(".box-title").html("Actualizar Servicio");
+  $(".box-title").html("Actualizar Cita");
   $("#editar").addClass('show');
   $("#editar").removeClass('hide');
   $("#listado").addClass('hide');
@@ -212,28 +239,51 @@ $(".box-body").on("click","a.editar",function(){
  
  */
 
-  $("#editar").load("./php/Servicios/editarServicio.php");
+  $("#editar").load("./php/Citas/EditarCita.php");
 
 
 
  $.ajax({
      type:"get",
-     url:"./php/Servicios/controladorServicios.php",
+     url:"./php/Citas/ControladorCitas.php",
      data: {codigo: codigo, accion:'consultar'},
      dataType:"json"
-     }).done(function( servicios ) {        
-          if(servicios.respuesta === "no existe"){
+     }).done(function( citas ) {        
+          if(citas.respuesta === "no existe"){
               swal({
                 type: 'error',
                 title: 'Oops...',
-                text: 'Empleado no existe!!!!!'                         
+                text: 'cita no existe!!!!!'                         
               })
           } else {
-              $("#id_servicio").val(servicios.codigo);                   
-              $("#tipo_servicio").val(servicios.servicio);             
-              sede = servicios.sede;
+              $("#id_cita").val(citas.codigo);                   
+              $("#nom_usu_cita").val(citas.nombre);  
+              $("#decu_usu_cita").val(citas.cedula);                   
+              $("#correo_cita").val(citas.correo); 
+              $("#fecha").val(citas.fecha);           
+              servicio = citas.servicio;
+              sede = citas.sede;
+              medico = citas.medico;
           }
      });
+
+     $.ajax({
+      type:"get",
+      url:"./php/Servicios/controladorServicios.php", // falta poner el el controlador de sedes
+      data: {accion:'listar'},
+      dataType:"json"
+    }).done(function( resultado ) {                     
+       $("#id_servicio option").remove();
+       $.each(resultado.data, function (index, value) { 
+         
+         if(servicio === value.id_sede){
+           $("#id_servicio").append("<option selected value='" + value.id_servicio + "'>" + value.tipo_servicio + "</option>")
+         }else {
+           $("#id_servicio").append("<option value='" + value.id_servicio + "'>" + value.tipo_servicio + "</option>")
+         }
+       });
+    });
+     
 
      $.ajax({
        type:"get",
@@ -250,7 +300,26 @@ $(".box-body").on("click","a.editar",function(){
             $("#id_sede").append("<option value='" + value.id_sede + "'>" + value.nom_sede + "</option>")
           }
         });
-     });    
+     });   
+     
+     $.ajax({
+      type:"get",
+      url:"./php/Medicos/ControladorMedicos.php", // falta poner el el controlador de sedes
+      data: {accion:'listar'},
+      dataType:"json"
+      
+    }).done(function( resultado ) {                     
+       $("#id_medico option").remove();
+       $.each(resultado.data, function (index, value) { 
+         
+         if(medico === value.id_sede){
+           $("#id_medico").append("<option selected value='" + value.id_medico + "'>" + value.nom_medico + "</option>")
+         }else {
+           $("#id_medico").append("<option value='" + value.id_medico + "'>" + value.nom_medico + "</option>")
+         }
+       });
+    });
+     
       
  })
 }

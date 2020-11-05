@@ -51,7 +51,7 @@
 		public function consultar($id_cita='') {
 			if($id_cita !=''):
 				$this->query = "
-                SELECT id_cita,nom_usu_cita,cedu_usu_cita,correo_cita,id_servicio
+                SELECT id_cita, nom_usu_cita, cedu_usu_cita, correo_cita, id_servicio, id_sede, id_medico, fecha
                 FROM tb_citas
                 WHERE id_cita = '$id_cita' ORDER BY id_cita
 				";
@@ -64,16 +64,21 @@
 			endif;
 		}
 		
+		
 		public function lista() {
 			$this->query = "
-			SELECT id_cita,nom_usu_cita,cedu_usu_cita,correo_cita, s.tipo_servicio
-			FROM tb_citas as c inner join tb_servicio as s
-			ON (c.id_servicio = s.id_servicio) order by id_cita
+			SELECT id_cita, nom_usu_cita, cedu_usu_cita, correo_cita, fecha, tb_sedes.nom_sede, tb_servicio.tipo_servicio, tb_medicos.nom_medico
+			FROM tb_citas
+			INNER JOIN tb_sedes on (tb_citas.id_sede = tb_sedes.id_sede)
+			INNER JOIN tb_servicio on (tb_citas.id_servicio = tb_servicio.id_servicio)
+			INNER JOIN tb_medicos on (tb_citas.id_medico = tb_medicos.id_medico)
 			";
 			
 			$this->obtener_resultados_query();
 			return $this->rows;
 		}
+
+
 		
 		public function nuevo($datos=array()) {
 			if(array_key_exists('id_cita', $datos)):
@@ -83,9 +88,9 @@
 				$nom_usu_cita= utf8_decode($nom_usu_cita);
 				$this->query = "
 					INSERT INTO tb_citas
-					(id_cita,nom_usu_cita,cedu_usu_cita,correo_cita,id_servicio)
+					(id_cita, nom_usu_cita, cedu_usu_cita, correo_cita, fecha, id_servicio, id_sede, id_medico)
 					VALUES
-					(NULL, '$id_cita','$nom_usu_cita','$cedu_usu_cita','$correo_cita','$id_servicio')
+					(NULL, '$nom_usu_cita','$cedu_usu_cita','$correo_cita','$fecha','$id_servicio','$id_sede','$id_medico')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;

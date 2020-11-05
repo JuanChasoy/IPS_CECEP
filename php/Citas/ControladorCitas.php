@@ -46,7 +46,7 @@ switch ($_GET['accion']){
         $citas = new Citas();
         $citas->consultar($datos['codigo']);
 
-        if($citas->getId_empleado() == null) {
+        if($citas->getId_cita() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
@@ -57,6 +57,9 @@ switch ($_GET['accion']){
                 'cedula' =>$citas->getCedu_usu_cita(),
                 'correo' =>$citas->getCorreo_cita(),
                 'servicio' => $citas->getId_servicio(),
+                'sede' => $citas->getId_sede(),
+                'medico' => $citas->getId_medico(),
+                'fecha' => $citas->getFecha(),
                 'respuesta' =>'existe'
                 
             );
