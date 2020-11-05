@@ -70,11 +70,11 @@ section .imgBx::before{
     width: 100%;
     height: 100%;
     background: linear-gradient(225deg, #3498db, #1abc9c);
-    z-index: 1;
+    z-index: 2;
     mix-blend-mode: screen;
 }
 
-section .imgBx img{
+section .imgBx img.fondo{
     position: absolute;
     top: 0;
     left: 0;
@@ -120,7 +120,8 @@ section .contentBx .formBx .inputBx span{
     letter-spacing: 1px;
 }
 
-section .contentBx .formBx .inputBx input{
+section .contentBx .formBx .inputBx input,
+section .contentBx .formBx .inputBx button{
     width: 100%;
     padding: 10px 20px;
     outline: none;
@@ -133,8 +134,8 @@ section .contentBx .formBx .inputBx input{
     border-radius: 30px;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"]{
-    background: #ff4584;
+section .contentBx .formBx .inputBx button[type="submit"]{
+    background: #3498db;
     color: #fff;
     outline: none;
     border: none;
@@ -142,8 +143,8 @@ section .contentBx .formBx .inputBx input[type="submit"]{
     cursor: pointer;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"]:hover{
-    background: #f53677;
+section .contentBx .formBx .inputBx button[type="submit"]:hover{
+    background: #2980b9;
 }
 
 section .contentBx .formBx .remember{
@@ -159,6 +160,10 @@ section .contentBx .formBx .inputBx p{
 
 section .contentBx .formBx .inputBx p a{
     color: #3498db;
+}
+
+section .contentBx .formBx .inputBx p a:hover{
+  color: #2980b9;
 }
 
 section .contentBx .formBx h3{
@@ -182,7 +187,7 @@ section .contentBx .formBx .sci li{
     align-items: center;
     background: #607d8b;
     border-radius: 50%;
-    margin: 0 7px;
+    margin: 0 15px;
     padding: 5px;
     cursor: pointer;
     transition: .3s linear;
@@ -242,7 +247,7 @@ section .contentBx .formBx .sci li i{
 
 <section>
         <div class="imgBx">
-            <img src="img/info-img (3).jpg" alt="">
+            <img src="img/info-img (3).jpg" alt="" class="fondo">
         </div>
         <div class="contentBx">
             <div class="formBx">
@@ -271,7 +276,7 @@ section .contentBx .formBx .sci li i{
                         <p>No tienes una cuenta?<a href="#">Regístrate</a></p>
                     </div>
                 </form>
-                <h3>Iniciar sesión con las redes sociales</h3>
+                <h3>Iniciar con redes sociales</h3>
                 <ul class="sci">
                     <li><i class="fab fa-facebook-f"></i></li>
                     <li><i class="fab fa-twitter"></i></li>
