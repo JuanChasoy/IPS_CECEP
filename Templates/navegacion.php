@@ -38,7 +38,7 @@
             <span>Menu</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-home"></i> Afiliados</a></li> <!--  -->
+            <li><a href="./php/Afiliados/index.php"><i class="fa fa-home"></i> Afiliados</a></li> <!--  -->
             <li><a href="./php/Empleados/index.php"><i class="fab fa-accessible-icon"></i> Empleados</a></li>
             <li><a href="./php/Medicos/index.php"><i class="fa fa-city"></i> Medicos</a></li>
             <li><a href="./php/Servicios/index.php"><i class="fas fa-archway"></i> Servicios</a></li>
