@@ -42,7 +42,7 @@ $(".box-body").on("click","button#actualizar",function(){
               showConfirmButton: false,
               timer: 1500
           }) 
-          $(".box-title").html("Listado de Ciudades");
+          $(".box-title").html("Listado de Servicios");
           $("#editar").html('');
           $("#editar").addClass('hide');
           $("#editar").removeClass('show');
