@@ -67,7 +67,7 @@
 			foreach ($datos as $campo=>$valor):
 				$$campo = $valor;
 			endforeach;
-			$nom_medicamento= utf8_decode($nom_medicamento);
+			$nom_pais= utf8_decode($nom_pais);
 			$this->query = "
 			UPDATE tb_pais
 			SET nom_pais='$nom_pais'

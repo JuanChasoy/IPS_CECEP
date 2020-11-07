@@ -94,9 +94,9 @@
 			$this->query = "
 			UPDATE tb_medicos
 			SET nom_medico='$nom_medico',
+			cedu_medico='$cedu_medico',
 			Especialista='$Especialista',
-			celu_medico='$celu_medico',
-            cedu_medico='$cedu_medico',
+			celu_medico='$celu_medico',           
 			correo_medico='$correo_medico',
 			id_sede='$id_sede'
 			WHERE id_medico = '$id_medico'

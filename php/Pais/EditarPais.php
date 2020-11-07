@@ -26,7 +26,7 @@
 
 					 <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="button" id="actualizar" class="btn btn-primary" data-toggle="tooltip" title="Actualizar medicamento">Actualizar Medicamento</button>
+                            <button type="button" id="actualizar" class="btn btn-primary" data-toggle="tooltip" title="Actualizar Pais">Actualizar Pais</button>
                             <button type="button" id="cerrar" class="btn btn-success btncerrar" data-toggle="tooltip" title="Cancelar">Cancelar</button>
                         </div>
                     </div>

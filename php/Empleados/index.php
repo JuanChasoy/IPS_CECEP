@@ -33,7 +33,9 @@
                 <tr>
 					<th>Código Id</th>
 					<th>Nombre</th>
+          <th>cedula</th>
 					<th>celualar</th>
+          <th>direaccion</th>
 					<th>Correo</th>
 					<th>Sede</th>
 					<th>Eliminar</th>
@@ -45,9 +47,11 @@
                 </tbody>
                 <tfoot>
                 <tr>
-					<th>Código Id</th>
+          <th>Código Id</th>
 					<th>Nombre</th>
+          <th>cedula</th>
 					<th>celualar</th>
+          <th>direaccion</th>
 					<th>Correo</th>
 					<th>Sede</th>
 					<th>Eliminar</th>
