@@ -1,35 +1,73 @@
-<div id="citas">
-<div class="box-header">
-    <i class="ion ion-clipboard"></i>
+<?php include_once ("../../Funciones/sessiones.php"); ?>
+      
+      <h1>
+        Gestión de
+        <small>  Ciudades</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Ciudades</li>
+      </ol>
+    </section>
 
-    <div class="pull-right box-tools">
-    	<button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" title="Nueva Cita"><i aria-hidden="true"></i>Nuevo empleado</button> 
-    	<button class="btn btn-info btn-sm btncerrar"  data-toggle="tooltip" title="Ocultar"><i></i>Salir</button>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+         <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Listado de Ciudades</h3>
+              <div class="box-tools pull-right">
+                  <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
+                      title="Nueva ciudad"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+              </div>
+            </div>
+           
+        
+            <!-- /.box-header -->
+            <div class="box-body">
+            <div id="editar"></div>
+            <div id="listado">
+              <table id="tabla" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Código sevicio</th>
+                  <th>Nombre servicio</th>
+                  <th>disponible en:</th>
+                  <th>Eliminar</th>
+                  <th>Modificar</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Código sevicio</th>
+                  <th>Nombre servicio</th>
+                  <th>disponible en:</th>
+                  <th>Eliminar</th>
+                  <th>Modificar</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  </div>
+  <!-- /.content-wrapper -->
 
-    </div>
-                  
-</div>
-
-<div class="box-body">
-
-	<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-		<thead>
-			<tr>
-			    <th>Id</th>
-				<th>Tipo Servicio</th>
-				<th>Cede</th>
-			</tr>
-		</thead>
-		<tbody>
-		
-		</tbody>
-
-	</table>
-
-		<div id="nuevo-editar" class="hide">
-			
-		</div>
-
-</div> 
+  </div><!-- /.box-body -->  
 	<script src="js/FuncionesServicios.js"></script>
 </div>
+<script>
+    $(document).ready(servicios);
+</script>

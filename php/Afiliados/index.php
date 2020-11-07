@@ -2,11 +2,11 @@
       
       <h1>
         Gestión de
-        <small>  Empleados</small>
+        <small>  Afiliados</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Empleados</li>
+        <li class="active">Afiliados</li>
       </ol>
     </section>
 
@@ -16,10 +16,10 @@
         <div class="col-xs-12">
          <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Listado de Empleados</h3>
+              <h3 class="box-title">Listado de Afiliados</h3>
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
-                      title="Nuevo Empleado"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+                      title="Nuevo afiliado"><i class="fa fa-plus" aria-hidden="true"></i></button> 
               </div>
             </div>
            
@@ -31,12 +31,11 @@
               <table id="tabla" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-					<th>Código Id</th>
-					<th>Nombre</th>
-          <th>cedula</th>
-					<th>celualar</th>
-          <th>direaccion</th>
-					<th>Correo</th>
+                    <th>Código afiliado</th>
+					<th>Nombre </th>
+					<th>Cedula</th>
+                    <th>Celular</th>
+					<th>Tipo afiliacion </th>
 					<th>Sede</th>
 					<th>Eliminar</th>
 					<th>Modificar</th>
@@ -47,12 +46,11 @@
                 </tbody>
                 <tfoot>
                 <tr>
-          <th>Código Id</th>
-					<th>Nombre</th>
-          <th>cedula</th>
-					<th>celualar</th>
-          <th>direaccion</th>
-					<th>Correo</th>
+                    <th>Código afiliado</th>
+					<th>Nombre </th>
+					<th>Cedula</th>
+                    <th>Celular</th>
+					<th>Tipo afiliacion </th>
 					<th>Sede</th>
 					<th>Eliminar</th>
 					<th>Modificar</th>
@@ -74,8 +72,8 @@
   <!-- /.content-wrapper -->
 
   </div><!-- /.box-body -->  
-	<script src="js/FuncionesEmpleados.js"></script>
+	<script src="js/FuncionesAfiliados.js"></script>
 </div>
 <script>
-    $(document).ready(empleados);
+    $(document).ready(afiliados);
 </script>

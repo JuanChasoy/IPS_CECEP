@@ -2,11 +2,11 @@
       
       <h1>
         Gestión de
-        <small>  Medicamentos</small>
+        <small>  Pais</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Medicamentos</li>
+        <li class="active">Pais</li>
       </ol>
     </section>
 
@@ -16,7 +16,7 @@
         <div class="col-xs-12">
          <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Listado de Medicamentos</h3>
+              <h3 class="box-title">Listado de Pais</h3>
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
                       title="Nuevo Empleado"><i class="fa fa-plus" aria-hidden="true"></i></button>

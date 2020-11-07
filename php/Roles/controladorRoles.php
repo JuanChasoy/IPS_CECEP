@@ -1,21 +1,19 @@
 <?php
  
- require_once 'Servicios_Modelo.php';
-
+require_once 'Roles_modelo.php';
 $datos = $_GET;
-
 switch ($_GET['accion']){
     case 'editar':
-        $servicios = new Servicios();
-        $resultado = $servicios->editar($datos);
+        $Roles = new Roles();
+        $resultado = $Roles->editar($datos);
         $respuesta = array(
                 'respuesta' => $resultado
             );
         echo json_encode($respuesta);
         break;
     case 'nuevo':
-        $servicios = new Servicios();
-		$resultado = $servicios->nuevo($datos);
+        $roles = new Roles();
+		$resultado = $roles->nuevo($datos);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'
@@ -28,8 +26,8 @@ switch ($_GET['accion']){
         echo json_encode($respuesta);
         break;
     case 'borrar':
-		$servicios = new Servicios();
-		$resultado = $servicios->borrar($datos['codigo']);
+		$roles = new Roles();
+		$resultado = $roles->borrar($datos['codigo']);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'
@@ -43,28 +41,26 @@ switch ($_GET['accion']){
         break;
 
     case 'consultar':
-        $servicios = new Servicios();
-        $servicios->consultar($datos['codigo']);
+        $roles = new Roles();
+        $roles->consultar($datos['codigo']);
 
-        if($servicios->getId_Servicio() == null) {
+        if($roles->getId_rol() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(
-                'codigo' => $servicios->getId_Servicio(),
-                'servicio' => $servicios->getTipo_servicio(),
-                'sede' =>$servicios->getid_sede(),
+                'codigo' => $roles->getId_rol(),
+                'rol' => $roles->getNom_rol(),
                 'respuesta' =>'existe'
-                
             );
         }
         echo json_encode($respuesta);
         break;
 
     case 'listar':
-        $servicios = new Servicios();
-        $listado = $servicios->lista();
+        $roles = new Roles();
+        $listado = $roles->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
 }

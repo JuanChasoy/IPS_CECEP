@@ -6,7 +6,9 @@ function empleados(){
             "columns": [
                 { "data": "id_empleado"} ,
                 { "data": "nom_empleado" },
+                { "data": "cedu_emplado" },
                 { "data": "celu_empleado" },
+                { "data": "dire_empleado" },
                 { "data": "email_empleado" }, 
                 { "data": "nom_sede" }, 
                 { "data": "id_empleado",

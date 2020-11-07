@@ -1,6 +1,6 @@
 <?php
     require_once("../modeloAbstractoDB.php");
-    class Empleados extends ModeloAbstractoDB {
+    class Servicios extends ModeloAbstractoDB {
         private $id_servicio;
         private $tipo_servicio;
         private $id_sede;
@@ -54,12 +54,12 @@
 				foreach ($datos as $campo=>$valor):
 					$$campo = $valor;
 				endforeach;
-				$nom_empleado= utf8_decode($nom_empleado);
+				$tipo_servicio= utf8_decode($tipo_servicio);
 				$this->query = "
 					INSERT INTO tb_servicio
 					(id_servicio, tipo_servicio, id_sede)
 					VALUES
-					(NULL, '$id_servicio', '$tipo_servicio', '$id_sede')
+					(NULL,'$tipo_servicio', '$id_sede')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;
@@ -70,11 +70,10 @@
 			foreach ($datos as $campo=>$valor):
 				$$campo = $valor;
 			endforeach;
-			$nom_empleado= utf8_decode($nom_empleado);
+			$tipo_servicio= utf8_decode($tipo_servicio);
 			$this->query = "
 			UPDATE tb_servicio
 			SET tipo_servicio='$tipo_servicio',
-			cedu_emplado='$cedu_emplado',
 			id_sede='$id_sede'
 			WHERE id_servicio = '$id_servicio'
 			";

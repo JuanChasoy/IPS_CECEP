@@ -38,9 +38,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="html/afiliados.html">Afiliados</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="html/empleados.html">Empleados</a>
             </li>
             <li class="nav-item">
@@ -56,21 +53,22 @@
               <a class="nav-link" href="html/sedes.html">Sedes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="html/ciudades.html">Ciudades</a>
+              <a class="nav-link" href="">Contactenos</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/paises.html">Paises</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="html/usuarios.html">Usuarios</a>
-            </li>
+
+           
+
+
+            
            
               
             
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          
+           <!--BARRA DE BUSQUEDA <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>-->
+        
+              <a class="btn btn-light" href="../IPS_CECEP/login.php" role="button">Iniciar Sesion</a>
           </form>
         </div>
       </nav>
@@ -148,7 +146,7 @@
       </div>
     </div>
 
-
+    
 
     <footer class="footer" title="footer en progreso...">
       

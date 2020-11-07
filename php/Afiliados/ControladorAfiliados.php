@@ -1,21 +1,19 @@
 <?php
  
- require_once 'Servicios_Modelo.php';
-
+require_once 'Afiliados_Modelo.php';
 $datos = $_GET;
-
 switch ($_GET['accion']){
     case 'editar':
-        $servicios = new Servicios();
-        $resultado = $servicios->editar($datos);
+        $afiliados = new Afiliados();
+        $resultado = $afiliados->editar($datos);
         $respuesta = array(
                 'respuesta' => $resultado
             );
         echo json_encode($respuesta);
         break;
     case 'nuevo':
-        $servicios = new Servicios();
-		$resultado = $servicios->nuevo($datos);
+        $afiliados = new Afiliados();
+		$resultado = $afiliados->nuevo($datos);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'
@@ -28,8 +26,8 @@ switch ($_GET['accion']){
         echo json_encode($respuesta);
         break;
     case 'borrar':
-		$servicios = new Servicios();
-		$resultado = $servicios->borrar($datos['codigo']);
+		$afiliados = new Afiliados();
+		$resultado = $afiliados->borrar($datos['codigo']);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'
@@ -43,28 +41,30 @@ switch ($_GET['accion']){
         break;
 
     case 'consultar':
-        $servicios = new Servicios();
-        $servicios->consultar($datos['codigo']);
+        $afiliados = new Afiliados();
+        $afiliados->consultar($datos['codigo']);
 
-        if($servicios->getId_Servicio() == null) {
+        if($afiliados->getId_afiliado() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(
-                'codigo' => $servicios->getId_Servicio(),
-                'servicio' => $servicios->getTipo_servicio(),
-                'sede' =>$servicios->getid_sede(),
+                'codigo' => $afiliados->getId_afiliado(),
+                'nombre' => $afiliados->getNom_afiliado(),
+                'cedula' =>$afiliados->getCedu_afiliado(),
+                'celular' => $afiliados->getCelu_afiliado(),
+                'tipoAfi' => $afiliados->getTipo_afiliacion(),
+                'sede' =>$afiliados->getId_sede(),
                 'respuesta' =>'existe'
-                
             );
         }
         echo json_encode($respuesta);
         break;
 
     case 'listar':
-        $servicios = new Servicios();
-        $listado = $servicios->lista();
+        $afiliados = new Afiliados();
+        $listado = $afiliados->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
 }

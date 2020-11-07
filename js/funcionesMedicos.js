@@ -1,7 +1,7 @@
 var dt;
 
 function medicos(){
-    $("#tabla").on("click","button#actualizar",function(){
+    $(".box-body").on("click","button#actualizar",function(){
          var datos=$("#fmedicos").serialize();
          $.ajax({
             type:"get",
@@ -17,11 +17,11 @@ function medicos(){
                 )     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Medicos");
-                $("#nuevo-editar").html("");
-                $("#nuevo-editar").removeClass("show");
-                $("#nuevo-editar").addClass("hide");
-                $("#medico").removeClass("hide");
-                $("#medico").addClass("show")
+                $("#editar").html("");
+                $("#editar").removeClass("show");
+                $("#editar").addClass("hide");
+                $("#listado").removeClass("hide");
+                $("#listado").addClass("show")
              } else {
                 swal({
                   type: 'error',
