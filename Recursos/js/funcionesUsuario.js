@@ -17,10 +17,28 @@ function usuario() {
                    
                     location.href = "adminper.php";
                 }
+
                 if(resultado.rol === 'Medicos')
                 {
                     location.href = "medicoper.php";
                 }
+
+                if(resultado.rol === 'Director')
+                {
+                   
+                    location.href = "direcper.php";
+                }
+
+                if(resultado.rol === 'Especialistas')
+                {
+                    location.href = "especiaper.php";
+                }
+
+                if(resultado.rol === 'Asesores')
+                {
+                    location.href = "aseper.php";
+                }
+                
                 
             } else {
                 swal({

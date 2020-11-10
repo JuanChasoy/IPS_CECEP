@@ -34,7 +34,7 @@
                 <img src="./Recursos/img/<?php echo $_SESSION['foto'] ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $_SESSION["nombre"] . "- Docente"; ?>
+                  <?php echo $_SESSION["nombre"]; ?>
                   <small> <?php echo $_SESSION["nombre_rol"]; ?></small>
                 </p>
               </li>
