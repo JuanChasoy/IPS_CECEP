@@ -35,7 +35,7 @@
 
                 <p>
                   <?php echo $_SESSION["nombre"] . "- Docente"; ?>
-                  <small>Administrador</small>
+                  <small> <?php echo $_SESSION["nombre_rol"]; ?></small>
                 </p>
               </li>
               <!-- Menu Body -->

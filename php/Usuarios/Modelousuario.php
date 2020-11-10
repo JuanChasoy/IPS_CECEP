@@ -49,6 +49,10 @@
 		
 		public function getId_rol(){
 			return $this->id_rol;
+		}
+		
+		public function getNom_rol(){
+			return $this->nom_rol;
         }
         
         public function getUsua_pass(){
@@ -66,8 +70,9 @@
 			$usuario = $datos['usuario'];
 			$password = $datos['password'];
             $this->query = "
-            SELECT id_usuario, usua_user, usua_pass, nom_usuario, usua_foto
+            SELECT id_usuario, usua_user, usua_pass, nom_usuario, usua_foto, tb_roles.nom_rol
 			FROM tb_usuarios 
+			INNER JOIN tb_roles on (tb_usuarios.id_rol = tb_roles.id_rol)
 			WHERE usua_user = '$usuario'
 			";
 
@@ -149,4 +154,3 @@
 			//unset($this);
 		}
 	}
-?>
