@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   
+
+    <title>IPS CECEP</title>
+    <style>
+      #header{
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+#header::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to top, rgba(0, 255, 204, 0.2), rgba(0, 204, 255, 0.2));
+    z-index: -1;
+}
+
+#header video{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#header img#logo{
+    width: 240px;
+    height: 260px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#header .navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+header.sticky .navbar{
+    transition: .5s linear;
+    background: #072b79;
+}
+
+#header .navbar a{
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: .3s linear;
+}
+
+
+#header .navbar a:hover{
+    transform: scale(1.2);
+    color: #fff;
+}
+
+#header .navbar button{
+    transition: .3s linear;
+}
+
+.section{
+    width: 100%;
+    height: 100vh;
+}
+
+.slider{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider ul:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.slider ul li{
+    width: 100%;
+    list-style: none;
+}
+
+.slider ul li img{
+    width: 100%;
+    height: 400px;
+}
+
+@keyframes cambio{
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+    75%{margin-left: -300%;}
+    300%{margin-left: -300%;}
+}
+
+.informacion{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(22, 104, 124);
+}
+.swiper-container{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    height: 300px;
+}
+
+.informacion{
+    padding: 30px 0;
+}
+
+.info{
+    margin: 70px 0;
+}
+
+.info .parrafo-info{
+    width: 50%;
+    display: inline-block;
+    text-align: justify;
+    padding: 0 25px;
+}
+
+.info .parrafo-info h3{
+    text-align: center;
+}
+
+.info .image-info{
+    width: 47%;
+    height: auto;
+    display: inline-block;
+    box-shadow: 0 0 10px #00000077;
+}
+
+.contact-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.targeta{
+    position: relative;
+    float: 1;
+    width: 30%;
+    height: 140px;
+    background-color: #fff;
+    margin: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.336);
+}
+
+.icon{
+    font-size: 32px;
+    color: #072b79;
+    transition: .3s linear;
+}
+
+.targeta:hover .icon{
+    transform: scale(4);
+    opacity: 0;
+}
+
+.contenido-targeta h3,
+.contenido-targeta span{
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+}
+
+.contenido-targeta h3{
+    top: 20px;
+    text-transform: uppercase;
+    color: #072b79;
+    font-size: 1.2em;
+}
+
+.contenido-targeta span{
+    bottom: 20px;
+    color: #000;
+    font-weight: 500;
+}
+
+.targeta:hover h3{
+    opacity: 1;
+    top: 46px;
+    transition: .3s linear .3s;
+}
+
+.targeta:hover span{
+    opacity: 1;
+    bottom: 46px;
+    transition: .3s linear .3s;
+}
+
+/*estilos footer en progreso...*/
+.footer{
+    width: 100%;
+    height: 100vh;
+    background-color: #072b79;
+}
+
+@media screen and (max-width:900px){
+    .info{
+        margin: 30px 0;
+    }
+    
+    .info .parrafo-info{
+        display: block;
+        width: 100%;
+    }
+
+    .info .image-info{
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: auto;
+    }
+    
+    .targeta{
+        float: 100%;
+        width: 80%;
+    }
+}
+    </style>
+
+  </head>
+  <body>
+    
+    <div class="text-center"> 
+    
+      <header id="header">
+        <video src="../video/full-video.mp4" autoplay loop muted>
+        </video>
+  
+        
+         
+  
+        <nav class="navbar navbar-expand-lg  navbar-dark">
+          <a class="navbar-brand" href="../index.php">Inicio </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active ">
+                <a class="nav-link" href="../html/afiliados.html">Afiliados    <!--<span class="sr-only">(current)</span> --></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/empleados.html">Empleados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/medicos.html">Medicos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/servicios.html">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/medicamentos.html">Medicamentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/sedes.html">Sedes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/ciudades.html">Ciudades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/paises.html">Paises</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/usuarios.html">Usuarios</a>
+              </li>
+             
+                
+              
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+          </div>
+        </nav>
+      </header>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+  
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans",sans-serif;
+}
+
+body{
+  background: #ccc;
+}
+
+.content-servicios{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.content-servicios .block-servicio{
+  margin: 20px 0;
+}
+
+.content-servicios .block-servicio button.servicio{
+  padding: 20px;
+  margin: 0 20px;
+  border-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+.content-servicios .block-servicio button.servicio span{
+  font-size: 1.5em;
+  transition: .3s linear;
+}
+.content-servicios .block-servicio button.servicio i{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.content-servicios .block-servicio button.servicio:hover{
+  background: cornflowerblue;
+  transform: scale(1.2);
+}
+
+.content-servicios .block-servicio button.servicio:hover i{
+  color: aqua;
+}
+
+.content-servicios .block-servicio button.servicio:hover span{
+  color: aqua;
+}
+</style>
+
+<body>
+    <div class="content-servicios">
+        <div class="block-servicio">
+            <button class="servicio">
+              <i class="fas fa-procedures"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+              <i class="fas fa-user-nurse"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+        </div>
+        <div class="block-servicio">
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+        </div>
+        <div class="block-servicio">
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+            <button class="servicio">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Servicio</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
