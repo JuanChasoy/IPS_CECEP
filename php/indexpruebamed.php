@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<php <!doctype html> 
+<html lang="en"> 
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     <!-- Estilos Inicio CSS-->
-    <link rel="stylesheet" href="css/styleInicio.css">
+    <link rel="stylesheet" href="css/styleInicio.css"> 
 
     <title>IPS CECEP</title>
   </head>
@@ -41,7 +41,7 @@
               <a class="nav-link" href="html/empleados.html">Empleados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="php/indexpruebamed.php">Medicos</a>
+              <a class="nav-link" href="php/Medicos/index.php">Medicos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="html/servicios.html">Servicios</a>
