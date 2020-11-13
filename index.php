@@ -25,6 +25,7 @@
     <header id="header">
       <video src="video/full-video.mp4" autoplay loop muted>
       </video>
+      <h1> Prueba </h1>
 
       <img  src="img/ipslogo.png" id="logo">
        
