@@ -29,10 +29,10 @@ function Header()
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(35, 10, 'Cedula', 1, 0, 'C', 1);
-    $this->Cell(40, 10, 'Correo', 1, 0, 'C', 1);
-    $this->Cell(30, 10, 'Fecha', 1, 1, 'C', 1);
+    $this->Cell(45, 10, 'Nombre', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Cedula', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Correo', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Fecha', 1, 1, 'C', 1);
 }
 
 // Pie de página
@@ -67,10 +67,10 @@ while($row = $resultado->fetch_assoc()){
         $fill = !$fill;
         $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(40, 10, $row['nom_usu_cita'], 1, 0, 'C', 1);
-    $pdf->Cell(35, 10, $row['cedu_usu_cita'], 1, 0, 'C', 1);
-    $pdf->Cell(40, 10, $row['correo_cita'], 1, 0, 'C', 1);
-    $pdf->Cell(30, 10, $row['fecha'], 1, 1, 'C', 1);
+    $pdf->Cell(45, 10, $row['nom_usu_cita'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['cedu_usu_cita'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['correo_cita'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['fecha'], 1, 1, 'C', 1);
     
 }
 

@@ -29,10 +29,10 @@ function Header()
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(35, 10, 'Cedula', 1, 0, 'C', 1);
-    $this->Cell(30, 10, 'Celular', 1, 0, 'C', 1);
-    $this->Cell(50, 10, 'Tipo Afiliacion', 1, 1, 'C', 1);
+    $this->Cell(45, 10, 'Nombre', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Cedula', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Celular', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Tipo Afiliacion', 1, 1, 'C', 1);
 }
 
 // Pie de página
