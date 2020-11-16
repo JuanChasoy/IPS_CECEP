@@ -30,8 +30,8 @@ function Header()
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
     $this->Cell(60, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(40, 10, 'Direccion', 1, 0, 'C', 1);
-    $this->Cell(40, 10, 'Telefono', 1, 1, 'C', 1);
+    $this->Cell(60, 10, 'Direccion', 1, 0, 'C', 1);
+    $this->Cell(60, 10, 'Telefono', 1, 1, 'C', 1);
 
 }
 
@@ -68,8 +68,8 @@ while($row = $resultado->fetch_assoc()){
         $pdf->SetFillColor(76, 89, 92);
     }
     $pdf->Cell(60, 10, $row['nom_sede'], 1, 0, 'C', 1);
-    $pdf->Cell(40, 10, $row['direc_sede'], 1, 0, 'C', 1);
-    $pdf->Cell(40, 10, $row['tele_sede'], 1, 1, 'C', 1);  
+    $pdf->Cell(60, 10, $row['direc_sede'], 1, 0, 'C', 1);
+    $pdf->Cell(60, 10, $row['tele_sede'], 1, 1, 'C', 1);  
 }
 
 $pdf->Output();
