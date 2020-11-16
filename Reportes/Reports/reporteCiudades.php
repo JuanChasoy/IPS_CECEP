@@ -1,7 +1,8 @@
 <?php
+
 require('../fpdf.php');
 require('../conexion.php');
-//require('../php/Empleados/Empleado_Modelo.php');
+
 
 class PDF extends FPDF
 {
@@ -16,7 +17,7 @@ function Header()
     $this->Cell(60);
     // Título
     $this->SetTextColor(16,87,97);
-    $this->Cell(70,15,'Reporte de Medicos',0,0,'C');
+    $this->Cell(70,15,'Reporte de Ciudades',0,0,'C');
     $this->SetDrawColor(61,174,233);
     $this->SetLineWidth(2);
     $this->Line(60, $this->GetY() + 15, 150, $this->GetY() + 15);
@@ -25,15 +26,14 @@ function Header()
 
     // Encabezados de tablas
     $this->SetTextColor(255, 255, 255);
-    $this->SetFillColor(22, 171, 236);
+    $this->SetFillColor(107, 214, 235 );
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(35, 10, 'Celular', 1, 0, 'C', 1);
-    $this->Cell(40, 10, 'Especialista', 1, 0, 'C', 1);
-    $this->Cell(30, 10, 'Cedula', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Correo', 1, 1, 'C', 1);
+    $this->Cell(50, 10, 'Id_Ciudad', 1, 0, 'C', 1);
+    $this->Cell(50, 10, 'Ciudad', 1, 0, 'C', 1);
+    $this->Cell(50, 10, 'Pais', 1, 0, 'C', 1);
+    $this->Ln();
 }
 
 // Pie de página
@@ -50,8 +50,8 @@ function Footer()
 }
 }
 
-
-$consulta = "SELECT * FROM tb_medicos";
+#$consulta = "SELECT nom_pais FROM tb_pais";
+$consulta = "SELECT * FROM tb_ciudades";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
@@ -63,17 +63,16 @@ $fill = false;
 while($row = $resultado->fetch_assoc()){
     if($fill){
         $fill = !$fill;
-        $pdf->SetFillColor(203, 236, 245);
+        $pdf->SetFillColor(224,235,255);
     }else{
         $fill = !$fill;
-        $pdf->SetFillColor(76, 89, 92);
+        $pdf->SetFillColor(255, 255, 255);
     }
-    $pdf->Cell(40, 10, $row['nom_medico'], 1, 0, 'C', 1);
-    $pdf->Cell(35, 10, $row['celu_medico'], 1, 0, 'C', 1);
-    $pdf->Cell(40, 10, $row['Especialista'], 1, 0, 'C', 1);
-    $pdf->Cell(30, 10, $row['cedu_medico'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['correo_medico'], 1, 1, 'C', 1);
-
+    $pdf->Cell(50, 10, $row['id_ciudad'], 1, 0, 'C', 1);
+    $pdf->Cell(50, 10, $row['nom_ciudad'], 1, 0, 'C', 1);
+    $pdf->Cell(50, 10, $row['id_pais'], 1, 0, 'C', 1);
+    $pdf->Ln();
+    
 }
 
 $pdf->Output();

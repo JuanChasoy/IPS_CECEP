@@ -45,7 +45,7 @@ function Footer()
     $this->SetTextColor(255,255,225);
     $this->SetFillColor(12, 143, 200);
     // Número de página    
-    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C', 1);
+    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'-{nb}',0,0,'C', 1);
 }
 }
 
