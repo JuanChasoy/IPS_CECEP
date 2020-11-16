@@ -1,6 +1,6 @@
 <?php
 	include 'Plantilla.php';
-	require 'conexionPDF.php';
+	require 'conexion.php';
 	
     $consulta = $mysqli->query("SELECT * FROM tb_empleados");
 	
