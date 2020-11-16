@@ -45,7 +45,7 @@ function Footer()
     $this->SetTextColor(255,255,225);
     $this->SetFillColor(12, 143, 200);
     // Número de página    
-    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C', 1);
+    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'-{nb}',0,0,'C', 1);
 }
 }
 
@@ -67,10 +67,10 @@ while($row = $resultado->fetch_assoc()){
         $fill = !$fill;
         $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(40, 10, $row['nom_afiliado'], 1, 0, 'C', 1);
-    $pdf->Cell(35, 10, $row['cedu_afiliado'], 1, 0, 'C', 1);
-    $pdf->Cell(30, 10, $row['celu_afiliado'], 1, 0, 'C', 1);
-    $pdf->Cell(50, 10, $row['tipo_afiliacion'], 1, 1, 'C', 1);
+    $pdf->Cell(45, 10, $row['nom_afiliado'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['cedu_afiliado'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['celu_afiliado'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['tipo_afiliacion'], 1, 1, 'C', 1);
     
 }
 
