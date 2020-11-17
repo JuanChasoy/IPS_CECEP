@@ -20,6 +20,7 @@
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
                       title="Nuevo Rol"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                      <a href="./reportes/Reports/reporteRoles.php" class="btn btn-info">reportes</a>
               </div>
             </div>
            
