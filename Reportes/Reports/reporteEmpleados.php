@@ -30,11 +30,12 @@ function Header()
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(35, 10, 'Cedula', 1, 0, 'C', 1);
-    $this->Cell(30, 10, 'Celular', 1, 0, 'C', 1);
-    $this->Cell(30, 10, 'Direccion', 1, 0, 'C', 1);
-    $this->Cell(55, 10, 'Email', 1, 1, 'C', 1);
+    $this->Cell(35, 10, 'Nombre', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Cedula', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Celular', 1, 0, 'C', 1);
+    $this->Cell(27, 10, 'Direccion', 1, 0, 'C', 1);
+    $this->Cell(45, 10, 'Email', 1, 0, 'C', 1);
+    $this->Cell(35, 10, 'Sede', 1, 1, 'C', 1);
 }
 
 // Pie de página
@@ -47,13 +48,17 @@ function Footer()
     $this->SetTextColor(255,255,225);
     $this->SetFillColor(12, 143, 200);
     // Número de página    
-    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'-{nb}',0,0,'C', 1);
+    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C', 1);
 }
 }
 
-
-$consulta = "SELECT * FROM tb_empleados";
+//$consulta = "SELECT * FROM tb_empleados";
+$consulta = "SELECT nom_empleado, cedu_emplado, celu_empleado, dire_empleado, email_empleado, s.nom_sede
+            FROM tb_empleados AS e
+            INNER JOIN tb_sedes AS s
+            ON (e.id_sede = s.id_sede)";
 $resultado = $mysqli->query($consulta);
+
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -69,11 +74,12 @@ while($row = $resultado->fetch_assoc()){
         $fill = !$fill;
         $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(40, 10, $row['nom_empleado'], 1, 0, 'C', 1);
-    $pdf->Cell(35, 10, $row['cedu_emplado'], 1, 0, 'C', 1);
-    $pdf->Cell(30, 10, $row['celu_empleado'], 1, 0, 'C', 1);
-    $pdf->Cell(30, 10, $row['dire_empleado'], 1, 0, 'C', 1);
-    $pdf->Cell(55, 10, $row['email_empleado'], 1, 1, 'C', 1);
+    $pdf->Cell(35, 10, $row['nom_empleado'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['cedu_emplado'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['celu_empleado'], 1, 0, 'C', 1);
+    $pdf->Cell(27, 10, $row['dire_empleado'], 1, 0, 'C', 1);
+    $pdf->Cell(45, 10, $row['email_empleado'], 1, 0, 'C', 1);
+    $pdf->Cell(35, 10, $row['nom_sede'], 1, 1, 'C', 1);
     
 }
 
