@@ -20,6 +20,7 @@
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
                       title="Nuevo afiliado"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+                      <a href="./reportes/Reports/reporteAfiliados.php" class="btn btn-info">reportes</a>
               </div>
             </div>
            
