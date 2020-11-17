@@ -29,9 +29,9 @@ function Header()
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(45, 10, 'Id_Serivicio', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Tipo', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Sede', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Id', 1, 0, 'C', 1);
+    $this->Cell(80, 10, 'Tipo', 1, 0, 'C', 1);
+    $this->Cell(80, 10, 'Sede', 1, 0, 'C', 1);
     $this->Ln();
    
 }
@@ -53,7 +53,11 @@ function Footer()
 }
 
 
-$consulta = "SELECT * FROM tb_servicio";
+//$consulta = "SELECT * FROM tb_servicio";
+$consulta = "SELECT id_servicio, tipo_servicio, sd.nom_sede
+            FROM tb_servicio AS sv
+            INNER JOIN tb_sedes AS sd
+            ON (sv.id_sede = sd.id_sede)";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
@@ -70,9 +74,9 @@ while($row = $resultado->fetch_assoc()){
         $fill = !$fill;
         $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(45, 10, $row['id_servicio'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['tipo_servicio'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['id_sede'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['id_servicio'], 1, 0, 'C', 1);
+    $pdf->Cell(80, 10, $row['tipo_servicio'], 1, 0, 'C', 1);
+    $pdf->Cell(80, 10, $row['nom_sede'], 1, 0, 'C', 1);
     $pdf->Ln();
    
     
