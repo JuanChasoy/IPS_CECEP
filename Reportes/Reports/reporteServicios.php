@@ -32,6 +32,7 @@ function Header()
     $this->Cell(45, 10, 'Id_Serivicio', 1, 0, 'C', 1);
     $this->Cell(45, 10, 'Tipo', 1, 0, 'C', 1);
     $this->Cell(45, 10, 'Sede', 1, 0, 'C', 1);
+    $this->Ln();
    
 }
 
@@ -72,6 +73,7 @@ while($row = $resultado->fetch_assoc()){
     $pdf->Cell(45, 10, $row['id_servicio'], 1, 0, 'C', 1);
     $pdf->Cell(45, 10, $row['tipo_servicio'], 1, 0, 'C', 1);
     $pdf->Cell(45, 10, $row['id_sede'], 1, 0, 'C', 1);
+    $pdf->Ln();
    
     
 }
