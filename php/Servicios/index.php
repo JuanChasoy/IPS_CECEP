@@ -20,6 +20,7 @@
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
                       title="Nueva ciudad"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+                      <a href="./reportes/Reports/reporteServicios.php" class="btn btn-info">reportes</a>
               </div>
             </div>
            
