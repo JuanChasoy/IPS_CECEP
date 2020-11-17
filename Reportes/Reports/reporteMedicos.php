@@ -29,11 +29,12 @@ function Header()
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(40, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(35, 10, 'Celular', 1, 0, 'C', 1);
+    $this->Cell(30, 10, 'Nombre', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Celular', 1, 0, 'C', 1);
     $this->Cell(40, 10, 'Especialista', 1, 0, 'C', 1);
     $this->Cell(30, 10, 'Cedula', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Correo', 1, 1, 'C', 1);
+    $this->Cell(35, 10, 'Correo', 1, 0, 'C', 1);
+    $this->Cell(30, 10, 'Sede', 1, 1, 'C', 1);
 }
 
 // Pie de página
@@ -51,8 +52,13 @@ function Footer()
 }
 
 
-$consulta = "SELECT * FROM tb_medicos";
+//$consulta = "SELECT * FROM tb_medicos";
+$consulta = "SELECT nom_medico, celu_medico, Especialista, cedu_medico, correo_medico, s.nom_sede 
+            FROM tb_medicos AS m
+            INNER JOIN tb_sedes AS s
+            ON (m.id_sede = s.id_sede)";
 $resultado = $mysqli->query($consulta);
+
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -68,11 +74,12 @@ while($row = $resultado->fetch_assoc()){
         $fill = !$fill;
         $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(40, 10, $row['nom_medico'], 1, 0, 'C', 1);
-    $pdf->Cell(35, 10, $row['celu_medico'], 1, 0, 'C', 1);
+    $pdf->Cell(30, 10, $row['nom_medico'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['celu_medico'], 1, 0, 'C', 1);
     $pdf->Cell(40, 10, $row['Especialista'], 1, 0, 'C', 1);
     $pdf->Cell(30, 10, $row['cedu_medico'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['correo_medico'], 1, 1, 'C', 1);
+    $pdf->Cell(35, 10, $row['correo_medico'], 1, 0, 'C', 1);
+    $pdf->Cell(30, 10, $row['nom_sede'], 1, 1, 'C', 1);
 
 }
 
