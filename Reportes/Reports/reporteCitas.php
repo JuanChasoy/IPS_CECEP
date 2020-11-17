@@ -29,10 +29,13 @@ function Header()
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(45, 10, 'Nombre', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Cedula', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Correo', 1, 0, 'C', 1);
-    $this->Cell(45, 10, 'Fecha', 1, 1, 'C', 1);
+    $this->Cell(25, 10, 'Nombre', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Cedula', 1, 0, 'C', 1);
+    $this->Cell(35, 10, 'Correo', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Sede', 1, 0, 'C', 1);
+    $this->Cell(35, 10, 'Servicio', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Medico', 1, 0, 'C', 1);
+    $this->Cell(25, 10, 'Fecha', 1, 1, 'C', 1);
 }
 
 // Pie de página
@@ -46,13 +49,19 @@ function Footer()
     $this->SetTextColor(255,255,225);
     $this->SetFillColor(12, 143, 200);
     // Número de página    
-    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'-{nb}',0,0,'C', 1);
+    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C', 1);
     
 }
 }
 
 
-$consulta = "SELECT * FROM tb_citas";
+//$consulta = "SELECT * FROM tb_citas";
+$consulta = "SELECT nom_usu_cita, cedu_usu_cita, correo_cita, sd.nom_sede, sv.tipo_servicio, m.nom_medico, fecha
+            FROM tb_citas AS c
+            INNER JOIN tb_sedes AS sd ON(c.id_sede = sd.id_sede)
+            INNER JOIN tb_servicio AS sv ON(c.id_servicio = sv.id_servicio)
+            INNER JOIN tb_medicos AS m ON(c.id_medico = m.id_medico)
+            ";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
@@ -69,10 +78,13 @@ while($row = $resultado->fetch_assoc()){
         $fill = !$fill;
         $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(45, 10, $row['nom_usu_cita'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['cedu_usu_cita'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['correo_cita'], 1, 0, 'C', 1);
-    $pdf->Cell(45, 10, $row['fecha'], 1, 1, 'C', 1);
+    $pdf->Cell(25, 10, $row['nom_usu_cita'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['cedu_usu_cita'], 1, 0, 'C', 1);
+    $pdf->Cell(35, 10, $row['correo_cita'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['nom_sede'], 1, 0, 'C', 1);
+    $pdf->Cell(35, 10, $row['tipo_servicio'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['nom_medico'], 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, $row['fecha'], 1, 1, 'C', 1);
     
 }
 
