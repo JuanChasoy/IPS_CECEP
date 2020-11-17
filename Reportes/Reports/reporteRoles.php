@@ -26,12 +26,12 @@ function Header()
 
     // Encabezados de tablas
     $this->SetTextColor(255, 255, 255);
-    $this->SetFillColor(107, 214, 235 );
+    $this->SetFillColor(22, 171, 236);
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(50, 10, 'Id_Rol', 1, 0, 'C', 1);
-    $this->Cell(50, 10, 'Roles', 1, 0, 'C', 1);
+    $this->Cell(35, 10, 'Id', 1, 0, 'C', 1);
+    $this->Cell(150, 10, 'Roles', 1, 0, 'C', 1);
     $this->Ln();
 }
 
@@ -62,13 +62,13 @@ $fill = false;
 while($row = $resultado->fetch_assoc()){
     if($fill){
         $fill = !$fill;
-        $pdf->SetFillColor(224,235,255);
+        $pdf->SetFillColor(203, 236, 245);
     }else{
         $fill = !$fill;
-        $pdf->SetFillColor(255, 255, 255);
+        $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(50, 10, $row['id_rol'], 1, 0, 'C', 1);
-    $pdf->Cell(50, 10, $row['nom_rol'], 1, 0, 'C', 1);
+    $pdf->Cell(35, 10, $row['id_rol'], 1, 0, 'C', 1);
+    $pdf->Cell(150, 10, $row['nom_rol'], 1, 0, 'C', 1);
     $pdf->Ln();
     
 }
