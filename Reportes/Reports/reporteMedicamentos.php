@@ -26,12 +26,12 @@ function Header()
 
     // Encabezados de tablas
     $this->SetTextColor(255, 255, 255);
-    $this->SetFillColor(107, 214, 235 );
+    $this->SetFillColor(22, 171, 236);
     $this->SetFontSize(15);
     $this->SetDrawColor(0);
     $this->SetLineWidth(0);
-    $this->Cell(50, 10, 'Id_Medicamento', 1, 0, 'C', 1);
-    $this->Cell(50, 10, 'Nombre', 1, 0, 'C', 1);
+    $this->Cell(30, 10, 'Id', 1, 0, 'C', 1);
+    $this->Cell(150, 10, 'Nombre', 1, 0, 'C', 1);
 
     $this->Ln();
 }
@@ -46,7 +46,7 @@ function Footer()
     $this->SetTextColor(255,255,225);
     $this->SetFillColor(12, 143, 200);
     // Número de página    
-    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'-{nb}',0,0,'C', 1);
+    $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C', 1);
 }
 }
 
@@ -63,13 +63,13 @@ $fill = false;
 while($row = $resultado->fetch_assoc()){
     if($fill){
         $fill = !$fill;
-        $pdf->SetFillColor(224,235,255);
+        $pdf->SetFillColor(203, 236, 245);
     }else{
         $fill = !$fill;
-        $pdf->SetFillColor(255, 255, 255);
+        $pdf->SetFillColor(76, 89, 92);
     }
-    $pdf->Cell(50, 10, $row['id_medicamento'], 1, 0, 'C', 1);
-    $pdf->Cell(50, 10, $row['nom_medicamento'], 1, 0, 'C', 1);
+    $pdf->Cell(30, 10, $row['id_medicamento'], 1, 0, 'C', 1);
+    $pdf->Cell(150, 10, $row['nom_medicamento'], 1, 0, 'C', 1);
     $pdf->Ln();
     
 }
