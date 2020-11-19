@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2020 a las 19:21:24
+-- Tiempo de generación: 19-11-2020 a las 18:56:21
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.2.30
 
@@ -45,7 +45,9 @@ INSERT INTO `tb_afiliados` (`id_afiliado`, `nom_afiliado`, `cedu_afiliado`, `cel
 (2, 'Marcos antonio', 998213, 312456785, 'traslado eps', 1),
 (3, 'Diana lorena', 111213, 3143485, 'nueva', 1),
 (4, 'oscar fernando', 992223, 3127755, 'traslado eps', 2),
-(5, 'antonio felix', 224613, 3321285, 'traslado eps', 1);
+(5, 'antonio felix castro', 224600, 3321285, 'traslado eps', 3),
+(6, 'deivy rivas', 52431526, 1231243, 'nuevo ', 4),
+(7, 'ana ruiz', 12341431, 324231342, 'nuevo ', 4);
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,8 @@ CREATE TABLE `tb_citas` (
 INSERT INTO `tb_citas` (`id_cita`, `nom_usu_cita`, `cedu_usu_cita`, `correo_cita`, `id_sede`, `id_servicio`, `id_medico`, `fecha`) VALUES
 (2, 'pepito ', 231432, 'pepo@gmail.com', 2, 5, 1, '2020-11-04'),
 (8, 'paco', 653426, 'paco@gmail.com', 1, 5, 1, '2020-11-20'),
-(9, 'deivy rivas', 112344379, 'rivas@hotmail.com', 2, 8, 3, '2020-11-13');
+(9, 'deivy rivas', 112344379, 'rivas@hotmail.com', 4, 8, 3, '2020-11-18'),
+(11, 'ana luz milena', 132469, 'milenita@hotmail.com', 3, 8, 3, '2020-11-20');
 
 -- --------------------------------------------------------
 
@@ -116,13 +119,13 @@ CREATE TABLE `tb_empleados` (
 --
 
 INSERT INTO `tb_empleados` (`id_empleado`, `nom_empleado`, `cedu_emplado`, `celu_empleado`, `dire_empleado`, `email_empleado`, `id_sede`) VALUES
-(2, 'arley ', 96764444, 140000, '', 'asprillarivas@gmail.com', 3),
-(4, 'Deivy Rivas Steven ', 1143997886, 313765146, '', 'deyruiz555qgmail.com', 3),
-(6, 'paulina Roa', 55426754, 32352823, '', 'pau@hotmail.com', 6),
-(7, 'Yeferson  rios', 6345223, 31076347, '', 'yeriru@gmail.com', 6),
+(2, 'arley ', 96764444, 140000, 'cra 44 a # 65 - 09', 'asprillarivas@gmail.com', 5),
+(4, 'Deivy Rivas Steven ', 1143997886, 313765146, 'avenida 8 ', 'deyruiz555qgmail.com', 3),
+(6, 'paulina Roa', 55426754, 32352823, 'calle 9', 'pau@hotmail.com', 6),
+(7, 'Yeferson  rios', 6345223, 31076347, 'calle 1 # 45 - 09', 'yeriru@gmail.com', 6),
 (8, 'pedro', 1113123, 11245, 'calle 6 - 54N', 'pedrito@gmail.com', 1),
-(12, 'deivy ruiz', 1143997888, 313765146, '', 'deyruiz555qgmail.com', 3),
-(13, 'pedroo', 2323232, 453412, '', 'pedrito@gmail.com', 5),
+(12, 'deivy ruiz', 1143997888, 313765146, 'cra 32 # 24 - 34', 'deyruiz555qgmail.com', 3),
+(13, 'pedroo', 2323232, 453412, 'calle 9 # 54 - 66', 'pedrito@gmail.com', 5),
 (16, 'mauricio', 2345212, 31397463, 'cra 2 # 4 -0', 'mau@gmail.co', 5),
 (17, 'pepito peres', 11111111, 986345, 'ave 32 # 21- 76', 'pepo@hotmail.com', 5),
 (18, 'alberto', 6537524, 31298356, 'cra 5 - 4', 'alber@gmail.com.co', 6),
@@ -145,7 +148,7 @@ CREATE TABLE `tb_medicamentos` (
 
 INSERT INTO `tb_medicamentos` (`id_medicamento`, `nom_medicamento`) VALUES
 (1, 'Acetaminofen'),
-(2, 'Dolex'),
+(2, 'Dolexx'),
 (3, 'Asitromicina'),
 (4, 'Lebofloxacina'),
 (5, 'Noxpirin'),
@@ -200,10 +203,8 @@ INSERT INTO `tb_pais` (`id_pais`, `nom_pais`) VALUES
 (2, 'Argentina'),
 (5, 'Brasil'),
 (6, 'Paraguay'),
-(7, 'Peru'),
 (8, 'Uruguay'),
-(9, 'Honduras'),
-(11, 'Holanda');
+(9, 'Honduras');
 
 -- --------------------------------------------------------
 
@@ -306,7 +307,8 @@ CREATE TABLE `tb_usuarios` (
 INSERT INTO `tb_usuarios` (`id_usuario`, `nom_usuario`, `cedu_usuario`, `usua_user`, `celu_usuario`, `correo_usuario`, `id_sede`, `id_rol`, `usua_pass`, `usua_foto`) VALUES
 (4, 'Deivi Steven Rivas Rivas', 223451, 'deivy', 53453424, 'Drivas@gmail.com.co', 1, 1, '$2y$12$xyMXafB//kPIBlb6kBjUUe9ojYPpLgWT.uKEFdRMDfEzp7YffmmvW', 'deivy.jpg'),
 (7, 'Pedro Bustamante Arqueo', 5562543, 'pedro', 31245673, 'Pedro@otro.com.co', 2, 3, '$2y$12$c0SuyCU6hdqKMf7RcW/ya.u0JfVRNcY8M10L7Thb2yvn0DaQT5w/a', 'avatar.png'),
-(8, 'pepa pina peres', 223312, 'pepa', 3217465, 'pepa@gmail.com', 2, 2, '$2y$12$Ubr7V9MdvGbGXtMZOgR48uTnnEEQX.ewieAw239W4UEgrVNftuq16', 'user2-160x160');
+(8, 'pepa pina peres', 223312, 'pepa', 3217465, 'pepa@gmail.com', 2, 2, '$2y$12$FINli3nvtX02o1nrixPpJOh9InzXNSaYMeV3zCGd.Rp2XSLPGweEa', 'avatar04.png'),
+(9, 'Antony anuel torres', 2542524, 'antony', 4232525, 'anto@gmail.com', 1, 5, '$2y$12$z4E2K2boJbpDTpbZ7jyW2u87Bag7Lfa1Z5Z7uFYUcejY0FCaaJgZy', 'user2-160x160.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -397,67 +399,67 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de la tabla `tb_afiliados`
 --
 ALTER TABLE `tb_afiliados`
-  MODIFY `id_afiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_afiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_citas`
 --
 ALTER TABLE `tb_citas`
-  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_ciudades`
 --
 ALTER TABLE `tb_ciudades`
-  MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_empleados`
 --
 ALTER TABLE `tb_empleados`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_medicamentos`
 --
 ALTER TABLE `tb_medicamentos`
-  MODIFY `id_medicamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_medicamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_medicos`
 --
 ALTER TABLE `tb_medicos`
-  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_pais`
 --
 ALTER TABLE `tb_pais`
-  MODIFY `id_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_roles`
 --
 ALTER TABLE `tb_roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_sedes`
 --
 ALTER TABLE `tb_sedes`
-  MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_servicio`
 --
 ALTER TABLE `tb_servicio`
-  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
