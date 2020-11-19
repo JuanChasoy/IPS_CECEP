@@ -56,7 +56,7 @@ function Footer()
 $consulta = "SELECT nom_empleado, cedu_emplado, celu_empleado, dire_empleado, email_empleado, s.nom_sede
             FROM tb_empleados AS e
             INNER JOIN tb_sedes AS s
-            ON (e.id_sede = s.id_sede)";
+            ON (e.id_sede = s.id_sede) ORDER BY id_empleado";
 $resultado = $mysqli->query($consulta);
 
 // Creación del objeto de la clase heredada

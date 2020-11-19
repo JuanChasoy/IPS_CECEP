@@ -50,7 +50,7 @@ function Footer()
 }
 
 
-$consulta = "SELECT * FROM tb_sedes";
+$consulta = "SELECT * FROM tb_sedes ORDER BY id_sede";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();

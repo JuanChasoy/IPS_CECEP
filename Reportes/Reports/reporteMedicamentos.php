@@ -51,7 +51,7 @@ function Footer()
 }
 
 #$consulta = "SELECT nom_pais FROM tb_pais";
-$consulta = "SELECT * FROM tb_medicamentos";
+$consulta = "SELECT * FROM tb_medicamentos ORDER BY id_medicamento";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();

@@ -57,7 +57,7 @@ function Footer()
 $consulta = "SELECT id_servicio, tipo_servicio, sd.nom_sede
             FROM tb_servicio AS sv
             INNER JOIN tb_sedes AS sd
-            ON (sv.id_sede = sd.id_sede)";
+            ON (sv.id_sede = sd.id_sede) ORDER BY id_servicio";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();

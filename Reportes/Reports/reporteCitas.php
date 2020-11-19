@@ -60,8 +60,7 @@ $consulta = "SELECT nom_usu_cita, cedu_usu_cita, correo_cita, sd.nom_sede, sv.ti
             FROM tb_citas AS c
             INNER JOIN tb_sedes AS sd ON(c.id_sede = sd.id_sede)
             INNER JOIN tb_servicio AS sv ON(c.id_servicio = sv.id_servicio)
-            INNER JOIN tb_medicos AS m ON(c.id_medico = m.id_medico)
-            ";
+            INNER JOIN tb_medicos AS m ON(c.id_medico = m.id_medico) ORDER BY id_cita";
 $resultado = $mysqli->query($consulta);
 // Creación del objeto de la clase heredada
 $pdf = new PDF();

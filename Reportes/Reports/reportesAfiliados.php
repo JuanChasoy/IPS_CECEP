@@ -16,7 +16,7 @@ function Header()
     $this->Cell(60);
     // Título
     $this->SetTextColor(16,87,97);
-    $this->Cell(70,15,'Reporte de Empleados',0,0,'C');
+    $this->Cell(70,15,'Reporte de Afiliados',0,0,'C');
     $this->SetDrawColor(61,174,233);
     $this->SetLineWidth(2);
     $this->Line(60, $this->GetY() + 15, 150, $this->GetY() + 15);
