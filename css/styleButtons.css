@@ -1,0 +1,16 @@
+.btn-report{
+    margin-left: 20px;
+    padding: 5px 10px;
+    background: #01168b;
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid #01168b;
+    transition: .3s linear;
+}
+
+.btn-report:hover{
+    color: #01168b;
+    background: none;
+    border-color: #01168b;
+}
