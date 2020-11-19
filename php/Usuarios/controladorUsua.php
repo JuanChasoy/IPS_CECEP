@@ -26,8 +26,8 @@ switch ($_GET['accion']){
         echo json_encode($respuesta);
         break;
     case 'borrar':
-		$pais = new Pais();
-		$resultado = $pais->borrar($datos['codigo']);
+		$usuario = new Usuario();
+		$resultado = $usuario->borrar($datos['codigo']);
         if($resultado > 0) {
             $respuesta = array(
                 'respuesta' => 'correcto'

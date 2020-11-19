@@ -141,10 +141,10 @@
 			return $resultado;
 		}
 		
-		public function borrar($comu_codi='') {
+		public function borrar($id_usuario='') {
 			$this->query = "
-			DELETE FROM tb_comuna
-			WHERE comu_codi = '$comu_codi'
+			DELETE FROM tb_usuarios
+			WHERE id_usuario = '$id_usuario'
 			";
 			$resultado = $this->ejecutar_query_simple();
 
