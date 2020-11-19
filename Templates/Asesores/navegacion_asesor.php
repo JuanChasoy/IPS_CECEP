@@ -39,11 +39,10 @@
           </a>
           <ul class="treeview-menu">
            
-          <li><a href="./php/Servicios/index.php"><i class="fas fa-archway"></i> Servicios</a></li>
-            <li><a href="./php/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>
-            <li><a href="./php/Sedes/index.php"><i class="fas fa-users"></i> Sedes</a></li>
-            
-            
+            <li><a href="./php/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>            
+            <li><a href="./php/Afiliados/index.php"><i class="fab fa-accessible-icon"></i> Afiliados</a></li>
+            <li><a href="./php/Citas/index.php"><i class="fab fa-accessible-icon"></i> Citas</a></li>
+            <li><a href="./php/Usuarios/index.php"><i class="fab fa-accessible-icon"></i> Usuarios</a></li>
           </ul>
         </li>
        

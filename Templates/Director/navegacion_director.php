@@ -40,14 +40,9 @@
           <ul class="treeview-menu">
            
             <li><a href="./php/Medicos/index.php"><i class="fa fa-city"></i> Medicos</a></li>
-            <li><a href="./php/Afiliados/index.php"><i class="fa fa-home"></i> Afiliados</a></li> <!--  -->
             <li><a href="./php/Empleados/index.php"><i class="fab fa-accessible-icon"></i> Empleados</a></li>
-            <li><a href="./php/Sedes/index.php"><i class="fas fa-users"></i> Sedes</a></li>
-            <li><a href="./php/Ciudades/index.php"><i class="fa fa-city"></i> Ciudades</a></li>
-            <li><a href="./php/Pais/index.php"><i class="fas fa-archway"></i> Paises</a></li>
-            
-            
-            
+            <li><a href="./php/Roles/index.php"><i class="fab fa-accessible-icon"></i> Roles</a></li>
+            <li><a href="./php/Servicios/index.php"><i class="fab fa-accessible-icon"></i> Servicios</a></li>
           </ul>
         </li>
        

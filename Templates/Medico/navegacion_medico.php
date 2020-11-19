@@ -40,12 +40,9 @@
           <ul class="treeview-menu">
            
             <li><a href="./php/Medicos/index.php"><i class="fa fa-city"></i> Medicos</a></li>
-            <li><a href="./php/Servicios/index.php"><i class="fas fa-archway"></i> Servicios</a></li>
-            <li><a href="./php/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>
-            <li><a href="./php/Sedes/index.php"><i class="fas fa-users"></i> Sedes</a></li>
-            
             <li><a href="./php/Citas/index.php"><i class="fas fa-users"></i> Citas</a></li>
-            
+            <li><a href="./php/Roles/index.php"><i class="fab fa-accessible-icon"></i> Roles</a></li>
+
           </ul>
         </li>
        
