@@ -31,13 +31,10 @@
               <table id="tabla" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-					<th>Id Medico</th>
+					<th>Id </th>
+          <th>Usuario</th>
           <th>Nombre</th>
-          <th>Especialista</th>
-          <th>Celular</th>
-          <th>Cedula</th>
-					<th>Correo</th>
-					<th>Sede</th>
+          <th>Rol</th>
 					<th>Eliminar</th>
 					<th>Modificar</th>
                 </tr>
@@ -47,13 +44,10 @@
                 </tbody>
                 <tfoot>
                 <tr>
-          <th>Id Medico</th>
+                <th>Id </th>
+          <th>Usuario</th>
           <th>Nombre</th>
-          <th>Especialista</th>
-          <th>Celular</th>
-          <th>Cedula</th>
-					<th>Correo</th>
-					<th>Sede</th>
+          <th>Rol</th>
 					<th>Eliminar</th>
 					<th>Modificar</th>
                 </tr>
@@ -74,8 +68,8 @@
   <!-- /.content-wrapper -->
 
   </div><!-- /.box-body -->  
-	<script src="js/funcionesMedicos.js"></script>
+	<script src="js/funcionusuarios.js"></script>
 </div>
 <script>
-    $(document).ready(medicos);
+    $(document).ready(usua);
 </script>

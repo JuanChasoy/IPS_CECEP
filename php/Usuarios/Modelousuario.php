@@ -87,9 +87,10 @@
 		
 		public function lista() {
 			$this->query = "
-			SELECT comu_codi, comu_nomb, m.muni_nomb
-			FROM tb_comuna as c inner join tb_municipio as m
-			ON (c.muni_codi = m.muni_codi) order by comu_codi
+			SELECT id_usuario, usua_user, nom_usuario, tb_roles.nom_rol
+            FROM tb_usuarios 
+            INNER JOIN tb_roles on (tb_usuarios.id_rol = tb_roles.id_rol)
+
 			";
 			
 			$this->obtener_resultados_query();
