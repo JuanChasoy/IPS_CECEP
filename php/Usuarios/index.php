@@ -17,6 +17,7 @@
          <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Listado de Usuarios</h3>
+              <a href="Reportes/Reports/reporteUsuarios.php" class="btn-report">Ver Reporte</a>
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
                       title="Nuevo Usuario"><i class="fa fa-plus" aria-hidden="true"></i></button> 
