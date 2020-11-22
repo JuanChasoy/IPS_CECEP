@@ -6,16 +6,18 @@ session_start();
 
 }*/
 
-    if (isset($_SESSION['nombre_rol']) && ($_SESSION['nombre_rol'] = 'Administrador')) {
+    if (isset($_SESSION['nombre_rol']) && ($_SESSION['nombre_rol'] = 'Cliente')) {
       //include_once("./Funciones/sessiones.php");
       include_once('./Templates/header.php');
       include_once('./Templates/barra.php');
-      include_once('./Templates/Administrador/navegacion.php');
+      include_once('./Templates/cliente/navegacion.php');
     }else{
       header('location: ./index.php');
     }
 
-    
+      
+
+
 /*include_once("./Funciones/sessiones.php");
 include_once('./Templates/header.php');
 

@@ -38,6 +38,13 @@ function usuario() {
                 {
                     location.href = "aseper.php";
                 }
+
+                
+                if(resultado.rol === 'Cliente')
+                {
+                    location.href = "cliente.php";
+                }
+                
                 
                 
             } else {
