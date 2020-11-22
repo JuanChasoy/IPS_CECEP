@@ -4,7 +4,7 @@ session_start();
 /*if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 1) {
   header('location: ./index.php');
 
-}*/
+}*/ 
 
     if (isset($_SESSION['nombre_rol']) && ($_SESSION['nombre_rol'] = 'Cliente')) {
       //include_once("./Funciones/sessiones.php");
