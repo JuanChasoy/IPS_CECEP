@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2020 a las 18:56:21
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.30
+-- Tiempo de generación: 22-11-2020 a las 19:31:02
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.3.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -226,7 +226,8 @@ INSERT INTO `tb_roles` (`id_rol`, `nom_rol`) VALUES
 (2, 'Director'),
 (3, 'Medicos'),
 (4, 'Especialistas'),
-(5, 'Asesores');
+(5, 'Asesores'),
+(6, 'Cliente');
 
 -- --------------------------------------------------------
 
@@ -308,7 +309,8 @@ INSERT INTO `tb_usuarios` (`id_usuario`, `nom_usuario`, `cedu_usuario`, `usua_us
 (4, 'Deivi Steven Rivas Rivas', 223451, 'deivy', 53453424, 'Drivas@gmail.com.co', 1, 1, '$2y$12$xyMXafB//kPIBlb6kBjUUe9ojYPpLgWT.uKEFdRMDfEzp7YffmmvW', 'deivy.jpg'),
 (7, 'Pedro Bustamante Arqueo', 5562543, 'pedro', 31245673, 'Pedro@otro.com.co', 2, 3, '$2y$12$c0SuyCU6hdqKMf7RcW/ya.u0JfVRNcY8M10L7Thb2yvn0DaQT5w/a', 'avatar.png'),
 (8, 'pepa pina peres', 223312, 'pepa', 3217465, 'pepa@gmail.com', 2, 2, '$2y$12$FINli3nvtX02o1nrixPpJOh9InzXNSaYMeV3zCGd.Rp2XSLPGweEa', 'avatar04.png'),
-(9, 'Antony anuel torres', 2542524, 'antony', 4232525, 'anto@gmail.com', 1, 5, '$2y$12$z4E2K2boJbpDTpbZ7jyW2u87Bag7Lfa1Z5Z7uFYUcejY0FCaaJgZy', 'user2-160x160.jpg');
+(9, 'Antony anuel torres', 2542524, 'antony', 4232525, 'anto@gmail.com', 1, 5, '$2y$12$z4E2K2boJbpDTpbZ7jyW2u87Bag7Lfa1Z5Z7uFYUcejY0FCaaJgZy', 'user2-160x160.jpg'),
+(10, 'Pepito', 1234567, 'pepito', 4326793, 'pepito321@gmail.com', 4, 6, '$2y$12$f74odVwmbXGVfWaj6/fENe1ixpa9/tvh382AAuZCgH4wj.jHiHdK.', '');
 
 --
 -- Índices para tablas volcadas
