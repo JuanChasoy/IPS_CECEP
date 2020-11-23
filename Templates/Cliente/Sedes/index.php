@@ -1,8 +1,8 @@
-<?php include_once ("../../Funciones/sessiones.php"); ?>
+<?php include_once ("../../../Funciones/sessiones.php"); ?>
       
       <h1>
         Gestión de
-        <small>  Sedes</small>
+        <small> Sedes </small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,14 +20,14 @@
               <a href="Reportes/Reports/reporteSedes.php" class="btn-report">Ver Reporte</a>
               <div class="box-tools pull-right">
                   <button class="btn btn-info btn-sm" id="nuevo"  data-toggle="tooltip" 
-                      title="Nuevo Empleado"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                      
                       <a href="./reportes/Reports/reporteSedes.php" class="btn btn-info">reportes</a>
               </div>
-            </div>
+            </div> 
            
         
             <!-- /.box-header -->
-            <div class="box-body">
+         <div class="box-body">
             <div id="editar"></div>
             <div id="listado">
               <table id="tabla" class="table table-bordered table-striped">
@@ -38,8 +38,7 @@
                   <th>direccion</th>
                   <th>telefono</th>
                   <th>ciudad</th>
-                  <th>Eliminar</th>
-                  <th>Modificar</th>
+                  <th>codigo sede</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,10 +46,12 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>codigo Pais</th>
-                  <th>nombre Pais</th>
-                  <th>Eliminar</th>
-                  <th>Modificar</th>
+                <th>codigo sede</th>
+                  <th>nombre sede</th>
+                  <th>direccion</th>
+                  <th>telefono</th>
+                  <th>ciudad</th>
+                  <th>codigo sede</th>
 
                 </tr>
                 </tfoot>
@@ -69,7 +70,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-<script src="js/funcionesSedes.js"></script>
+<script src="Templates/Cliente/Sedes/FuncionesSedes.js"></script>
 <!-- Funciones de Lógica de neogcio -->
 <script>
     $(document).ready(sedes);

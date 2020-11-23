@@ -68,7 +68,7 @@
   <!-- /.content-wrapper -->
 
   </div><!-- /.box-body -->  
-	<script src="js/FuncionesServicios.js"></script>
+	<script src="Templates/Cliente/Servicios/FuncionesServicios.js"></script>
 </div>
 <script>
     $(document).ready(servicios);

@@ -8,7 +8,7 @@
     function verificarUsuario(){
         return isset($_SESSION["usuario"]);
     }
-    session_start();
+     session_start();
     usuarioAutenticado();
 
 ?>
