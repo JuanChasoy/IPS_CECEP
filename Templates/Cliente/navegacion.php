@@ -39,15 +39,15 @@
           </a>
           <ul class="treeview-menu">
            
-            <li><a href="./php/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>            
-            <li><a href="./php/Afiliados/index.php"><i class="fab fa-accessible-icon"></i> Afiliados</a></li> 
-            <li><a href="./php/Citas/index.php"><i class="fab fa-accessible-icon"></i> Citas</a></li>
-            <li><a href="./php/Usuarios/index.php"><i class="fab fa-accessible-icon"></i> Usuarios</a></li> 
+            <li><a href="/Templates/Cliente/Medicamentos/index.php"><i class="fas fa-globe-americas"></i> Medicamentos</a></li>            
+            <li><a href="/Templates/Cliente/Afiliados/index.php"><i class="fab fa-accessible-icon"></i> Afiliados</a></li> 
+            <li><a href="/Templates/Cliente/Citas/index.php"><i class="fab fa-accessible-icon"></i> Citas</a></li>
+            <li><a href="/Templates/Cliente/Usuarios/index.php"><i class="fab fa-accessible-icon"></i> Usuarios</a></li> 
             <li><a href="./Templates/Cliente/Medicos/index.php"><i class="fas fa-globe-americas"></i> Medicos</a></li> 
-            <li><a href="./php/Paises/index.php"><i class="fas fa-globe-americas"></i> Paises</a></li> 
-            <li><a href="./php/Ciudades/index.php"><i class="fas fa-globe-americas"></i> Ciudades</a></li> 
+            <li><a href="/Templates/Cliente/Paises/index.php"><i class="fas fa-globe-americas"></i> Paises</a></li> 
+            <li><a href="/Templates/Cliente/Ciudades/index.php"><i class="fas fa-globe-americas"></i> Ciudades</a></li> 
             <li><a href="./Templates/Cliente/Sedes/index.php"><i class="fas fa-globe-americas"></i> Sedes</a></li>
-            <li><a href="./php/Servicios/index.php"><i class="fas fa-globe-americas"></i> Servicios</a></li> 
+            <li><a href="/Templates/Cliente/Servicios/index.php"><i class="fas fa-globe-americas"></i> Servicios</a></li> 
           </ul>
         </li>
        
