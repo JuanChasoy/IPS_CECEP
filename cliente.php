@@ -10,7 +10,7 @@ session_start();
       //include_once("./Funciones/sessiones.php");
       include_once('./Templates/header.php');
       include_once('./Templates/barra.php');
-      include_once('./Templates/cliente/navegacion.php');
+      include_once('./Templates/Cliente/navegacion_cliente.php');
     }else{
       header('location: ./index.php');
     }
