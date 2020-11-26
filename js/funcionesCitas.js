@@ -170,6 +170,17 @@ $(".box").on("click","#nuevo", function(){
             $("#editar #id_medico").append("<option value='" + value.id_medico + "'>" + value.nom_medico + "</option>")
           });
       });
+
+       $.ajax({
+          type:"get",
+          url:"./php/Afiliados/ControladorAfiliados.php",
+          data: {accion:'listar'},
+          dataType:"json"
+        }).done(function( resultado ) {                    ;
+            $.each(resultado.data, function (index, value) { 
+              $("#editar #nom_usu_cita").append("<option value='" + value.nom_afiliado + "'>" + value.nom_afiliado + "</option>")
+            });
+        });
   });
   
 })
