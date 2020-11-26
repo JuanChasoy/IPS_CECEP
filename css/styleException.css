@@ -22,3 +22,7 @@ a.borrar,
 a.editar{
     display:  none;
 }
+
+a.btn-report{
+    display: none;
+}
