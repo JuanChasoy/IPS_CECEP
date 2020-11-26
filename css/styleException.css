@@ -1,0 +1,24 @@
+thead th:nth-last-child(1),
+thead th:nth-last-child(2){
+    display: none;
+}
+
+tbody tr td:nth-last-child(1),
+tbody tr td:nth-last-child(2){
+    display: none;
+}
+
+tfoot tr th:nth-last-child(1),
+tfoot tr th:nth-last-child(2){
+    display: none;
+}
+
+button#nuevo,
+a.btn-info{
+    display: none;
+}
+
+a.borrar,
+a.editar{
+    display:  none;
+}
