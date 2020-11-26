@@ -28,13 +28,15 @@
                           </div>
                       </div>
 
-                    <div class="form-group">
+                      <div class="form-group">
                         <label class="control-label col-sm-2" for="nom_usu_cita">Nombre:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nom_usu_cita" name="nom_usu_cita" placeholder="Ingrese Nombre"
-                            value = "">
+                            <select class="form-control" id="nom_usu_cita" name="nom_usu_cita">
+                         
+							</select>	
                         </div>
                     </div>
+
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="cedu_usu_cita">Cedula:</label>

@@ -330,6 +330,25 @@ $(".box-body").on("click","a.editar",function(){
          }
        });
     });
+
+
+    $.ajax({ 
+      type:"get",
+      url:"./php/Afiliados/ControladorAfiliados.php", // falta poner el el controlador de sedes
+      data: {accion:'listar'},
+      dataType:"json"
+      
+    }).done(function( resultado ) {                     
+       $("#nom_usu_cita option").remove();
+       $.each(resultado.data, function (index, value) { 
+         
+         if(medico === value.nom_afiliado){
+           $("#nom_usu_cita").append("<option selected value='" + value.nom_afiliado + "'>" + value.nom_afiliado + "</option>")
+         }else {
+           $("#nom_usu_cita").append("<option value='" + value.nom_afiliado + "'>" + value.nom_afiliado + "</option>")
+         }
+       });
+    });
      
       
  })
